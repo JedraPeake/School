@@ -26,7 +26,7 @@
 2<sup>nd</sup> Year
 * [ECE 2277A: Digital Logic Systems](#ECE-2277A:-Digital-Logic-Systems)
 * [SE 2203A: Software Design](#SE-2203A:-Software-Design)
-* [CS 1037A: Computer Science Fundamentals II](#CS-1037A:-Computer-Science-Fundamentals-II)
+* [CS 1037A: Computer Science Fundamentals II](https://github.com/JedraPeake/Software-Engineering-Projects#cs-1037a-computer-science-fundamentals-ii)
 * [ECE 2238B: Introduction to Electrical Engineering](#ECE-2238B:-Introduction-to-Electrical-Engineering)
 * [SE 2205B: Algorithms and Data Structures](#SE-2205B:-Algorithms-and-Data-Structures)
 * [SE 2250B: Software Construction](#SE-2250B:-Software-Construction)
@@ -60,8 +60,6 @@
 ## ECE 2277A: Digital Logic Systems
 ## SE 2203A: Software Design
 ## CS 1037A: Computer Science Fundamentals II
------------
-
 **Technologies Used**: C++
 
 ### **Uno**
