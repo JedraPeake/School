@@ -23,7 +23,7 @@
 * [SE 3351B: Software Project and Process Management](#SE-3351B:-Software-Project-and-Process-Management)
 * [SE 3353B: Human-Computer Interaction](#SE-3353B:-Human-Computer-Interaction)
 
-[2<sup>nd</sup> Year](#010)
+2<sup>nd</sup> Year
 * [ECE 2277A: Digital Logic Systems](#ECE-2277A:-Digital-Logic-Systems)
 * [SE 2203A: Software Design](#SE-2203A:-Software-Design)
 * [CS 1037A: Computer Science Fundamentals II](#CS-1037A:-Computer-Science-Fundamentals-II)
@@ -57,11 +57,38 @@
 ### SE 3351B: Software Project and Process Management
 ### SE 3353B: Human-Computer Interaction
 -----------
-## 010
+## ECE 2277A: Digital Logic Systems
+## SE 2203A: Software Design
+## CS 1037A: Computer Science Fundamentals II
+-----------
 
-### ECE 2277A: Digital Logic Systems
-### SE 2203A: Software Design
-### CS 1037A: Computer Science Fundamentals II
-### ECE 2238B: Introduction to Electrical Engineering
-### SE 2205B: Algorithms and Data Structures
-### SE 2250B: Software Construction
+**Technologies Used**: C++
+
+### **Uno**
+**Features**:
+- Created a simple simulation of an uno game between multiple players
+- The game is randomly played out based on player input i.e. number of players, hand size etc
+- Implemented using stacks, queues, ordered/linked lists
+
+[See More](https://github.com/JedraPeake/Uno)
+
+### **TopSpinGame**
+**Features**:
+- The premise of the game is fairly simple, you have a Circular Doubly Linked List chain of numbers in some non sorted order 
+- In order to solve this game the numbers must be sorted
+- Created a player input system that will shift or spin the list based on the input
+- Implemented a full Circular Doubly Linked List to act as the game board
+
+[See More](https://github.com/JedraPeake/TopSpinGame)
+
+### **SimpleVector**
+**Features**:
+- Creating my own version of the built-in vector
+- Implemented empty, size, push, pop, insert, print, set, and reverse methods for my vector
+- Created a destructor to clean up and deallocate memory when the object is destroyed
+
+[See More](https://github.com/JedraPeake/SimpleVector)
+
+## ECE 2238B: Introduction to Electrical Engineering
+## SE 2205B: Algorithms and Data Structures
+## SE 2250B: Software Construction
