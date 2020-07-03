@@ -27,9 +27,7 @@
 * [ECE 2277A: Digital Logic Systems](#ECE-2277A:-Digital-Logic-Systems)
 * [SE 2203A: Software Design](#SE-2203A:-Software-Design)
 * [CS 1037A: Computer Science Fundamentals II](https://github.com/JedraPeake/Software-Engineering-Projects#cs-1037a-computer-science-fundamentals-ii)
-* [ECE 2238B: Introduction to Electrical Engineering](#ECE-2238B:-Introduction-to-Electrical-Engineering)
 * [SE 2205B: Algorithms and Data Structures](#SE-2205B:-Algorithms-and-Data-Structures)
-* [SE 2250B: Software Construction](#SE-2250B:-Software-Construction)
 
 -----------
 ## 100
@@ -87,6 +85,14 @@
 
 [See More](https://github.com/JedraPeake/SimpleVector)
 
-## ECE 2238B: Introduction to Electrical Engineering
 ## SE 2205B: Algorithms and Data Structures
-## SE 2250B: Software Construction
+**Technologies Used**: Java, JUnit
+
+### [00 ‐ Java Introduction](https://github.com/JedraPeake/lab-00-java-introduction-JedraPeake)
+### [01 ‐ Lists and GUI Introduction](https://github.com/JedraPeake/lab-01-lists-gui-introduction-JedraPeake)
+### [02 ‐ Object-Oriented Programming](https://github.com/JedraPeake/lab-02-object-oriented-programming-JedraPeake)
+### [03 ‐ Trees](https://github.com/JedraPeake/lab-3-trees-JedraPeake)
+### [04 ‐ Maps - Tree](https://github.com/JedraPeake/lab-4-maps-tree-JedraPeake)
+### [05 ‐ Maps - Hash](https://github.com/JedraPeake/lab-5-maps-hashing-JedraPeake)
+### [06 ‐ Sorting](https://github.com/JedraPeake/lab-6-sorting-JedraPeake)
+### [07 ‐ Graphs](https://github.com/JedraPeake/lab-7-graphs-JedraPeake)
