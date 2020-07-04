@@ -1,0 +1,22 @@
+{
+  "name": "jpeake2ass3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "purchase2OrderF19.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "jasmine": "^3.5.0"
+  },
+  "devDependencies": {
+    "jasmine-sinon": "^0.4.0",
+    "nyc": "^14.1.1"
+  },
+  "scripts": {
+    "test": "jasmine",
+    "coverage": "nyc --reporter=html --reporter=text npm run test "
+  },
+  "author": "",
+  "license": "ISC"
+}
