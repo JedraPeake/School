@@ -8,9 +8,9 @@
 
 3<sup>rd</sup> Year
 * [ECE 4436A: Networking Principles, Protocols, and Architecture](#ECE-4436A:-Networking-Principles,-Protocols,-and-Architecture)
-* [SE 3309A: Database Management Systems](#SE-3309A:-Database-Management-Systems)
+* [SE 3309A: Database Management Systems](https://github.com/JedraPeake/Software-Engineering-Projects#se-3309a-database-management-systems)
 * [SE 3313A: Operating Systems for Software Engineering](#SE-3313A:-Operating-Systems-for-Software-Engineering)
-* [SE 3316A: Web Technologies](#SE-3316A:-Web-Technologies)
+* [SE 3316A: Web Technologies](https://github.com/JedraPeake/Software-Engineering-Projects#se-3316a-web-technologies)
 * [SE 3352A: Software Requirements & Analysis](#SE-3352A:-Software-Requirements-&-Analysis)
 * [ECE 3375B: Microprocessors and Microcomputers](#ECE-3375B:-Microprocessors-and-Microcomputers)
 * [SE 3310B: Theoretical Foundations of Software Engineering](#SE-3310B:-Theoretical-Foundations-of-Software-Engineering)
@@ -80,13 +80,28 @@ In addition to the web application, they wanted to have additional functionality
 [See Deployment Steps](https://github.com/JedraPeake/Software-Engineering-Projects/blob/master/4455b/se445b_final_case.pdf)
 
 
-
-
-
 ### ECE 4436A: Networking Principles, Protocols, and Architecture
 ### SE 3309A: Database Management Systems
+----
+**Technologies Used**: SQL, Angular
+
+**Features**:
+- Developed SQL tables to match a basic gym application 
+- Developed a basic ui to query the tables, which were populated with data
+
+[See Project](https://github.com/JedraPeake/SE3309-Gym-Database)
 ### SE 3313A: Operating Systems for Software Engineering
 ### SE 3316A: Web Technologies
+----
+**Technologies Used**: MEAN Stack(MongoDB, Express.js, Angular, and Node.js)
+
+**Features**:
+- Leveraged the NASA API, so the logged in user could search for images
+- Added a collection system so a user could save images they liked for later
+- Implemented my own authentication system
+
+[See Project](https://github.com/JedraPeake/SE3316_Lab5)
+
 ### SE 3352A: Software Requirements & Analysis
 ### ECE 3375B: Microprocessors and Microcomputers
 ### SE 3310B: Theoretical Foundations of Software Engineering
@@ -96,9 +111,6 @@ In addition to the web application, they wanted to have additional functionality
 ### SE 3353B: Human-Computer Interaction
 ### ECE 2277A: Digital Logic Systems
 ### SE 2203A: Software Design
-
-
-
 
 ### CS 1037A: Computer Science Fundamentals II
 ----
