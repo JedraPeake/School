@@ -1,10 +1,10 @@
 # Selected School Projects
 ### Table of Contents
 4<sup>th</sup> Year
-* [CS 4482A: Game Engine Development](#CS-4482A:-Game-Engine-Development)
-* [SE 4450: Software Engineering Design II](#SE-4450:-Software-Engineering-Design-II)
-* [SE 4452A: Software Testing & Maintenance](#SE-4452A:-Software-Testing-&-Maintenance)
-* [SE 4455B: Cloud Computing](#SE-4455B:-Cloud-Computing)
+* [CS 4482A: Game Engine Development](https://github.com/JedraPeake/Software-Engineering-Projects#cs-4482a-game-engine-development)
+* [SE 4450: Software Engineering Design II](https://github.com/JedraPeake/Software-Engineering-Projects#se-4450-software-engineering-design-ii)
+* [SE 4452A: Software Testing & Maintenance](https://github.com/JedraPeake/Software-Engineering-Projects#se-4452a-software-testing--maintenance)
+* [SE 4455B: Cloud Computing](https://github.com/JedraPeake/Software-Engineering-Projects#se-4455b-cloud-computing)
 
 3<sup>rd</sup> Year
 * [ECE 4436A: Networking Principles, Protocols, and Architecture](#ECE-4436A:-Networking-Principles,-Protocols,-and-Architecture)
@@ -23,7 +23,7 @@
 * [ECE 2277A: Digital Logic Systems](#ECE-2277A:-Digital-Logic-Systems)
 * [SE 2203A: Software Design](#SE-2203A:-Software-Design)
 * [CS 1037A: Computer Science Fundamentals II](https://github.com/JedraPeake/Software-Engineering-Projects#cs-1037a-computer-science-fundamentals-ii)
-* [SE 2205B: Algorithms and Data Structures](#SE-2205B:-Algorithms-and-Data-Structures)
+* [SE 2205B: Algorithms and Data Structures](https://github.com/JedraPeake/Software-Engineering-Projects#se-2205b-algorithms-and-data-structures)
 
 ### CS-4482A: Game Engine Development
 ----
@@ -42,7 +42,7 @@ Signed a NDA with the Royal Bank of Canada.
 ### SE-4452A: Software Testing & Maintenance
 ----
 **Technologies Used**: JavaScript, Mocha
-### **Assignment 2**
+#### Assignment 2
 Use the required specifications to develop effective functional (black box) unit test suite for the project to include:
 - Equivalence classes testing
 - Boundaries values testing
@@ -52,7 +52,7 @@ Make sure the test suite isolates via stubs where applicable, and provide an ana
 
 [See Tests](https://github.com/JedraPeake/Software-Engineering-Projects/blob/master/4452a/jpeake2Ass2)
 
-### **Assignment 3**
+#### Assignment 3
 - Develop the DD path graph.
 - Identify the basis paths.
 - Develop the structural unit test cases for the OrderHandling 
@@ -82,7 +82,7 @@ In addition to the web application, they wanted to have additional functionality
 
 
 
------------
+
 ### ECE 4436A: Networking Principles, Protocols, and Architecture
 ### SE 3309A: Database Management Systems
 ### SE 3313A: Operating Systems for Software Engineering
@@ -94,13 +94,17 @@ In addition to the web application, they wanted to have additional functionality
 ### SE 3350B: Software Engineering Design I
 ### SE 3351B: Software Project and Process Management
 ### SE 3353B: Human-Computer Interaction
------------
-## ECE 2277A: Digital Logic Systems
-## SE 2203A: Software Design
-## CS 1037A: Computer Science Fundamentals II
+### ECE 2277A: Digital Logic Systems
+### SE 2203A: Software Design
+
+
+
+
+### CS 1037A: Computer Science Fundamentals II
+----
 **Technologies Used**: C++
 
-### **Uno**
+#### Uno
 **Features**:
 - Created a simple simulation of an uno game between multiple players
 - The game is randomly played out based on player input i.e. number of players, hand size etc
@@ -108,7 +112,7 @@ In addition to the web application, they wanted to have additional functionality
 
 [See More](https://github.com/JedraPeake/Uno)
 
-### **TopSpinGame**
+#### TopSpinGame
 **Features**:
 - The premise of the game is fairly simple, you have a Circular Doubly Linked List chain of numbers in some non sorted order 
 - In order to solve this game the numbers must be sorted
@@ -117,7 +121,7 @@ In addition to the web application, they wanted to have additional functionality
 
 [See More](https://github.com/JedraPeake/TopSpinGame)
 
-### **SimpleVector**
+#### SimpleVector
 **Features**:
 - Creating my own version of the built-in vector
 - Implemented empty, size, push, pop, insert, print, set, and reverse methods for my vector
@@ -125,7 +129,8 @@ In addition to the web application, they wanted to have additional functionality
 
 [See More](https://github.com/JedraPeake/SimpleVector)
 
-## SE 2205B: Algorithms and Data Structures
+### SE 2205B: Algorithms and Data Structures
+----
 **Technologies Used**: Java, JUnit
 
 [00 ‐ Java Introduction](https://github.com/JedraPeake/lab-00-java-introduction-JedraPeake)
