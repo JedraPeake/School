@@ -104,8 +104,28 @@ In addition to the web application, they wanted to have additional functionality
 
 ### SE 3352A: Software Requirements & Analysis
 ### ECE 3375B: Microprocessors and Microcomputers
+----
+**Technologies Used**: Assembly 
+
+#### Final Project
+**Features**:
+- The project alters the brightness of the lights based on how intense the sunlight is to save power in an industrial setting
+- The starting base brightness can be adjusted based on the work location
+- The brightness alters on a timer that can be set i.e. every 5 minutes due to clouds or other variables that might affect sunlight temporarily
+
+[See Project](https://github.com/JedraPeake/Software-Engineering-Projects/blob/master/3375b)
+
 ### SE 3310B: Theoretical Foundations of Software Engineering
 ### SE 3314B: Computer Networks Applications
+----
+**Technologies Used**: C# 
+
+**Gives Users The Ability To**:
+- see the current state of the market
+- buy/bid/sell stocks
+
+[See Project](https://github.com/JedraPeake/Software-Engineering-Projects/blob/master/3314b/se3314networkingassignment1)
+
 ### SE 3350B: Software Engineering Design I
 ### SE 3351B: Software Project and Process Management
 ### SE 3353B: Human-Computer Interaction
