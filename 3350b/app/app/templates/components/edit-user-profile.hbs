@@ -1,0 +1,75 @@
+{{#if (not-eq oudaAuth.getName "Root")}}
+<h1>Modify Profile Information for {{getUser}} {{userProfile.familyName}} {{userProfile.givenName}}</h1>
+    <div class="ui segment">
+      <div class="ui form">
+        <div class="inline field">
+          <label class="right">First Name:</label><br>
+          {{input value=userProfile.familyName type="text" placeholder="enter first name" }}
+        </div>
+        <div class="inline field">
+          <label class="right">Last Name:</label><br>
+          {{input value=userProfile.givenName type="text" placeholder="enter last name"}}
+        </div>
+
+        <div class="inline field">
+          <label class="right">Email Address:</label><br>
+          {{input value=userProfile.email type="text" placeholder="enter email address"}}
+        </div>
+
+        {{#if  isChangingPassword }}
+          <div class="inline field">
+            <label class="right">Old Password</label><br>
+            {{input value=oldPassword type="password" placeholder="enter old password"}}
+          </div>
+
+          <div class="inline field">
+            <label class="right">New Password</label><br>
+            {{input value=newPassword1 type="password" placeholder="enter new password"}}
+          </div>
+
+          <div class="inline field">
+            <label class="right">New Password Again</label><br>
+            {{input value=newPassword2 type="password" placeholder="enter new password again"}}
+          </div>
+
+          <div class="inline field">
+            <p></p>
+            <button class="ui button"  {{action 'cancelChangePassword'}}>Cancel
+              Change Password
+            </button>
+          </div>
+
+        {{else}}
+          <div class="inline field">
+            <label class="right">Password</label>
+            <button class="ui button"  {{action 'changePassword'}}>Change
+              password
+            </button>
+          </div>
+        {{/if}}
+        <div class="ui center aligned container">
+          <p style="color: #ca1010"> {{errorMessage}}</p>
+        </div>
+      </div>
+
+    </div>
+
+    <br><br>
+    <button class="ui button"  {{action 'saveUser'}}>Save</button>
+    <button class="ui button"  {{action 'cancel'}}>Cancel</button>
+
+{{else}}
+  <div class="ui center aligned raised segment">
+    <div class="ui icon header">
+      <i class="protect icon"></i>
+      Permission Denied
+    </div>
+    <div>
+      <br>
+      <p>Not available for Root user</p>
+      <br>
+    </div>
+  </div>
+
+{{/if}}
+

@@ -1,0 +1,66 @@
+ <style>
+    .modal{
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        max-height: 100%;
+        overflow-y: auto;
+    }
+ </style>
+
+<div button class="ui blue top attached button" style="text-align=right;"  {{action 'openRehabModal'}}>
+    <i class = "plus icon"></i>Create New Rehabilitation Plan 
+    {{!--{{temp}}--}}
+</div>
+
+
+{{#ui-modal name="newRehab" class="newRehab" }}
+<div class="header">
+    Adding New Rehab Plan
+</div>
+<div class="content">
+    <div class="ui form">
+        
+        <div class="three fields">
+            <div class="field">
+                <label>Rehab Plan Name</label>
+            {{input type="text" cols="50" rows="1" value = name placeholder="add rehab plan name"}}
+            </div>
+            <div class="field">
+                <label>Author Name</label>
+            {{input type="text" cols="50" rows="1" value = author placeholder="add rehab plan author name"}}
+            </div>
+            
+            <div class="field">
+                <label> Rehab Plan Time Frame to complete</label>
+            {{input type="date" cols="50" rows="1" value = complete placeholder="add rehab plan author name"}}
+            </div>
+        </div>
+    
+        <div class="two fields">
+            
+            <div class="field">
+                <label>Rehab Plan Description</label>
+                {{textarea value=description cols="50" rows="3" placeholder="add rehab plan goal"}}
+            </div>
+            
+            <div class="field">
+                <label>Rehab Plan Goal</label>
+                {{textarea value=goal cols="50" rows="3" placeholder="add rehab plan goal"}}
+            </div>
+        </div>
+            
+        
+    </div>
+</div>
+<br>
+<div class="actions">
+    <div class="ui black deny button">
+        Cancel
+    </div>
+    <div class="ui positive right labeled icon button">
+        Save
+        <i class="checkmark icon"></i>
+    </div>
+</div>
+{{/ui-modal}}

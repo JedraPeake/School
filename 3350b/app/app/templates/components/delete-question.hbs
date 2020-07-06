@@ -1,0 +1,32 @@
+ <style>
+    .modal{
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        max-height: 100%;
+        overflow-y: auto;
+    }
+ </style>
+<div class="ui animated fade button" tabindex="0"{{action 'deleteModal' this}}>
+     <div class="visible content"></div><div class="hidden content"><i class="remove icon"></i></div>
+        </div>
+            {{#ui-modal name=modalName class=modalName }}
+  <div class="header">
+    Please Confirm...
+  </div>
+  <div class="content">
+    <label>Are you sure you want to delete this question?</label>
+  </div>
+  <br>
+  <div class="actions">
+    <div class="ui deny button">
+      Cancel
+    </div>
+    <div class="ui positive right labeled icon button">
+      Yes
+      <i class="checkmark icon"></i>
+    </div>
+  </div>
+{{/ui-modal}}
+
+           

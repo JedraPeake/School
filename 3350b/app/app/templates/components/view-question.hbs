@@ -1,0 +1,37 @@
+ <style>
+    .modal{
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        max-height: 100%;
+        overflow-y: auto;
+    }
+ </style>
+<div class="ui animated fade button" tabindex="0"{{action 'openViewModal' this}}>
+     <div class="visible content"></div><div class="hidden content"><i class="eye icon"></i></div>
+        </div>
+{{#ui-modal name=viewModal class=viewModal }}
+  <div class="header">
+   Viewing Question
+  </div>
+  <div class="content">
+    <div class="ui form">
+      <div class="field">
+        
+        <label>Question Title</label>
+        {{input type="textarea" disabled=true cols="50" rows="2" value = questionText}}
+      </div>
+       
+<div class="field">
+        <label>Question Description</label>
+        {{textarea type="textarea" disabled=true cols="50" rows="2" value = helpDescription }}
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="actions">
+    <div class="ui deny button">
+      Close
+    </div>
+  </div>
+{{/ui-modal}}

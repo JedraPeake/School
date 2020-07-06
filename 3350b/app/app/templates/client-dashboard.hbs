@@ -1,0 +1,56 @@
+<style>
+  .ui#content{
+    margin-left:280px;
+    margin-top: 50px;
+    margin-right: 20px;
+    z-index:5;
+  }
+  
+  .ui#logo{
+    padding-left: 20px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    width: 250px;
+  }
+  
+  .ui#btn{
+    position:absolute; 
+    top:0; 
+    right:0;
+    margin-top: 23px;
+    margin-right:20px;
+  }
+  
+  .ui#main{
+    padding-left:20px;
+    padding-top:20px;
+  }
+</style>
+
+<script
+
+  src = "/frontend/app/components/nav-bar.js"
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+  
+  <div class="pusher">
+    <div id="content" class="ui basic segment">
+      <div id = "main" class = "ui grid">
+      <div class="fourteen wide column">
+      {{currentID}}
+      {{dashboard-client}}
+      
+{{!--<br>--}}
+<br>
+<br> 
+</div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+

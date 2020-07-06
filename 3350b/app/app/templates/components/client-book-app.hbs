@@ -1,0 +1,123 @@
+<style>
+  .as-calendar-occurrence{background-color:rgba(100,181,246 ,1);border-left:2px solid #2196F3;color:#fff;left:0;padding:0 .375rem;position:absolute;right:0}
+  
+</style>
+
+{{as-calendar
+  title="Appointment Calendar"
+  occurrences=occurrences
+  defaultTimeZoneQuery="New York|London|Dubai|Hong Kong"
+  dayStartingTime="9:00"
+  dayEndingTime="20:00"
+  timeSlotDuration="00:30"
+  
+
+  onAddOccurrence=(action "calendarAddOccurrence") value = available
+  onUpdateOccurrence=(action "calendarUpdateOccurrence")
+  onRemoveOccurrence=(action "calendarRemoveOccurrence")}}
+
+<br>
+
+{{#if occurencesLength}}
+<div class="ui centered header" style="color:#0E6EB8;">
+<h1>Your Upcoming Appointment</h1>
+</div>
+<table class = "ui blue table" cellspacing="0" width="100%">
+<thead>
+<tr>
+    {{!--<th><div class="ui centered header" style="color:#0E6EB8;">Client Name</div></th>--}}
+    {{!--<th><div class="ui centered header" style="color:#0E6EB8;">Email</div></th>--}}
+        {{!--<th><div class="ui centered header" style="color:#0E6EB8;">Phone Number</div></th>--}}
+    <th><div class="ui centered header" style="color:#0E6EB8;">Date and Time</div></th>
+    <th><div class="ui centered header" style="color:#0E6EB8;">Teleconference Link</div></th>
+</tr>
+</thead>
+<tbody>
+    {{#each occurrences as |data|}}
+    <tr>
+    {{!--<td><center>{{data.clientName}} {{data.clientLastName}}</center></td>--}}
+    {{!--<td><center>{{data.clientEmail}}</center></td>--}}
+     {{!--<td><center>{{data.clientPhone}}</center></td>--}}
+     <td><center>{{data.startsAt}}</center></td>
+     <td>
+       <center>
+       <span class="skype-button rounded" data-contact-id="shima.kanani" data-text="Enter Appointment" ></span>
+        <script src="https://swc.cdn.skype.com/sdk/v1/sdk.min.js"></script>
+      </center>
+      </td>
+      
+    </tr> 
+    {{/each}}
+</tbody>
+</table>
+{{else}}
+<div class="ui centered header" style="color:#0E6EB8;">
+<h1>You currently have no booked appointments!</h1>
+<p>Please select a time slot in the calander to book an appointment. Once booked, a teleconference link will become available for your appointment.</p>
+</div>
+
+
+{{/if}}
+
+
+
+{{#ui-modal name=modalName class=modalName }}
+{{#if docAvailable}}
+  <div class="header">
+    Please Confirm...
+  </div>
+  <div class="content">
+    <label>Are you sure you want to book an appointment at this time?</label>
+  </div>
+  <br>
+  <div class="actions">
+    <div class="ui deny button">
+      Cancel
+    </div>
+    <div class="ui positive right labeled icon button">
+      Yes
+      <i class="checkmark icon"></i>
+    </div>
+  </div>
+  {{else if deleting}}
+    <div class="header">
+    Please Confirm...
+  </div>
+  <div class="content">
+    <label>Are you sure you want to cancel your booked appointment at this time?</label>
+  </div>
+  <br>
+  <div class="actions">
+    <div class="ui deny button">
+      Cancel
+    </div>
+    <div class="ui positive right labeled icon button">
+      Yes
+      <i class="checkmark icon"></i>
+    </div>
+  </div>
+
+  {{else}}
+   <div class="header">
+    Please select another time...
+  </div>
+  <div class="content">
+    <label>Unfortunately, there is no availability at this time. Please select another time slot for an appointment!</label>
+  </div>
+  <br>
+  <div class="actions">
+    {{!--<div class="ui deny button">--}}
+    {{!--  Cancel--}}
+    {{!--</div>--}}
+    <div class="ui positive right labeled icon button">
+      Okay, I understand. 
+      <i class="checkmark icon"></i>
+    </div>
+  </div>
+
+    {{/if}}
+  
+
+{{/ui-modal}}
+
+

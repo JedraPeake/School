@@ -1,0 +1,36 @@
+<style>
+  .floatLeft { width: 47%; float: left;}
+  .floatRight {width: 47%; float: right; }
+  .container { overflow: hidden; }
+</style>
+
+    <div class="ui form">
+      <div class="field">
+        <label>Diagnosed Case</label>
+        {{input type="text" cols="50" rows="1" value = case placeholder="add title"}}
+      </div>
+      <div class="field">
+        <label> Examination Findings Sumamry</label>
+        {{textarea value=outcome cols="50" rows="4" placeholder="add content"}}
+      </div>
+      </div>
+    <br>
+
+<div class="container">
+  <div class="floatLeft">
+    {{#js-pdf steps showPdf=false filename="summaryReport" as |pdf|}}
+      
+      <div class="ui green button" {{action pdf.save}}>
+        <i class = "file alternate download icon"></i>Download
+      </div>
+      
+    {{/js-pdf}}
+  </div>
+  
+  
+  <div class="floatRight">
+    <div class="ui green button" {{action 'saveToBackend'}}>
+      <i class = "file alternate upload icon"></i>Save
+    </div>
+  </div>
+</div>  

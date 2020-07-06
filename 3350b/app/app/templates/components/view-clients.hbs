@@ -1,0 +1,406 @@
+<style
+  src = "https://code.jquery.com/jquery-1.12.4.js"
+  src = "https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"
+  src = "https://cdn.datatables.net/1.10.16/js/dataTables.semanticui.min.js"
+  src = "https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/semantic.min.js" >
+  
+  .columnInfo1 {
+    float:left;
+    width:50%;
+    padding-right:500px;
+  }
+  .columnInfo1{
+    float:left;
+    width:50%;
+    padding-right:500px;
+  }
+  
+  
+  
+</style>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{{!--<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">--}}
+
+
+
+{{#if viewProfile}}
+
+{{#fullwidth-tabs as |tab|}}
+ 
+  {{#tab.pane title="Client Information"}}
+
+<button class="ui basic labeled icon blue button" {{action 'profileDone' }}>
+  <i class="arrow left icon"></i>
+  Back 
+</button>
+<center>
+ {{!--<div class="ui grid">--}}
+  {{!--<div class="fourteen wide column" align='center'>   --}}
+  <font size="3">
+
+<br> 
+ <div class="ui centered header">
+            <h1 class="font" style="color:black;">Details of {{givenName}} {{familyName}}'s Profile</h1>
+          </div>
+          
+<table class="ui blue table">
+  <thead>
+    <tr><th><div class="ui centered header" style="color:#0E6EB8;">Given Name</div></th>
+    <th><div class="ui centered header" style="color:#0E6EB8;">Family Name</div></th>
+    <th><div class="ui centered header" style="color:#0E6EB8;">Email</div></th>
+    <th><div class="ui centered header" style="color:#0E6EB8;">Phone</div></th>
+    <th><div class="ui centered header" style="color:#0E6EB8;">Birth Date</div></th>
+    <th><div class="ui centered header" style="color:#0E6EB8;">Postal Code</div></th>
+    <th><div class="ui centered header" style="color:#0E6EB8;">Occupation</div></th>
+    
+  </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><center>{{givenName}}</center></td>
+      <td><center>{{familyName}}</center></td>
+      <td><center>{{email}}</center></td>
+      <td><center>{{phone}}</center></td>
+      <td><center>{{DOB}}</center></td>
+      <td><center>{{postalCode}}</center></td>
+      <td><center>{{occupation}}</center></td>
+    </tr>
+    
+  </tbody>
+</table>
+<div class="ui centered header">
+            <h1 class="font" style="color:black;">Assigned Exercise Menus</h1>
+          </div>
+   
+   <table class="ui blue table">
+  <thead>
+    <tr><th><div class="ui centered header" style="color:#0E6EB8;">Name</div></th>
+    <th><div class="ui centered header" style="color:#0E6EB8;">Description</div></th>
+    <th><div class="ui centered header" style="color:#0E6EB8;">Goal</div></th>
+    <th><div class="ui centered header" style="color:#0E6EB8;">Time Frame</div></th>
+    <th><div class="ui centered header" style="color:#0E6EB8;">Created by</div></th>
+    <th><div class="ui centered header" style="color:#0E6EB8;">Add Assessment Test</div></th>
+    <th><div class="ui centered header" style="color:#0E6EB8;">Edit</div></th>
+    <th><div class="ui centered header" style="color:#0E6EB8;">Remove</div></th>
+    
+  </tr>
+  </thead>
+  <tbody>
+        
+    {{#each filterTreatments as |treatmentTest|}}
+      {{#if treatmentTest.rehabilitation}}
+      <tr>
+        <td><center>{{treatmentTest.rehabilitation.name}}</center></td>
+        <td><center>{{treatmentTest.rehabilitation.description}}</center></td>
+        <td><center>{{treatmentTest.rehabilitation.goal}}</center></td>
+        <td><center>{{treatmentTest.rehabilitation.timeFrameToComplete}}</center></td>
+        <td><center>{{treatmentTest.rehabilitation.authorName}}</center></td>
+        <td><center>
+      <div class="ui animated fade button" align='center' tabindex="0" {{action 'addAssessment' treatmentTest.rehabilitation.id}}>
+     <div class="visible content"></div><div class="hidden content"><i class="plus icon"></i></div>
+        </div></center></td>
+        <td><center>{{edit-rehabilitation ID=treatmentTest.rehabilitation.id onConfirm=(action "updateTreatments")}}</center></td>
+        <td><center>{{delete-rehabilitation ID=treatmentTest.rehabilitation.id IDTreat=treatmentTest.id}}</center></td>
+      </tr>
+      {{/if}}
+    {{/each}}
+  </tbody>
+</table>
+
+
+<div class="ui centered header">
+    <h1 class="font" style="color:black;">Payment History</h1>
+</div>
+{{#if paymentsArrayLength}}
+
+<table class = "ui blue table" cellspacing="0" width="100%">
+<thead>
+<tr>
+    <th><div class="ui centered header" style="color:#0E6EB8;">Payment Date and Time</div></th>
+    <th><div class="ui centered header" style="color:#0E6EB8;">Amount Paid</div></th>
+    <th><div class="ui centered header" style="color:#0E6EB8;">Subscription Type</div></th>
+</tr>
+</thead>
+<tbody>
+    {{#each paymentsArray as |data|}}
+    <tr>
+     <td><center>{{data.clientPaymentDate}}</center></td>
+     <td><center>{{data.clientPaymentAmount}}</center></td>
+     <td><center>{{data.clientPaymentPackage}}</center></td>
+    </tr> 
+    {{/each}}
+</tbody>
+</table>
+{{else}}
+<div class="ui blue raised segment ">
+<div class="ui centered header" style="color:#0E6EB8;">
+<h2>No payment records are on file for {{givenName}} {{familyName}}</h2>
+</div>
+</div>
+{{!--<br>--}}
+{{/if}}
+    
+
+
+
+</font>
+{{!--</div>--}}
+{{!--<br>--}}
+
+{{!--<div align="right">--}}
+{{!--<div class="seven wide column" >   --}}
+
+<div class="ui centered header">
+    <h1 class="font" style="color:black;">Posture Photos</h1>
+</div>
+<font size="2">
+{{#if photosLength}}
+<div class="ui blue raised segment ">
+<div class="item">
+      <div class="content" >
+        {{#each filterImages as |singleImage|}}
+          <img src="{{singleImage.imageData}}" width="700px" >
+        {{/each}}
+      </div>
+    </div>
+</div> 
+{{else}}
+<div class="ui blue raised segment ">
+<div class="ui centered header" style="color:#0E6EB8;">
+<h2>No posture photos have been uploaded by {{givenName}} {{familyName}}</h2>
+</div>
+</div>
+<br>
+{{/if}}
+</font>
+{{!--</div>--}}
+
+{{!--</div>--}}
+</center>
+  {{/tab.pane}}
+ 
+  {{#tab.pane title="Notes"}}
+  
+  <button class="ui basic labeled icon blue button" {{action 'profileDone' }}>
+  <i class="arrow left icon"></i>
+  Back 
+</button>
+  <br>
+  
+    <div class="ui centered header">
+            <h1 class="font" style="color:black;">Notes on {{givenName}} {{familyName}}'s Profile</h1>
+          </div>
+  
+  
+{{add-note clientId=currentID onConfirm=(action "updateNotes")}}
+<br>
+    {{#ui-accordion class="styled fluid"}}
+  
+ {{#each clientNotes as |note|}}
+ <div class="title">
+    <i class="dropdown icon"></i>Title: {{note.title}} - Date: {{note.date}}
+  </div>
+  <div class="content">
+    {{note.content}}
+  </div>
+ {{/each}}
+{{/ui-accordion}}
+  {{/tab.pane}}
+  
+  {{#tab.pane title="Summary Report"}}
+    <button class="ui basic labeled icon blue button" {{action 'profileDone' }}>
+    <i class="arrow left icon"></i>
+    Back 
+  </button>
+  
+    <div class="ui centered header">
+            <h1 class="font" style="color:black;">Generate Summary Reports for {{givenName}} {{familyName}}'s Profile</h1>
+          </div>
+  <br>
+  
+  {{generate-summary-pdf clientName=givenName clientFamilyName=familyName clientPhoneNo=phone clientEmail=email clientTreat=filterTreatmentName currID=currentID onConfirm=(action "updateReports")}}
+  <br>
+    {{#ui-accordion class="styled fluid"}}
+  
+     {{#each clientReports as |report|}}
+     {{#if report.summary}}
+     <div class="title">
+        <p><i class="dropdown icon"></i>{{report.reportName}} generated on: {{report.date}}</p>
+      </div>
+      <div class="content">
+        {{#js-pdf report.pdfArray showPdf=false filename="summaryReport" as |pdf|}}
+      
+      <div class="ui green button" {{action pdf.save}}>
+        <i class = "file alternate download icon"></i>Download
+      </div>
+      
+    {{/js-pdf}}
+    
+      </div>
+      {{/if}}
+     {{/each}}
+    {{/ui-accordion}}
+  
+  {{/tab.pane}}
+  
+  {{#tab.pane title="Final Outcome Report"}}
+  
+  <button class="ui basic labeled icon blue button" {{action 'profileDone' }}>
+    <i class="arrow left icon"></i>
+    Back 
+  </button>
+  
+   <div class="ui centered header">
+            <h1 class="font" style="color:black;">Generate Final Outcome Reports for {{givenName}} {{familyName}}'s Profile</h1>
+          </div>
+
+  <br>
+  
+    {{generate-pdf clientName=givenName clientFamilyName=familyName clientPhoneNo=phone clientEmail=email clientTreat=filterTreatmentName currCase=case currOut=outcome currID=currentID onConfirm=(action "updateReports")}}
+  <br>
+    {{#ui-accordion class="styled fluid"}}
+  
+     {{#each clientReports as |report|}}
+     
+     {{#if report.final}}
+     
+     <div class="title">
+        <p><i class="dropdown icon"></i>{{report.reportName}} generated on: {{report.date}}</p>
+      </div>
+      <div class="content">
+        {{#js-pdf report.pdfArray showPdf=false filename="summaryReport" as |pdf|}}
+      
+      
+      <button class="ui green button"  {{action pdf.save}}>
+        <i class = "file alternate download icon"></i>Download
+      </button><br>
+      
+    {{/js-pdf}}
+    
+      </div>
+      {{/if}}
+     {{/each}}
+    {{/ui-accordion}}
+
+  {{/tab.pane}}
+ 
+ 
+{{/fullwidth-tabs}}
+
+
+{{else if addingTest}}
+
+<button class="ui basic labeled icon blue button" {{action 'addAssessment' }}>
+  <i class="arrow left icon"></i>
+  Back 
+</button>
+ <div class="ui grid">
+  
+
+  <div class="six wide column">
+    <br/>
+    
+  <table class="ui single line table">
+  <thead>
+    <tr>
+      <th>Assessment Tests</th>
+      <th>View</th>
+      <th>Add Test</th>
+    </tr>
+  </thead>
+  <tbody>
+ {{#each assessTests as |test|}}
+ <tr> 
+ <td>{{test.name}}</td>
+ <td>View</td>
+<td><div class="ui animated fade button" tabindex="0" {{action 'clickAssessment' test.id}}>
+     <div class="visible content"></div><div class="hidden content"><i class="plus icon"></i></div>
+        </div></td>
+ </tr>
+ {{/each}}
+  </tbody>
+</table>
+  </div>
+  <div class="six wide column">
+      <h3>Assessment Tests</h3>
+<table class="ui single line table">
+  <thead>
+    <tr>
+      <th>Test Name</th>
+      <th>Remove from Plan</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each addedTests as |test|}}
+    <tr>
+    <td>{{test.name}}</td>
+    <td><div class="ui animated fade button" tabindex="0" {{action 'removeAssessment' test.id}}>
+     <div class="visible content"></div><div class="hidden content"><i class="plus icon"></i></div>
+        </div></td>
+        </tr>
+    {{/each}}
+  </tbody>
+</table>
+
+<br/><br/>
+ <div align='center' class="ui green button" {{action "addAssessment"}}>
+  <i class = "plus icon"></i>Confirm
+</div>
+ </div>
+ </div>
+ 
+ 
+
+{{!-------------------------------------------------------------}}
+
+{{else}}
+
+
+
+<div><br>
+<h1> Client Profiles </h1>
+</div>
+<table id="clientTable" class = "ui unstackable table" cellspacing="0" width="100%">
+<thead>
+<tr>
+    <th><center>First Name</center></th>
+    <th><center>Last Name</center></th>
+    <th><center>Age</center></th>
+    {{!--<th><center>Payment Status</center></th>--}}
+    <th><center>Primary Phone</center></th>
+    <th><center>View More</center></th>
+</tr>
+</thead>
+<tbody>
+    {{#each clientData as |client|}}
+    
+    <tr>
+    <td><center>{{client.givenName}}</center></td>
+    <td><center>{{client.familyName}}</center></td>
+    <td><center>{{client.age}}</center></td>
+    {{!--{{#if paymentsArrayLength}}--}}
+    {{!--<td><center><i class="green checkmark icon"></i>Payment Approved</center></td>--}}
+    {{!--{{else}}--}}
+    {{!--<td><center><i class="red window close icon"></i>Payment Pending</center></td>--}}
+    {{!--{{/if}}--}}
+    <td><center>{{client.phone}}</center></td>
+    <td><center>
+      
+    <div class="ui animated fade button" tabindex="0" 
+    {{action 'loadProfile' client.id client.familyName client.givenName client.email client.DOB client.postalCode client.phone client.occupation}}
+          title="View">
+      <div class="visible content"></div>
+      <div class="hidden content"><i class="arrow right icon"></i>
+      </div>
+    </div>
+    </center>
+  </td>
+    
+    </tr> 
+    
+    {{/each}}
+</tbody>
+</table>
+
+{{/if}}

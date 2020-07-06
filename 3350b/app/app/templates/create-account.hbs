@@ -1,0 +1,430 @@
+<style>
+
+.ui#logo{
+    padding-left: 15px;
+    padding-top: 4px;
+    padding-bottom: 15px;
+    width: 170px;
+  }
+  
+  .ui#btn{
+    position:absolute; 
+    top:0; 
+    right:0;
+    margin-top: 23px;
+    margin-right:20px;
+  }
+  
+  .ui#main{
+    padding-left:20px;
+    padding-top:20px;
+  }
+  
+
+    #agreementBox{
+        background-color: #E3E4E7;
+        border-radius:5px;
+    }
+  .in, .out {
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-duration: 500ms !important;
+}
+
+#create{
+    display: none;
+    padding:20px;
+}
+
+#genInfo{
+    display:none;
+    padding:20px;
+}
+
+#agreement{
+    display: block;
+    padding:20px;
+}
+    
+#forms{
+    display: none;
+    padding: 20px;
+}
+
+#photo {
+    display: none;
+    padding: 20px;
+}
+
+#book{
+    display: none;
+    padding: 20px;
+}
+    
+#pay {
+    display: none;
+    padding: 20px;
+}
+    
+#confirm{
+        display: none;
+        padding: 20px;
+}
+.text.container{
+
+    width:40%;
+
+}
+
+</style>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.js"></script>
+<script>
+    $(document).ready(function() {
+
+  var ct = 0;
+
+  $('.ui.dropdown')
+    .dropdown()
+  ;
+  
+  $('.ui.menu a.item')
+        .on('click', function() {
+          $(this)
+            .addClass('active')
+            .siblings()
+            .removeClass('active')
+          ;
+        })
+      ;
+
+  $('.agree').one('click', function(e) {
+
+    e.preventDefault();
+
+    $('#agreement').animate('slow', function() {
+
+      if (ct > 0) {
+        $('#agreement').removeClass('transition visible');
+        $('#agreement').addClass('transition hidden');
+
+      }
+      $('#agreement').css('display', 'none');
+
+      $('#agreementS').addClass('disabled');
+      $('#createP').removeClass('disabled');
+      $("#create").transition('fade');
+      $('body').css('background-color', '#FFFFFF');
+      $('#create button').removeClass('blue');
+      $('#create button').addClass('blue');
+      ct++;
+
+    });
+
+  });
+
+  $('.prev1').one('click', function(e) {
+
+    e.preventDefault();
+    $('#agreementS').removeClass('disabled');
+    $('#createP').addClass('disabled');
+
+    $('#create').animate('slow', function() {
+
+      $('body').css('background-color', '#FFFFFF');
+      $('#create').transition('hide');
+      $("#agreement").transition('fade');
+
+    });
+
+  });
+
+  $('.next1').one('click', function(m) {
+
+    m.preventDefault();
+
+    $('#createP').addClass('disabled');
+    $('#genInfoP').removeClass('disabled');
+
+    $('#create').animate('slow', function() {
+
+      $('#genInfo button').removeClass("blue");
+      $('#genInfo button').addClass("blue");
+      $('body').css('background-color', '#FFFFFF');
+      $('#create').transition('hide');
+
+      $('#genInfo').transition('fade');
+    });
+
+  });
+
+  $('.prev2').one('click', function(m) {
+
+    m.preventDefault();
+    $('#genInfoP').addClass('disabled');
+    $('#createP').removeClass('disabled');
+
+    $('#genInfo').animate('slow', function() {
+
+      $('body').css('background-color', '#FFFFFF');
+      $('#genInfo').transition('hide');
+
+      $('#create').transition('fade');
+    });
+
+  });
+        
+  $('.next2').one('click', function(m) {
+
+    m.preventDefault();
+
+    $('#genInfoP').addClass('disabled');
+    $('#formsP').removeClass('disabled');
+
+    $('#genInfo').animate('slow', function() {
+
+      $('#forms button').removeClass("blue");
+      $('#forms button').addClass("blue");
+      $('body').css('background-color', '#FFFFFF');
+      $('#genInfo').transition('hide');
+
+      $('#forms').transition('fade');
+    });
+
+  });
+        
+  $('.prev3').one('click', function(e) {
+
+    e.preventDefault();
+    $('#genInfoS').removeClass('disabled');
+    $('#formsP').addClass('disabled');
+
+    $('#forms').animate('slow', function() {
+
+      $('body').css('background-color', '#FFFFFF');
+      $('#forms').transition('hide');
+      $("#genInfo").transition('fade');
+
+    });
+
+  });
+
+  $('.next3').one('click', function(m) {
+
+    m.preventDefault();
+
+    $('#formsP').addClass('disabled');
+    $('#photoP').removeClass('disabled');
+
+    $('#forms').animate('slow', function() {
+
+      $('#photo button').removeClass("blue");
+      $('#photo button').addClass("blue");
+      $('body').css('background-color', '#FFFFFF');
+      $('#forms').transition('hide');
+
+      $('#photo').transition('fade');
+    });
+
+  });
+
+$('.prev4').one('click', function(e) {
+
+    e.preventDefault();
+    $('#formsP').removeClass('disabled');
+    $('#photoP').addClass('disabled');
+
+    $('#photo').animate('slow', function() {
+
+      $('body').css('background-color', '#FFFFFF');
+      $('#photo').transition('hide');
+      $("#forms").transition('fade');
+
+    });
+
+  });
+
+$('.next4').one('click', function(m) {
+
+    m.preventDefault();
+
+    $('#photoP').addClass('disabled');
+    $('#bookP').removeClass('disabled');
+
+    $('#forms').animate('slow', function() {
+
+      $('#book button').removeClass("blue");
+      $('#book button').addClass("blue");
+      $('body').css('background-color', '#FFFFFF');
+      $('#photo').transition('hide');
+
+      $('#book').transition('fade');
+    });
+
+  });
+        
+$('.prev5').one('click', function(e) {
+
+    e.preventDefault();
+    $('#photoP').removeClass('disabled');
+    $('#bookP').addClass('disabled');
+
+    $('#book').animate('slow', function() {
+
+      $('body').css('background-color', '#FFFFFF');
+      $('#book').transition('hide');
+      $("#photo").transition('fade');
+
+    });
+
+  });
+
+  $('.next5').one('click', function(m) {
+
+    m.preventDefault();
+
+    $('#bookP').addClass('disabled');
+    $('#payP').removeClass('disabled');
+
+    $('#book').animate('slow', function() {
+
+      $('#pay button').removeClass("blue");
+      $('#pay button').addClass("blue");
+      $('body').css('background-color', '#FFFFFF');
+      $('#book').transition('hide');
+
+      $('#pay').transition('fade');
+    });
+
+  });
+
+$('.prev6').one('click', function(e) {
+
+    e.preventDefault();
+    $('#bookP').removeClass('disabled');
+    $('#payP').addClass('disabled');
+
+    $('#pay').animate('slow', function() {
+
+      $('body').css('background-color', '#FFFFFF');
+      $('#pay').transition('hide');
+      $("#book").transition('fade');
+
+    });
+
+  });
+
+  $('.next6').one('click', function(m) {
+
+    m.preventDefault();
+
+    $('#payP').addClass('disabled');
+    $('#confirmP').removeClass('disabled');
+
+    $('#pay').animate('slow', function() {
+
+      $('#confirm button').removeClass("blue");
+      $('#confirm button').addClass("blue");
+      $('body').css('background-color', '#FFFFFF');
+      $('#pay').transition('hide');
+
+      $('#confirm').transition('fade');
+    });
+
+  });
+  
+$('.prev7').one('click', function(e) {
+
+    e.preventDefault();
+    $('#payP').removeClass('disabled');
+    $('#confirmP').addClass('disabled');
+
+    $('#confirm').animate('slow', function() {
+
+      $('body').css('background-color', '#FFFFFF');
+      $('#confirm').transition('hide');
+      $("#pay").transition('fade');
+
+    });
+
+  });
+        
+$('.submit').one('click', function(p) {
+
+    p.preventDefault();
+
+    $('#genInfo').stop();
+  });
+
+});
+   </script>
+
+
+
+   <div class = "ui large fixed menu">
+      <div id = "logo" class="ui small image">
+        {{!--<img src="https://owl.uwo.ca/access/lessonbuilder/item/92768700/group/4fba372a-5b2d-4717-bb15-3e659416e637/Client%20Materials/marcotte-self-start-bodysmartFINAL.png">--}}
+        <a>{{#link-to "landing-page"}}
+          <img src="assets/images/logo.png">
+        {{/link-to}}
+        </a>
+      </div>
+    
+  </div>
+  <div class="pusher">
+    <div id="content" class="ui basic segment">
+      <h3 class="ui header">Self Start</h3>
+      
+    </div>
+  </div>
+  
+  <div class="ui centered  grid container">
+
+    <div class="row"></div>
+    <div class="row"></div>
+    <div class="row"></div>
+
+
+    <div class="ui container">
+
+      <div class="row"></div>
+      <div class="row"></div>
+
+      <div id="agreement">
+        {{getting-started}}
+
+      </div>
+
+      <div id="create">
+        {{create-username}}
+
+      </div>
+
+      <div id="genInfo">
+        {{create-account}}
+      </div>
+
+      <div id="forms">
+        {{create-forms}}
+      </div>
+      
+      <div id="photo">
+        {{create-upload}}
+      </div>
+      
+      <div id="book">
+         {{create-booking}}
+      </div>
+      
+      <div id="pay">
+        {{create-payment}}
+      </div>
+        
+      <div id="confirm">
+        {{create-confirmation}}  
+      </div>
+    </div>
+  </div>

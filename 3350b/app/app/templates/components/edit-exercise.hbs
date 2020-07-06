@@ -1,0 +1,161 @@
+{{!--<button class="ui animated fade button icon green button" {{action 'openEditExModal' }}--}}
+{{!--        title="Edit"><i class="write icon"></i>--}}
+{{!--</button>--}}
+<div class="ui animated fade button" tabindex="0"{{action 'openEditExModal' this}}>
+     <div class="visible content"></div><div class="hidden content"><i class="write icon"></i></div>
+</div>
+
+{{#ui-modal name=editExModal class=editExModal }}
+      <div class="header">
+        Edit Exercise: {{name}}
+      </div>
+      <div class="content">
+        <div class="ui form">
+          
+        <div class="two fields">
+            <div class="field">
+                <label>Exercise Name</label>
+                {{input type="text" cols="50" rows="1" value = name placeholder="add exercise name"}}
+            </div>
+            <div class="field">
+                <label>Author Name</label>
+                {{input type="text" cols="50" rows="1" value = authorName placeholder="add author name"}}
+            </div>
+        </div>
+        
+        <div class="three fields">
+            <div class="field">
+                <label>Exercise Description</label>
+                {{textarea value=description cols="50" rows="3" placeholder="add exercise description"}}
+            </div>
+            <div class="field">
+                <label>Exercise Objectives</label>
+                {{textarea value=objectives cols="50" rows="3" placeholder="add exercise objectives"}}
+            </div>
+            <div class="field">
+                <label>Action Steps</label>
+                {{textarea value=authorSteps cols="50" rows="3" placeholder="add exercise action steps"}}
+            </div>
+        </div>
+        
+        <div class="four fields">
+            <div class="field">
+                <label>Location</label>
+                {{input type="text" cols="50" rows="1" value = location placeholder="add exercise location"}}
+            </div>
+            <div class="field">
+                <label>Sets</label>
+                {{input type="number" cols="50" rows="1" value = frequency placeholder="add exercise frequency"}}
+            </div>
+            <div class="field">
+                <label>Reps</label>
+                {{input type="number" cols="50" rows="1" value = reps placeholder="add exercise frequency"}}
+            </div>
+            <div class="field">
+                <label>Duration</label>
+                {{input type="number" cols="50" rows="1" value = duration placeholder="add exercise duration"}}
+            </div>
+        </div>
+        
+        {{#if editimagesData}}
+          <div class="field">
+              <label>Existing Files</label>
+              {{#each editimagesData as |singleImage|}}
+                <div class="ui divided demo items">
+                    <div class="item">
+                      <div class="image">
+                          <img src="{{singleImage.imageData}}">
+                      </div>
+                      <div class="middle aligned content">
+                        <div class="header">{{singleImage.name}}</div>
+                        <div class="meta">
+                          <span>Size: {{singleImage.size}}</span>
+                        </div>
+                        <div class="description">
+                        </div>
+                        <div class="extra">
+                          <button class="ui icon red basic button" {{action 'deleteImageFromDB' singleImage.id}}>
+                            <i class="remove icon"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              {{/each}}
+          </div>
+          {{/if}}
+        
+        <div class="field">
+            <label>Upload Files</label>
+            {{#each queue as |file| }}
+                <div class="ui divided demo items">
+                  <div class="item">
+                    <div class="image">
+                      {{#if file.isUploading}}
+                        <div class="ui active inverted dimmer">
+                          <div class="ui loader"></div>
+                        </div>
+                      {{else}}
+                        <img src="{{file.base64Image}}">
+                      {{/if }}
+                    </div>
+                    <div class="middle aligned content">
+                      <div class="header">{{file.name}}</div>
+                      <div class="meta">
+                        <span>Size: {{file.size}}</span>
+                      </div>
+                      <div class="description">
+                        {{#if file.isDisplayableImage}}
+                          <br>
+                        {{else}}
+                          <p>Unsupported image</p>
+                        {{/if}}
+                      </div>
+                      <div class="extra">
+                        <button class="ui icon red basic button" {{action 'deleteFile' file}}>
+                          <i class="remove icon"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            {{else}}
+              <div class="ui fluid labeled input">
+                <label class="ui fluid huge label" style="{{labelStyle}}">
+                  <i class="big cloud upload icon"></i>
+                  Click or Drop files into this area to upload files
+                </label>
+                <input type="file" value="target.value" onchange={{action "selectFile"}} style="{{inputStyle}}"
+                       accept="{{accept}}" multiple={{multiple}}>
+              </div>
+              <br>
+            {{/each}}
+          
+          {{#if queue}}
+            
+            {{#if savingInProgress}}
+              <button class="ui labeled green icon loading button">Loading</button>
+            {{else}}
+            {{/if}}
+            <button class="ui labeled red icon button" {{action 'deleteAllFiles' }}>
+              <i class="remove icon"></i>
+              Remove All
+            </button>
+          {{/if}}
+        
+        </div>
+        
+        </div>
+      </div>
+      <br>
+
+      <div class="actions">
+        <div class="ui black deny button">
+          Cancel
+        </div>
+        <div class="ui positive right labeled icon button">
+          Save
+          <i class="checkmark icon"></i>
+        </div>
+      </div>
+{{/ui-modal}}

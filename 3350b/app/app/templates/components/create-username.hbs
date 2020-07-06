@@ -1,0 +1,91 @@
+<div class="center aligned twenty column grid container" style="margin:30px;">
+    <div class="ui eight mini ordered steps">
+        <div class = "completed step">
+            <div class="content">
+                  <div class="title">Terms</div>
+                  <div class="description">Terms and Agreements</div>
+            </div>
+        </div>
+        
+        <div class = "active step">
+            <div class="content">
+                  <div class="title">Create Account</div>
+                  <div class="description">Username and Password</div>
+            </div>
+        </div>
+        
+        <div class = "disabled step">
+            <div class="content">
+                  <div class="title">General Information</div>
+                  <div class="description">Fill in Information</div>
+            </div>
+        </div>
+        
+        <div class = "disabled step">
+            <div class="content">
+                  <div class="title">Forms</div>
+                  <div class="description">Complete Form</div>
+            </div>
+        </div>
+        
+        <div class = "disabled step">
+            <div class="content">
+                  <div class="title">Upload Photo</div>
+                  <div class="description">Upload Photos</div>
+            </div>
+        </div>
+        
+        <div class = "disabled step">
+            <div class="content">
+                  <div class="title">Booking</div>
+                  <div class="description">Book Appoinment</div>
+            </div>
+        </div>
+        
+        <div class = "disabled step">
+            <div class="content">
+                  <div class="title">Payment</div>
+                  <div class="description">Payment Options</div>
+            </div>
+        </div>
+        
+        <div class = "disabled step">
+            <div class="content">
+                  <div class="title">Confirm</div>
+                  <div class="description">Information Confirmation</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="ui center aligned  segment text container " id="signUpBox">
+          <div class="ui centered header">
+            <h1 class="font" style="color:#300032;">Create Username and Password</h1>
+          </div>
+
+          <form class="ui form">
+            <div class="field">
+              <div class="ui left icon input">
+                <i class="user icon"></i>
+                {{!--<label>Username</label>--}}
+            {{input type="text" cols="50" rows="1" value = userAccountName placeholder="Username"}}
+                
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="ui left icon input">
+                <i class="lock icon"></i>
+                {{!--<label>Password</label>--}}
+            {{input type="password" cols="50" rows="1" value = encryptedPassword placeholder="Password"}}
+              </div>
+            </div>
+
+              {{!--<button class="ui blue medium button prev1">Previous</button>--}}
+              <button {{action 'createUsername'}} class="ui blue medium button next1">Next</button>
+
+            {{!--{{errorMessage}}--}}
+          </form>
+
+
+        </div>

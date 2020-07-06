@@ -1,4 +1,4 @@
-# Selected School Projects
+# Featured School Projects
 ### Table of Contents
 4<sup>th</sup> Year
 * [CS 4482A: Game Engine Development](https://github.com/JedraPeake/Software-Engineering-Projects#cs-4482a-game-engine-development)
@@ -7,21 +7,13 @@
 * [SE 4455B: Cloud Computing](https://github.com/JedraPeake/Software-Engineering-Projects#se-4455b-cloud-computing)
 
 3<sup>rd</sup> Year
-* [ECE 4436A: Networking Principles, Protocols, and Architecture](#ECE-4436A:-Networking-Principles,-Protocols,-and-Architecture)
 * [SE 3309A: Database Management Systems](https://github.com/JedraPeake/Software-Engineering-Projects#se-3309a-database-management-systems)
-* [SE 3313A: Operating Systems for Software Engineering](#SE-3313A:-Operating-Systems-for-Software-Engineering)
 * [SE 3316A: Web Technologies](https://github.com/JedraPeake/Software-Engineering-Projects#se-3316a-web-technologies)
-* [SE 3352A: Software Requirements & Analysis](#SE-3352A:-Software-Requirements-&-Analysis)
 * [ECE 3375B: Microprocessors and Microcomputers](https://github.com/JedraPeake/Software-Engineering-Projects#ece-3375b-microprocessors-and-microcomputers)
-* [SE 3310B: Theoretical Foundations of Software Engineering](#SE-3310B:-Theoretical-Foundations-of-Software-Engineering)
 * [SE 3314B: Computer Networks Applications](https://github.com/JedraPeake/Software-Engineering-Projects#se-3314b-computer-networks-applications)
-* [SE 3350B: Software Engineering Design I](#SE-3350B:-Software-Engineering-Design-I)
-* [SE 3351B: Software Project and Process Management](#SE-3351B:-Software-Project-and-Process-Management)
-* [SE 3353B: Human-Computer Interaction](#SE-3353B:-Human-Computer-Interaction)
+* [SE 3350B: Software Engineering Design I](https://github.com/JedraPeake/Software-Engineering-Projects#se-3350b-software-engineering-design-i)
 
 2<sup>nd</sup> Year
-* [ECE 2277A: Digital Logic Systems](#ECE-2277A:-Digital-Logic-Systems)
-* [SE 2203A: Software Design](#SE-2203A:-Software-Design)
 * [CS 1037A: Computer Science Fundamentals II](https://github.com/JedraPeake/Software-Engineering-Projects#cs-1037a-computer-science-fundamentals-ii)
 * [SE 2205B: Algorithms and Data Structures](https://github.com/JedraPeake/Software-Engineering-Projects#se-2205b-algorithms-and-data-structures)
 
@@ -79,8 +71,6 @@ In addition to the web application, they wanted to have additional functionality
 
 [See Deployment Steps](https://github.com/JedraPeake/Software-Engineering-Projects/blob/master/4455b/se445b_final_case.pdf)
 
-
-### ECE 4436A: Networking Principles, Protocols, and Architecture
 ### SE 3309A: Database Management Systems
 ----
 **Technologies Used**: SQL, Angular
@@ -90,7 +80,6 @@ In addition to the web application, they wanted to have additional functionality
 - Developed a basic ui to query the tables, which were populated with data
 
 [See Project](https://github.com/JedraPeake/SE3309-Gym-Database)
-### SE 3313A: Operating Systems for Software Engineering
 ### SE 3316A: Web Technologies
 ----
 **Technologies Used**: MEAN Stack(MongoDB, Express.js, Angular, and Node.js)
@@ -102,7 +91,6 @@ In addition to the web application, they wanted to have additional functionality
 
 [See Project](https://github.com/JedraPeake/SE3316_Lab5)
 
-### SE 3352A: Software Requirements & Analysis
 ### ECE 3375B: Microprocessors and Microcomputers
 ----
 **Technologies Used**: Assembly 
@@ -115,7 +103,6 @@ In addition to the web application, they wanted to have additional functionality
 
 [See Project](https://github.com/JedraPeake/Software-Engineering-Projects/blob/master/3375b)
 
-### SE 3310B: Theoretical Foundations of Software Engineering
 ### SE 3314B: Computer Networks Applications
 ----
 **Technologies Used**: C# 
@@ -127,10 +114,17 @@ In addition to the web application, they wanted to have additional functionality
 [See Project](https://github.com/JedraPeake/Software-Engineering-Projects/blob/master/3314b/se3314networkingassignment1)
 
 ### SE 3350B: Software Engineering Design I
-### SE 3351B: Software Project and Process Management
-### SE 3353B: Human-Computer Interaction
-### ECE 2277A: Digital Logic Systems
-### SE 2203A: Software Design
+----
+**Technologies Used**: MEEN Stack(MongoDB, Express.js, Ember.js, and Node.js)
+
+**Features**:
+- Built an online therapy application
+- Set up a system so that practitioners could easily generate forms for clients to fill in
+- Developed a system for practitioners to easily generate client specific workouts
+- Set up a practitioner portal where things could be easily updated, such as changing the exercise video
+- Implemented a jwt authentication scheme
+
+[See Project](https://github.com/JedraPeake/Software-Engineering-Projects/blob/master/3350b)
 
 ### CS 1037A: Computer Science Fundamentals II
 ----

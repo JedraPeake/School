@@ -1,0 +1,29 @@
+<style>
+    .ui#content{
+    margin-left:280px;
+    /*margin-top: 20px;*/
+    margin-right: 20px;
+    z-index:5;
+  }
+  
+  .ui#main{
+    padding-left:20px;
+    padding-top:20px;
+  }
+</style>
+
+<div class="ui grid">
+  <div class="row">
+    <div class="four wide column"></div>
+    <div class="eight wide column">
+<br/>
+<h1 align="center">Introduction Form</h1>
+<br/><br/>
+<p style="margin:3em">Please fill out the following form to the best of your ability. It will allow us to have a better understanding of what problems you 
+are having and how we can help you. Each question comes with some text to help give you an idea on how to answer it.</p>
+
+{{intro-questions model=model}}
+</div>
+<div class="two wide column"></div>
+</div>
+</div>

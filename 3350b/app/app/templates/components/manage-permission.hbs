@@ -1,0 +1,84 @@
+<div class="ui button" {{action 'openModal'}}>
+  Edit
+</div>
+
+{{#if MP001IsPermitted }}
+
+  {{#ui-modal name= modalName class= modalName }}
+    <div class="header">Assign Capabilities for {{roleName}}</div>
+    <div class="content">
+      <form class="ui form">
+        <div class="ui grid">
+          <div class="four wide column">
+            <div class="field">
+              <label>Name</label>
+              {{input class="edit name" type="text" value=roleName placeholder="Name..."}}
+            </div>
+          </div>
+
+
+          <div class="twelve wide column">
+            <div class="field">
+              <label>Permissions</label>
+              <select class="ui dropdown" selected = selectedFeatures onchange={{action "selectPermission" value="target.value"}}>
+                <option value="">Select Permissions</option>
+                {{#each rolePermissionModel as |permissionChoice|}}--}}
+                    <option value="{{permissionChoice.id}}">
+                      {{permissionChoice.code}} {{permissionChoice.sysFeature}}
+                    </option>
+                  {{/each}}
+               </select>
+              
+              {{!--{{#ui-dropdown   class="fluid multiple selection" selected=selectedFeatures onSelect=(action 'selectPermission')}}--}}
+              {{!--  <i class="dropdown icon"></i>--}}
+              {{!--  <div class="default text">Select permissions</div>--}}
+              {{!--  <div class="menu">--}}
+              {{!--    {{#each rolePermissionModel as |permissionChoice|}}--}}
+              {{!--      <div class="item" data-value="{{permissionChoice.id}}">--}}
+              {{!--        {{permissionChoice.code}} {{permissionChoice.sysFeature}}--}}
+              {{!--      </div>--}}
+              {{!--    {{/each}}--}}
+              {{!--  </div>--}}
+              {{!--{{/ui-dropdown}}--}}
+            </div>
+
+          </div>
+
+
+        </div>
+      </form>
+    </div>
+    <div class="actions">
+      <div class="ui positive button">
+        Done
+      </div>
+    </div>
+  {{/ui-modal}}
+
+{{else}}
+
+  {{#ui-modal name= modalName class= modalName }}
+    <div class="ui icon header">
+      <i class="protect icon"></i>
+      Permission Denied
+    </div>
+    <div class="content">
+      <p>This feature (MP001) is not allowed for your account.</p>
+      <p>Please contact the system administrator for more information.</p>
+    </div>
+
+    <div class="actions">
+      <div class="ui black deny button">
+        Understand
+      </div>
+    </div>
+  {{/ui-modal}}
+
+{{/if}}
+
+
+
+
+
+
+

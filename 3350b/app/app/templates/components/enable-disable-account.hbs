@@ -1,0 +1,12 @@
+{{!--{{ui-checkbox checked=status onchecked=(action 'assignStatus' )}}--}}
+
+<div class="ui toggle checkbox" onchange={{action "assignStatus"}}>
+  {{#if status}}
+    {{!--check it off--}}
+    <input type="checkbox" checked="">
+  {{else}}
+    {{!--keep as disabled--}}
+    <input type="checkbox">
+  {{/if}}
+  <label></label>
+</div>

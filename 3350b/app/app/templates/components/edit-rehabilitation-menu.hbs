@@ -1,0 +1,54 @@
+ <style>
+    .ui.modal{
+        position: relative;
+        top: 0;
+        left: 0;
+        max-height: 100%;
+        overflow-y: auto;
+    }
+ </style>
+<div class="ui animated fade button" tabindex="0"{{action 'openEditModal' this}}>
+     <div class="visible content"></div><div class="hidden content"><i class="write icon"></i></div>
+        </div>
+{{#ui-modal name=editModal class=editModal }}
+  <div class="header">
+   Editing Exercise Menu 
+  </div>
+  <div class="content">
+    <div class="ui form">
+      <div class="field">
+        <label>Rehabilitation Plan Name</label>
+        {{input type="textarea" cols="50" rows="2" value = name}}
+      </div>
+       
+        <div class="field">
+          <label>Rehabilitation Plan Description</label>
+        {{input type="textarea" cols="50" rows="2" value = description}}
+        </div>
+        
+        <div class="field">
+            <label>Rehabilitation Plan Author</label>
+        {{input type="textarea" cols="50" rows="2" value = authorName}}
+        </div>
+
+        <div class="field">
+        <label>Rehabilitation Plan Goal</label>
+        {{textarea type="textarea" cols="50" rows="2" value = goal }}
+        </div>
+        <div class="field">
+        <label>Rehabilitation Plan Time Frame</label>
+        {{textarea type="textarea" cols="50" rows="2" value = timeFrameToComplete }}
+        </div>
+    </div>
+  </div>
+  <br>
+  <div class="actions">
+    <div class="ui deny button">
+      Cancel
+    </div>
+    <div class="ui positive right labeled icon button">
+      Save
+      <i class="checkmark icon"></i>
+    </div>
+  </div>
+{{/ui-modal}}

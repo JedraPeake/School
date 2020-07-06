@@ -1,0 +1,89 @@
+<style>
+    .ui#content{
+    margin-left:280px;
+    /*margin-top: 20px;*/
+    margin-right: 20px;
+    z-index:5;
+  }
+  
+  .ui#main{
+    padding-left:20px;
+    padding-top:20px;
+  }
+</style>
+
+{{#each quests as |question index|}}
+
+<br/><br/>
+{{#if question.isWritten }}
+<div align="center">
+<h3>{{index}}: {{question.questionText}}</h3>
+<h4>{{question.helpDescription}}</h4>
+{{textarea type="textarea" col="50" rows="4" placeholder="Answer Here"}}
+</div>
+{{/if}}
+{{#if question.isAgree }}
+<div align="center">
+<div class="ui form">
+  <div class="inline fields">
+    <label>{{index}}: {{question.questionText}}</label>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="frequency" checked="checked">
+        <label>Strongly Agree</label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="frequency">
+        <label>Agree</label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="frequency">
+        <label>Neither</label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="frequency">
+        <label>Disagree</label>
+      </div>
+    </div>
+     <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="frequency">
+        <label>Strongly Disagree</label>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+{{/if}}
+{{#if question.isYes}}
+<div align="center">
+<div class="ui form">
+  <div class="inline fields">
+    <label>{{index}}: {{question.questionText}}</label>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name={{question.questionText}} checked="checked">
+        <label>Yes</label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name={{question.questionText}}>
+        <label>No</label>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+{{/if}}
+{{#if question.isMultiple}}
+
+{{/if}}
+
+{{/each}}

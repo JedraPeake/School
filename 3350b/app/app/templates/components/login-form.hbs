@@ -1,0 +1,203 @@
+{{!--{{tempID}}--}}
+{{!--<br>--}}
+{{!--<button class="ui basic labeled icon blue button" {{action 'submit' }}>--}}
+{{!--  <i class="arrow left icon"></i>--}}
+{{!--  Back --}}
+{{!--</button>--}}
+
+<style>
+  .ui#content{
+  padding-top: 70px;
+  z-index:5;
+  }
+  
+  .ui#logo{
+    padding-left: 20px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    width: 250px;
+  }
+  
+  .ui#btn{
+    position:absolute; 
+    top:0; 
+    right:0;
+    margin-top: 23px;
+    margin-right:20px;
+  }
+  
+  .ui#main{
+    padding-left:20px;
+    padding-top:20px;
+  }
+  
+  #signUpBox{
+    width: 50%;
+    padding: 20px;
+  }
+  
+</style>
+<script
+  src = "/frontend/app/components/nav-bar.js"
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous">
+</script>
+
+<div class = "ui large fixed menu">
+      <div id = "logo" class="ui small image">
+        {{!--<img src="https://owl.uwo.ca/access/lessonbuilder/item/92768700/group/4fba372a-5b2d-4717-bb15-3e659416e637/Client%20Materials/marcotte-self-start-bodysmartFINAL.png">--}}
+        <a>{{#link-to "landing-page"}}
+          <img src="assets/images/logo.png">
+        {{/link-to}}
+        </a>
+      </div>
+    
+      {{!--<button id = "btn" class="ui blue button">Log out</button>--}}
+  </div>
+<div class="pusher">
+    <div id="content" class="ui basic segment">
+      {{!--<h3 class="ui header">Self Start</h3>--}}
+      
+    </div>
+  </div>
+ 
+<br>
+
+<div class="ui center aligned attached fluid segment container " id="signUpBox">
+  {{!--<div class="ui centered header">--}}
+  {{!--  <h1 class="font" style="color:black;">Login Here</h1>--}}
+  {{!--</div>--}}
+  
+  {{!--<br><br>--}}
+  
+    <div class="column four wide form-holder">
+    <h1 class="font" style="color:black;">Login Here</h1>
+    <div class="ui form">
+      <div class="field">
+        <label>Username</label>
+        {{input value=name  type="text" placeholder="Enter username"}}
+      </div>
+      <div class="field">
+        <label>Password</label>
+        {{input value=password  type="password" placeholder="Enter password"}}
+      </div>
+      <div class="field">
+        <button class="ui button large fluid blue" {{action 'login'}}>
+          Log In
+        </button>
+        <p></p>
+        <p></p>
+        <p style="color: #ca1010"> {{errorMessage}}</p>
+        <p></p>
+      </div>
+    </div>
+  </div>
+
+{{!-- Old Login Form--}}
+{{!--   <div class="ui form">--}}
+{{!--            <div class="field">--}}
+{{!--                <label>Username</label>--}}
+{{!--            {{input type="text" cols="25" rows="1" value = userName placeholder="Enter username"}}--}}
+{{!--            </div>--}}
+{{!--            <div class="field">--}}
+{{!--                <label>Password</label>--}}
+{{!--            {{input type="password" cols="25" rows="1" value = password placeholder="Enter password"}}--}}
+{{!--            </div>--}}
+        
+{{!--        <a> {{#link-to "forgot-password"}}--}}
+{{!--        Forgot password? --}}
+{{!--        {{/link-to}}</a>--}}
+      
+{{!--        </div>--}}
+{{!--        <br/>--}}
+{{!--        <div class="col-sm-offset-2 col-sm-10">--}}
+{{!--            <a>--}}
+
+{{!--              <button class="ui blue button" {{action 'submit' }}>Client Login</button> --}}
+               
+{{!--            </a>--}}
+            
+            
+{{!--   </div>--}}
+{{!--   <br/>--}}
+{{!--      <div class="col-sm-offset-2 col-sm-10">--}}
+{{!--          <a>{{#link-to "dashboard"}}--}}
+{{!--     <button class="ui blue button">Admin Login</button> --}}
+{{!--     {{/link-to}}</a>--}}
+     
+{{!--     <button class="ui basic labeled icon blue button" {{action 'submit' }}>--}}
+{{!--  <i class="arrow left icon"></i>--}}
+{{!--  Back --}}
+{{!--</button>--}}
+
+{{!--   </div>--}}
+</div>
+
+<div class="ui bottom attached warning message" style="width:50%;   margin: 0 auto; text-align: center">
+  Don't Have an Account? <a> {{#link-to "create-account"}}
+  Sign Up Here
+  {{/link-to}}
+  </a>
+</div>
+
+
+{{!--<div class="ui one column center aligned grid">--}}
+{{!--  <div class="column four wide form-holder">--}}
+{{!--    <h1 class="font" style="color:black;">Login Here</h1>--}}
+{{!--    <div class="ui form">--}}
+{{!--      <div class="field">--}}
+{{!--        <label>Username</label>--}}
+{{!--        {{input value=name  type="text" placeholder="Enter username"}}--}}
+{{!--      </div>--}}
+{{!--      <div class="field">--}}
+{{!--        <label>Password</label>--}}
+{{!--        {{input value=password  type="password" placeholder="Enter password"}}--}}
+{{!--      </div>--}}
+{{!--      <div class="field">--}}
+{{!--        <button class="ui button large fluid blue" {{action 'login'}}>--}}
+{{!--          Log In--}}
+{{!--        </button>--}}
+{{!--        <p></p>--}}
+{{!--        <p></p>--}}
+{{!--        <p style="color: #ca1010"> {{errorMessage}}</p>--}}
+{{!--        <p></p>--}}
+{{!--      </div>--}}
+{{!--    </div>--}}
+{{!--  </div>--}}
+{{!--</div>--}}
+
+
+
+{{#ui-modal name="changePassword" class="changePassword" }}
+  <div class="header">
+    Please change your password and login again
+  </div>
+  <div class="content">
+    <div class="ui form">
+      <div class="inline field">
+        <label>Password</label>
+        {{input value=firstPassword type="password" placeholder="enter password"}}
+      </div>
+      <div class="inline field">
+        <label>Reenter Password</label>
+        {{input value=secondPassword type="password" placeholder="re-enter password"}}
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="actions">
+    <div class="ui black deny button">
+      Cancel
+    </div>
+    <div class="ui positive right labeled icon button">
+      Save
+      <i class="checkmark icon"></i>
+    </div>
+    <div class="ui center aligned container">
+      <p style="color: #ca1010"> {{errorMessage}}</p>
+    </div>
+  </div>
+{{/ui-modal}}

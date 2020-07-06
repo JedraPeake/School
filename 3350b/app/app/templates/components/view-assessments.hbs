@@ -1,0 +1,113 @@
+<style>
+  .item.content{
+    padding: 5px;
+  }
+
+</style>
+
+
+<h1>Your Assigned Assessment Tests</h1>
+
+{{#ui-accordion class="styled fluid"}}
+    
+        {{#each rehabilitationData2 as |rehab|}}
+        
+                <div class="title">
+                    <h3><i class="dropdown icon"></i>{{rehab.name}}</h3>
+                </div>
+                
+                <div class = "content">
+                    <div class="ui compact raised segment ">
+                        <h2>Introduction Form</h2>
+                        <form class="ui form">
+
+              1) Your pain is sharp rather than dull? <br>Indicate how much you agree with the proposed statement.
+              <br>
+              <div class="inline fields">
+              <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="frequency" >
+        <label>Strongly Agree</label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="frequency">
+        <label>Agree</label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="frequency">
+        <label>Disagree</label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="frequency">
+        <label>Strongly Disagree</label>
+      </div>
+    </div>
+              
+      </div>        
+            <br>
+              2) Describe where on your body that you are experiencing trouble. <br>	Give a short summary regarding the proposed question.	<br>
+               <input type="text" > <br><br> <br>
+              3) How long has this pain been present for?	<br> Provide a short summary conveying how long in hours or days that you have been experiencing discomfort.	<br>
+               <input type="text"> <br><br> <br>
+              4) Have you ever experienced this before?	<br>Provide an answer regarding the proposed question.<br>
+              <input type="text"> <br>
+            </form>
+            <br>
+            <button id = "save" class = "ui primary button"> Save</button>
+                    </div>
+                </div>
+                
+                {{!--<div class="content">
+                    <h5>Exercise Menu Description</h5>
+                    <p>{{rehab.description}}</p>
+                    
+                    <h5>Exercise Menu Goal</h5>
+                    <p>{{rehab.goal}}</p>
+                    
+                    <h5>Assessment:</h5>
+                    <table id="exTable" class="ui exTable celled table" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th>Complete</th>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th>Author Name</th>
+                                <th>More</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each rehab.assessmentTests as |rehabAssess|}}
+                            <tr> 
+                            
+                                <td>
+                                    
+                                </td>
+                                
+                                <td>{{rehabAssess.name}}</td>
+                                <td>{{rehabAssess.description}}</td>
+                                <td>{{rehabAssess.authorName}}</td>
+                                
+                                <td>
+                                    <div class="ui animated fade button" tabindex="0" 
+                                      {{action 'loadMore' rehabEx.id}}
+                                              title="View">
+                                          <div class="visible content"></div>
+                                          <div class="hidden content"><i class="arrow right icon"></i></div>
+                                    </div>
+                                </td>
+                            
+                            </tr> 
+                            {{/each}}
+                        </tbody>
+                    </table>
+                    <br>
+                </div>--}}
+        {{/each}}
+{{/ui-accordion}}

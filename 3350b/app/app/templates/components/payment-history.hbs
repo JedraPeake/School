@@ -1,0 +1,31 @@
+<div class="ui centered header" style="color:#0E6EB8;">
+<h1>Your Payment History</h1>
+</div>
+
+
+
+{{#if paymentsArrayLength}}
+
+<table class = "ui blue table" cellspacing="0" width="100%">
+<thead>
+<tr>
+    <th><div class="ui centered header" style="color:#0E6EB8;">Date and Time</div></th>
+    <th><div class="ui centered header" style="color:#0E6EB8;">Subscription Type</div></th>
+</tr>
+</thead>
+<tbody>
+    {{#each paymentsArray as |data|}}
+    <tr>
+     <td><center>{{paymentsArray.clientPaymentDate}}</center></td>
+     <td><center>{{paymentsArray.clientPaymentAmount}}</center></td>
+    </tr> 
+    {{/each}}
+</tbody>
+</table>
+{{else}}
+<div class="ui centered header" style="color:#0E6EB8;">
+<h1>You have not made a payment yet!</h1>
+<p>Please select a payment package in order to be able to continue using our service.</p>
+</div>
+
+{{/if}}

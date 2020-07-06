@@ -1,0 +1,108 @@
+<style>
+  .ui#content{
+  padding-top: 70px;
+  z-index:5;
+  }
+  
+  .ui#logo{
+    padding-left: 20px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    width: 250px;
+  }
+  
+  .ui#btn{
+    position:absolute; 
+    top:0; 
+    right:0;
+    margin-top: 23px;
+    margin-right:20px;
+  }
+  
+  .ui#main{
+    padding-left:20px;
+    padding-top:20px;
+  }
+
+</style>
+
+<script
+  src = "/frontend/app/components/nav-bar.js"
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+
+{{!--<div class="ui bottom attached segment">--}}
+  
+  <div class = "ui fluid container top fixed massive menu">
+      <div id = "logo" class="ui small image">
+        {{!--<img src="https://owl.uwo.ca/access/lessonbuilder/item/92768700/group/4fba372a-5b2d-4717-bb15-3e659416e637/Client%20Materials/marcotte-self-start-bodysmartFINAL.png">--}}
+        <img src="assets/images/logo.png">
+      </div>
+      
+    
+      <button id = "btn" class="ui blue button">Log out</button>
+  </div>
+
+  
+  <div id="content" class="ui secondary visible left vertical sidebar menu">
+
+
+      <a>{{#link-to "dashboard"}}
+     
+      <br><br>
+      
+      <a class="item">
+        <i class="calendar icon"></i>
+        Dashboard
+      </a>
+      {{/link-to}}
+      </a>
+
+    <a>{{#link-to "clients"}}
+    <a class="item">
+      <i class="user circle icon"></i>
+      Clients
+    </a>
+    {{/link-to}}
+    </a>
+    <a>{{#link-to "exercises"}}
+    <a class="item">
+      <i class="list layout icon"></i>
+      Exercises
+    </a>
+    {{/link-to}}
+    </a>
+    <a> {{#link-to "dynamicForms"}}
+    <a class="item">
+      <i class="file icon"></i>
+     Question Library
+    </a>
+    {{/link-to}}
+    </a>
+    <a> {{#link-to "dynamicForms"}}
+    <a class="item">
+      <i class="file icon"></i>
+     Forms
+    </a>
+    {{/link-to}}
+    </a>
+  </div>
+
+  <div class="pusher">
+    <div id="content" class="ui basic segment">
+      {{!--<h3 class="ui header">Self Start</h3>--}}
+      <p></p>
+      
+      <div id = "main" class = "ui grid">
+      <div class="twelve wide column">
+      {{!--{{outlet}} --}}
+      </div>
+      </div>
+      <p></p>
+      <p></p>
+      <p></p>
+    </div>
+  </div>
+{{!--</div>--}}
+

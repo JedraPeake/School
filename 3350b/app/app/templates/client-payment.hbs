@@ -1,0 +1,164 @@
+/*<style>*/
+/*  .ui#content{*/
+/*  padding-top: 70px;*/
+/*  z-index:5;*/
+/*  }*/
+  
+/*  .ui#logo{*/
+/*    padding-left: 20px;*/
+/*    padding-top: 0px;*/
+/*    padding-bottom: 0px;*/
+/*    width: 250px;*/
+/*  }*/
+  
+/*  .ui#btn{*/
+/*    position:absolute; */
+/*    top:0; */
+/*    right:0;*/
+/*    margin-top: 23px;*/
+/*    margin-right:20px;*/
+/*  }*/
+  
+/*  .ui#main{*/
+/*    padding-left:20px;*/
+/*    padding-top:20px;*/
+/*  }*/
+/*</style>*/
+<style>
+  .ui#content{
+    margin-left:280px;
+    /*margin-top: 20px;*/
+    margin-right: 20px;
+    z-index:5;
+  }
+  
+  .ui#logo{
+    padding-left: 20px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    width: 250px;
+  }
+  
+  .ui#btn{
+    position:absolute; 
+    top:0; 
+    right:0;
+    margin-top: 23px;
+    margin-right:20px;
+  }
+  
+  .ui#main{
+    padding-left:20px;
+    padding-top:20px;
+  }
+</style>
+<script
+
+  src = "/frontend/app/components/nav-bar.js"
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+  
+  {{!--<div class = "ui fluid container top fixed massive menu">--}}
+  {{!--    <div id = "logo" class="ui small image">--}}
+  {{!--      <img src="assets/images/logo.png">--}}
+  {{!--    </div>--}}
+  {{!--    {{#link-to "landing-page"}}<button id = "btn" class="ui blue button">Log out</button>{{/link-to}}--}}
+  {{!--</div>--}}
+  
+  {{!--SIDEBAR--}}
+  {{!--<div id="content" class="ui secondary visible left vertical sidebar menu">--}}
+    {{!--DASHBOARD--}}
+  {{!--  <a>{{#link-to "client-dashboard"}}--}}
+  {{!--      <br>--}}
+  {{!--      <br>--}}
+  {{!--      <a class="item">--}}
+  {{!--        <i class="calendar icon"></i>--}}
+  {{!--        Dashboard--}}
+  {{!--      </a>--}}
+  {{!--  {{/link-to}}--}}
+  {{!--  </a>--}}
+    {{!--PHOTOS--}}
+  {{!--  <a>{{#link-to "client-upload"}}--}}
+  {{!--  <a class="item">--}}
+  {{!--    <i class="id badge icon"></i>--}}
+  {{!--    Upload Photos--}}
+  {{!--  </a>--}}
+  {{!--  {{/link-to}}--}}
+  {{!--  </a>--}}
+    {{!--EXERCISES--}}
+  {{!--  <a>{{#link-to "client-exercises"}}--}}
+  {{!--  <a class="item">--}}
+  {{!--    <i class="list layout icon"></i>--}}
+  {{!--    Exercises--}}
+  {{!--  </a>--}}
+  {{!--  {{/link-to}}--}}
+  {{!--  </a>--}}
+    {{!--ASSESSMENTS--}}
+  {{!--  <a>{{#link-to "client-assessments"}}--}}
+  {{!--  <a class="item">--}}
+  {{!--    <i class="clipboard outline icon"></i>--}}
+  {{!--    AssessmentTests--}}
+  {{!--  </a>--}}
+  {{!--  {{/link-to}}--}}
+  {{!--  </a>--}}
+    {{!--BOOK --}}
+  {{!--  <a> {{#link-to "client-book"}}--}}
+  {{!--  <a class="item">--}}
+  {{!--    <i class="calendar plus outline icon"></i>--}}
+  {{!--   Book Appointment   --}}
+  {{!--  </a>--}}
+  {{!--  {{/link-to}}--}}
+  {{!--  </a>--}}
+    {{!--ENTER--}}
+  {{!--  <a> {{#link-to "client-appointment"}}--}}
+  {{!--  <a class="item">--}}
+  {{!--    <i class="sign in alternate icon"></i>--}}
+  {{!--   Enter Appointment --}}
+  {{!--  </a>--}}
+  {{!--  {{/link-to}}--}}
+  {{!--  </a>--}}
+    {{!--PAYMENTS--}}
+  {{!--   <a> {{#link-to "client-payment"}}--}}
+  {{!--  <a class="item">--}}
+  {{!--    <i class="credit card paypal icon"></i>--}}
+  {{!--   Payments   --}}
+  {{!--  </a>--}}
+  {{!--  {{/link-to}}--}}
+  {{!--  </a>--}}
+    {{!--CONTACT US--}}
+  {{!--  <a> {{#link-to "client-contact"}}--}}
+  {{!--  <a class="item">--}}
+  {{!--    <i class="edit outline icon"></i>--}}
+  {{!--   Contact Us  --}}
+  {{!--  </a>--}}
+  {{!--  {{/link-to}}--}}
+  {{!--  </a>--}}
+    {{!-- SETTINGS --}}
+  {{!--  <a> {{#link-to "client-settings"}}--}}
+  {{!--  <a class="item">--}}
+  {{!--    <i class="wrench outline icon"></i>--}}
+  {{!--   Settings--}}
+  {{!--  </a>--}}
+  {{!--  {{/link-to}}--}}
+  {{!--  </a>--}}
+  {{!--</div>--}}
+  {{!--END OF SIDEBAR--}}
+
+  <div class="pusher">
+    <div id="content" class="ui basic segment">
+    <div id = "main" class = "ui grid">
+          <div class="fourteen wide column">
+              <h1>Payment Information</h1>
+                      {{payment-button}}
+        </div>
+     </div>
+     {{payment-history}}
+
+  </div>
+ </div>
+
+
+
+
+

@@ -1,0 +1,54 @@
+{{#if ISF01IsPermitted }}
+  <h2>{{selectedPost.title}}</h2>
+  {{#if isLoading}}
+
+    <table class="ui celled table">
+      <thead>
+      <tr>
+        {{#each tableHeader as |header|}}
+          <th>{{header}}</th>
+        {{/each}}
+      </tr>
+      </thead>
+
+      <tbody>
+      {{#each tableData as |oneRow|}}
+        <tr>
+          {{#each oneRow as |oneCol|}}
+            <td>{{oneCol}}</td>
+          {{/each}}
+        </tr>
+      {{/each}}
+      </tbody>
+    </table>
+    <button class="ui positive button" {{action 'save'}}>Confirm</button>
+    <button class="ui button" {{action 'cancel'}}>Cancel</button>
+
+  {{else}}
+    {{#file-picker fileLoaded="fileImported" accept=".xlsx" readAs="readAsBinaryString" dropzone=true progress=false  preview=true }}
+      <div class="ui icon green message">
+        <i class="inbox icon"></i>
+        <div class="content">
+          <div class="header">
+            Drag the Excel file here ...
+          </div>
+          <p>or Click to upload the file.</p>
+        </div>
+      </div>
+    {{/file-picker}}
+
+  {{/if}}
+
+{{else}}
+  <div class="ui center aligned raised segment">
+    <div class="ui icon header">
+      <i class="protect icon"></i>
+      Permission Denied
+    </div>
+    <div>
+      <p>This feature (ISF01) is not allowed for your account.</p>
+      <p>Please contact the system administrator for more information.</p>
+    </div>
+
+  </div>
+{{/if}}

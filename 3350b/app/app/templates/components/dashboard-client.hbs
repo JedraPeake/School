@@ -1,0 +1,273 @@
+{{#if (not-eq oudaAuth.getName "Root")}}
+  {{#if VCI01IsPermitted }}
+    {{!--PHYSIO THERAPIST DASH--}}
+      <h1>Hello {{oudaAuth.getName}}!</h1>
+<br>
+
+    
+  
+  <div class="ui  blue cards">
+    
+  <div class="card">
+    <div class="content">
+      <div class="header" id="card">
+            <a class="ui blue ribbon label"><h4>New Clients</h4></a>
+      </div>
+      <div class="item">
+          <div class="content">
+           <br><p>  <i class="user icon"></i>Sherry Walters<br>
+             <i class="user icon"></i>Amber Daniels<br>
+             <i class="user icon"></i>Jackson Schmidt<br><br>
+            </p>
+          </div>
+        </div>
+      {{!--<div class="meta">--}}
+      
+      {{!--</div>--}}
+    
+    </div>
+    <div class="extra content">
+      <div class="ui two buttons">
+        <div class="ui blue basic button">View Profiles</div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card">
+    <div class="content">
+      <div class="header">
+          <a class="ui blue ribbon label"><h4>Self Start Stats</h4></a>
+      </div> 
+      <div class="ui list">
+        <div class="item">
+          <i class="users icon"></i>
+          <div class="content">
+            28 New Clients
+          </div>
+        </div>
+      <div class="item">
+        <i class="hand pointer icon"></i>
+        <div class="content">
+          134 Page Clicks
+        </div>
+      </div>
+      <div class="item">
+        <i class="reply icon"></i>
+        <div class="content">
+          10 returning users  
+        </div>
+      </div>
+    </div>  
+    </div>
+    <div class="extra content">
+      <div class="ui two buttons">
+        <div class="ui blue basic  button">View Stats</div>
+      </div>
+    </div>
+  </div>
+
+
+ <div class="card">
+    <div class="content">
+      <div class="header">
+          <a class="ui blue ribbon label"><h4>New Payments</h4></a>
+      </div> 
+      <div class="description"> Febrary 11, 18 </div>
+      <br>
+      <div class="header"> Jenny Hess </div>
+      <div class="meta">
+        Client since 2017
+      </div>
+      <div class="description">
+        $250
+      </div>
+      <div class="meta">
+        1 month package
+      </div>
+    </div>
+    <div class="extra content">
+      <div class="ui two buttons">
+        <div class="ui blue basic  button">View Payment History</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    {{!----------------------------------------------------------------------------------------------}}
+    {{!--END OF PHYSIO DASH--}}
+  {{else}}
+    {{!--CLIENT DASH--}}
+   <h1>Hello {{oudaAuth.getName}}!</h1>
+<h2 style="font-style:italic;">Quote of the Day: {{randomQuote}} "Empowered Healing"</h2>
+
+<br>
+
+  <div class="ui  blue cards">
+    
+  <div class="card">
+    <div class="content">
+      <div class="header" id="card">
+            <a class="ui blue ribbon label"><h4>Upcoming Appointments</h4></a>
+      </div>
+      <div class="item">
+          <div class="content">
+           <br><p>  <i class="calendar icon"></i>Tuesday March 6, 2018<br>
+             <i class="clock icon"></i>1:00pm<br>
+             <i class="user icon"></i>Stephanie Marcotte<br><br>
+            </p>
+          </div>
+        </div>
+    </div>
+    <div class="extra content">
+      <div class="ui two buttons">
+        <div class="ui blue basic button">View Appointments</div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card">
+    <div class="content">
+      <div class="header">
+          <a class="ui blue ribbon label"><h4>Exercises Pending</h4></a>
+      </div> 
+      <div class="ui list">
+        <div class="item">
+          <i class="users icon"></i>
+          <div class="content">
+            2 Reps remaining
+          </div>
+        </div>
+      <div class="item">
+        <i class="hand pointer icon"></i>
+        <div class="content">
+          2 Exercises
+        </div>
+      </div>
+      
+    </div>  
+    </div>
+    <div class="extra content">
+      <div class="ui two buttons">
+        <div class="ui blue basic  button">View Exercises</div>
+      </div>
+    </div>
+  </div>
+
+
+ <div class="card">
+    <div class="content">
+      <div class="header">
+          <a class="ui blue ribbon label"><h4>Upcoming Payments</h4></a>
+      </div> 
+      <div class="description"> Package 1 </div>
+      <br>
+      <div class="header"> March 5, 18 </div>
+      <div class="meta">
+        Client since 2018
+      </div>
+      <div class="description">
+        $250
+      </div>
+      <div class="meta">
+        1 month package
+      </div>
+    </div>
+    <div class="extra content">
+      <div class="ui two buttons">
+        <div class="ui blue basic  button">View Payment History</div>
+      </div>
+    </div>
+  </div>
+</div>
+    {{!----------------------------------------------------------------------------------------------}}
+    {{!--END OF CLIENT DASH--}}
+  {{/if}}
+{{else}}
+{{/if}}
+
+
+
+{{!--<h1>Hello {{currClientData.givenName }} {{currClientData.familyName}}!</h1>--}}
+
+{{!--<h1>Hello {{oudaAuth.getName}}!</h1>--}}
+{{!--<h2 style="font-style:italic;">Quote of the Day: {{randomQuote}} "Empowered Healing"</h2>--}}
+
+{{!--<br>--}}
+
+{{!--  <div class="ui  blue cards">--}}
+    
+{{!--  <div class="card">--}}
+{{!--    <div class="content">--}}
+{{!--      <div class="header" id="card">--}}
+{{!--            <a class="ui blue ribbon label"><h4>Upcoming Appointments</h4></a>--}}
+{{!--      </div>--}}
+{{!--      <div class="item">--}}
+{{!--          <div class="content">--}}
+{{!--           <br><p>  <i class="calendar icon"></i>Tuesday March 6, 2018<br>--}}
+{{!--             <i class="clock icon"></i>1:00pm<br>--}}
+{{!--             <i class="user icon"></i>Stephanie Marcotte<br><br>--}}
+{{!--            </p>--}}
+{{!--          </div>--}}
+{{!--        </div>--}}
+{{!--    </div>--}}
+{{!--    <div class="extra content">--}}
+{{!--      <div class="ui two buttons">--}}
+{{!--        <div class="ui blue basic button">View Appointments</div>--}}
+{{!--      </div>--}}
+{{!--    </div>--}}
+{{!--  </div>--}}
+  
+{{!--  <div class="card">--}}
+{{!--    <div class="content">--}}
+{{!--      <div class="header">--}}
+{{!--          <a class="ui blue ribbon label"><h4>Exercises Pending</h4></a>--}}
+{{!--      </div> --}}
+{{!--      <div class="ui list">--}}
+{{!--        <div class="item">--}}
+{{!--          <i class="users icon"></i>--}}
+{{!--          <div class="content">--}}
+{{!--            2 Reps remaining--}}
+{{!--          </div>--}}
+{{!--        </div>--}}
+{{!--      <div class="item">--}}
+{{!--        <i class="hand pointer icon"></i>--}}
+{{!--        <div class="content">--}}
+{{!--          2 Exercises--}}
+{{!--        </div>--}}
+{{!--      </div>--}}
+      
+{{!--    </div>  --}}
+{{!--    </div>--}}
+{{!--    <div class="extra content">--}}
+{{!--      <div class="ui two buttons">--}}
+{{!--        <div class="ui blue basic  button">View Exercises</div>--}}
+{{!--      </div>--}}
+{{!--    </div>--}}
+{{!--  </div>--}}
+
+
+{{!-- <div class="card">--}}
+{{!--    <div class="content">--}}
+{{!--      <div class="header">--}}
+{{!--          <a class="ui blue ribbon label"><h4>Upcoming Payments</h4></a>--}}
+{{!--      </div> --}}
+{{!--      <div class="description"> Package 1 </div>--}}
+{{!--      <br>--}}
+{{!--      <div class="header"> March 5, 18 </div>--}}
+{{!--      <div class="meta">--}}
+{{!--        Client since 2018--}}
+{{!--      </div>--}}
+{{!--      <div class="description">--}}
+{{!--        $250--}}
+{{!--      </div>--}}
+{{!--      <div class="meta">--}}
+{{!--        1 month package--}}
+{{!--      </div>--}}
+{{!--    </div>--}}
+{{!--    <div class="extra content">--}}
+{{!--      <div class="ui two buttons">--}}
+{{!--        <div class="ui blue basic  button">View Payment History</div>--}}
+{{!--      </div>--}}
+{{!--    </div>--}}
+{{!--  </div>--}}
+{{!--</div>--}}

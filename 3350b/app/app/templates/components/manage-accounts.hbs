@@ -1,0 +1,98 @@
+<style
+  src = "https://code.jquery.com/jquery-1.12.4.js"
+  src = "https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"
+  src = "https://cdn.datatables.net/1.10.16/js/dataTables.semanticui.min.js"
+  src = "https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/semantic.min.js"
+></style>
+
+<div>
+<h1> Manage Accounts </h1>
+<br>
+{{!--<div class="ui search">--}}
+{{!--  <div class="ui icon input">--}}
+{{!--    <input class="prompt" type="text" placeholder="Seach clients...">--}}
+{{!--    <i class="search icon"></i>--}}
+{{!--  </div>--}}
+{{!--  <div class="results"></div>--}}
+{{!--</div>--}}
+</div>
+{{!--<table id="clientTable" class="ui selectable table"  >--}}
+
+{{!------------------------------------------------------------------------------------------}}
+
+{{#if ADM01IsPermitted }}
+
+  <div class="ui grid">
+    <div class="three wide column">
+      <div class="ui violet vertical pointing menu">
+        <a class="item active" {{action "manageUsers"}}>
+          <i class="large users icon"></i>
+          Users Accounts
+        </a>
+        <a class="item" {{action "manageRoles"}}>
+          <i class="large list layout icon"></i>
+          System Roles
+        </a>
+        <a class="item " {{action "manageFeatures"}}>
+          <i class="large lock icon"></i>
+          System Features/Privileges
+        </a>
+      </div>
+    </div>
+    <div class="thirteen wide column ">
+      <div class="ui segment container">
+        {{#if isUsersShowing}}
+          {{manage-users}}
+        {{/if}}
+        {{#if isRolesEditing }}
+          {{manage-roles}}
+        {{/if}}
+        {{#if isFeaturesEditing }}
+          {{manage-features}}
+        {{/if}}
+      </div>
+    </div>
+  </div>
+
+{{else}}
+  <div class="ui center aligned raised segment">
+    <div class="ui icon header">
+      <i class="protect icon"></i>
+      Permission Denied
+    </div>
+    <div>
+      <p>This feature (ADM01) is not allowed for your account.</p>
+      <p>Please contact the system administrator for more information.</p>
+    </div>
+
+  </div>
+
+{{/if}}
+
+
+{{!------------------------------------------------------------------------------------------}}
+
+{{!--<table id="clientTable" class = "ui celled table" cellspacing="0" width="100%">--}}
+
+{{!--<thead>--}}
+{{!--<tr>--}}
+{{!--    <th class="">First Name</th>--}}
+{{!--    <th class = "">Last Name</th>--}}
+{{!--    <th>Reset Password</th>--}}
+{{!--    <th>Remove</th>--}}
+
+{{!--</tr>--}}
+{{!--</thead>--}}
+{{!--<tbody>--}}
+{{!--    {{#each clientData as |client|}}--}}
+    
+{{!--    <tr>--}}
+{{!--    <td>{{client.givenName}}</td>--}}
+{{!--    <td>{{client.familyName}}</td>--}}
+{{!--    <td>{{edit-account ID=client.id}}</td>--}}
+{{!--    <td>{{delete-account ID=client.id}}</td>--}}
+{{!--    </tr> --}}
+    
+{{!--    {{/each}}--}}
+{{!--</tbody>--}}
+{{!--</table>--}}

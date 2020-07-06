@@ -1,0 +1,189 @@
+// <script>
+//     $('.ui.form')
+//   .form({
+//     fields: {
+//       givenName: {
+//         identifier: 'givenName',
+//         rules: [
+//           {
+//             type   : 'empty',
+//             prompt : 'Please enter your name'
+//           }
+//         ]
+//       },
+//       familyName: {
+//         identifier: 'familyName',
+//         rules: [
+//           {
+//             type: 'empty',
+//             prompt : 'Please enter your last name'
+//           }
+//         ]
+//       },
+//       email: {
+//         identifier: 'email',
+//         rules: [
+//           {
+//             type   : 'empty',
+//             prompt : 'Please enter your email address'
+//           }
+//         ]
+//       },
+//       phone: {
+//         identifier: 'phone',
+//         rules: [
+//           {
+//             type   : 'empty',
+//             prompt : 'Please enter a phone number'
+//           }
+//         ]
+//       },
+//       dOfB: {
+//         identifier: 'dOfB',
+//         rules: [
+//           {
+//             type   : 'empty',
+//             prompt : 'Please enter date of birth'
+//           },
+//         ]
+//       },
+//       occupation: {
+//         identifier: 'occupation',
+//         rules: [
+//           {
+//             type   : 'empty',
+//             prompt : 'Please enter occupation'
+//           }
+//         ]
+//       }
+//     }
+//   })
+// ;
+// </script>
+
+<div class="center aligned twenty column grid container" style="margin:30px;">
+    <div class="ui eight mini ordered steps">
+        <div class = "completed step">
+            <div class="content">
+                  <div class="title">Terms</div>
+                  <div class="description">Terms and Agreements</div>
+            </div>
+        </div>
+        
+        <div class = "completed step">
+            <div class="content">
+                  <div class="title">Create Account</div>
+                  <div class="description">Username and Password</div>
+            </div>
+        </div>
+        
+        <div class = "active step">
+            <div class="content">
+                  <div class="title">General Information</div>
+                  <div class="description">Fill in Information</div>
+            </div>
+        </div>
+        
+        <div class = "disabled step">
+            <div class="content">
+                  <div class="title">Forms</div>
+                  <div class="description">Complete Form</div>
+            </div>
+        </div>
+        
+        <div class = "disabled step">
+            <div class="content">
+                  <div class="title">Upload Photo</div>
+                  <div class="description">Upload Photos</div>
+            </div>
+        </div>
+        
+        <div class = "disabled step">
+            <div class="content">
+                  <div class="title">Booking</div>
+                  <div class="description">Book Appoinment</div>
+            </div>
+        </div>
+        
+        <div class = "disabled step">
+            <div class="content">
+                  <div class="title">Payment</div>
+                  <div class="description">Payment Options</div>
+            </div>
+        </div>
+        
+        <div class = "disabled step">
+            <div class="content">
+                  <div class="title">Confirm</div>
+                  <div class="description">Information Confirmation</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="ui center aligned attached fluid segment text container " id="signUpBox">
+          <div class="ui centered header">
+            <h1 class="font" style="color:black;">General Information</h1>
+          </div>
+
+          <form class="ui form">
+            
+            <div class="two fields">
+            <div class="field">
+                <label>First Name</label>
+            {{input type="text" cols="50" rows="1" value = givenName placeholder="add first name"}}
+            </div>
+            <div class="field">
+                <label>Last Name</label>
+            {{input type="text" cols="50" rows="1"  value = familyName placeholder="add last name"}}
+            </div>
+        </div>
+        
+        <div class="two fields">
+           
+            <div class="field">
+                <label>Email ID</label>
+                {{input type="text" cols="50" rows="1" value = email placeholder="add email Id"}}
+            </div>
+            <div class="field">
+                <label>Phone Number</label>
+                {{input type="text" cols="50" rows="1" value = phone placeholder="(XXX)-XXX-XXXX"}}
+            </div>
+        </div>
+        
+        <div class="three fields">
+            <div class="field">
+                <label>Age</label>
+                {{input type="number" cols="50" rows="1" value = age placeholder="add age"}}
+            </div>
+             <div class="field">
+                <label>Date of Birth</label>
+                {{input type="date" cols="50" rows="1" value = dofB placeholder="YYYY/MM/DD"}}
+            </div>
+            <div class="field">
+                <label>Occupation</label>
+                {{input type="text" cols="50" rows="1" value = occupation placeholder="add occupation"}}
+            </div>
+            <div class="field">
+                <label>Postal Code</label>
+                {{input type="text" cols="50" rows="1" value = postalCode placeholder="add postal code"}}
+            </div>
+        </div>
+              {{!--<button class="ui blue medium button prev2">Previous</button>--}}
+              {{#link-to "landing-page"}}<button class="ui red medium button">Cancel</button>{{/link-to}}
+              <button {{action 'submitCreateAccount'}} class ="ui blue medium button next2">Next</button>
+              
+
+          </form>
+          <br>
+          <div class="ui bottom attached warning message">
+              {{!--<i class="icon help"></i>--}}
+              Already signed up? <a> {{#link-to "login"}}
+               Login here
+              {{/link-to}}
+              </a>
+            </div>
+        </div>
+        
+        

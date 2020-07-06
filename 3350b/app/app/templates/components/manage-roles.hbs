@@ -1,0 +1,64 @@
+{{#if MSR01IsPermitted }}
+  <div class="ui grid">
+    <div class="eight wide column">
+      <h2 class="ui header" style="margin-top: 2px;">Manage System Roles</h2>
+    </div>
+    <div class="eight wide column right aligned">
+      {{add-new-role}}
+    </div>
+  </div>
+
+
+  <table class="ui table" style="margin-top: 25px;">
+    <thead>
+    <tr>
+      <th>System Role Name</th>
+      <th>Assigned Permissions</th>
+      <th></th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+
+    {{#each roleCodeModel as |oneCode|}}
+      <tr>
+        <td class="three wide left aligned">
+          {{oneCode.name}}
+        </td>
+
+        <td class="four wide">
+          {{#each rolePermissionModel as |rolePermission|}}
+            {{#each rolePermission.roleCodes as |code|}}
+              {{#if (eq code.id oneCode.id)}}
+                {{rolePermission.code}}&nbsp;
+              {{/if}}
+            {{/each}}
+          {{/each}}
+        </td>
+
+        <td class="three wide right aligned">
+          {{manage-permission roleID = oneCode.id roleName = oneCode.name}}
+
+        </td>
+
+        <td class="three wide right aligned">
+          {{delete-role key=oneCode.id}}
+        </td>
+
+      </tr>
+    {{/each}}
+    </tbody>
+  </table>
+
+{{else}}
+  <div class="ui center aligned raised segment">
+    <div class="ui icon header">
+      <i class="protect icon"></i>
+      Permission Denied
+    </div>
+    <div>
+      <p>This feature (MSR01) is not allowed for your account.</p>
+      <p>Please contact the system administrator for more information.</p>
+    </div>
+  </div>
+{{/if}}

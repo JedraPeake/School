@@ -1,0 +1,78 @@
+<div class="ui button" {{action 'openModal' }}>
+  Assign Roles
+</div>
+
+{{#if MR001IsPermitted }}
+
+  {{#ui-modal name= modalName class= modalName }}
+
+    <div class="header">Manage Roles for {{userRecord.familyName}} {{userRecord.givenName}}</div>
+    <div class="content">
+      <!-- display a list of assigned roles names -->
+      <!-- for the current user                   -->
+      <table class="ui table" style="margin-top: 25px;">
+        {{#each userRoleModel as |oneRole|}}
+          <tr>
+            <td>
+              {{oneRole.name}}
+            </td>
+            <td class="right aligned">
+              <button class="ui icon button" {{action 'deleteRole' oneRole.id ID}}>
+                <i class="delete icon"></i>
+              </button>
+            </td>
+          </tr>
+        {{/each}}
+      </table>
+      <!-- display a dropdown list to assign a new  user role  -->
+      <br> <br>
+      <select class="ui dropdown" class="labeled icon top right green pointing button" onchange={{action "selectRole" value="target.value"}}>
+        <i class="plus icon"></i>
+        Add User Role
+          {{#each roleCodeModel as |roleCode|}}
+          <option value = ""> Select Role </option>
+            <option value="{{roleCode.id}}">
+              {{roleCode.name}}
+            </option>
+          {{/each}}
+      </select>
+      {{!--{{#ui-dropdown class="labeled icon top right green pointing button" onChange=(action 'selectRole')}}--}}
+      {{!--  <i class="plus icon"></i>--}}
+      {{!--  Add User Role--}}
+      {{!--  <div class="menu">--}}
+      {{!--    {{#each roleCodeModel as |roleCode|}}--}}
+      {{!--      <div data-value="{{roleCode.id}}" class="item">--}}
+      {{!--        {{roleCode.name}}--}}
+      {{!--      </div>--}}
+      {{!--    {{/each}}--}}
+      {{!--  </div>--}}
+      {{!--{{/ui-dropdown}}--}}
+    </div>
+    <div class="actions">
+      <div class="ui positive button">Done
+      </div>
+    </div>
+  {{/ui-modal}}
+
+{{else}}
+
+  {{#ui-modal name= modalName class= modalName }}
+    <div class="ui icon header">
+      <i class="protect icon"></i>
+      Permission Denied
+    </div>
+    <div class="content">
+      <p>This feature (MR001) is not allowed for your account.</p>
+      <p>Please contact the system administrator for more information.</p>
+    </div>
+
+    <div class="actions">
+      <div class="ui black deny button">
+        Understand
+      </div>
+    </div>
+  {{/ui-modal}}
+
+{{/if}}
+
+

@@ -1,0 +1,40 @@
+
+    {{!--{{#each boxdata as |box| }}--}}
+  <div class="ui equal width center aligned padded grid">
+  <div class="row">
+    <div class="column">
+      <div class = "ui inverted blue raised segment">
+        <h3 class = "ui header">Do you suffer from any of the following?</h3>
+        <div class="ui equal width center aligned padded grid">
+          <div class = "row">
+            <div class = "column">
+                {{#each boxData1 as |bp|}}
+                <div class = "column">
+                  <p>{{bp}}</p>
+                </div>
+                {{/each}}
+            </div>
+            <div class = "column">
+             {{#each boxData2 as |bp|}}
+                <div class = "column">
+                  <p>{{bp}}</p>
+                </div>
+                {{/each}}
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="column">
+      <div class = "ui padded raised segment" style="padding-bottom: 22px; padding-top:22px;">
+        <br><br><br>
+          <p><font size = "4">{{boxBlurb}}</font></p>
+        <button class = "ui blue button"  style="margin-bottom:7px;"> Learn More </button>
+        <br><br><br>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{!--{{/each}}--}}

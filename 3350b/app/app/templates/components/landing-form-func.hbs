@@ -1,0 +1,50 @@
+<h1>Edit Landing Page Boxes</h1> 
+<br>
+<h3>Left Box</h3> 
+<br>
+<table class="ui selectable line table" id="tabHead">
+                <thead>
+                <tr>
+                    <th>Point</th>
+                    <th>Remove</th>
+                </tr>
+                </thead>
+                
+                <tbody>
+                    {{#each arrayPoint as |point|}}
+                    <tr> 
+                    
+                    <td>{{point}}</td>
+                    <td>
+                        <div class="ui red button" {{action 'removeBullet' point}}>
+                          <i class = "minus icon"></i>
+                        </div>
+                        
+                    </td>
+                    </tr> 
+                    {{/each}}
+                </tbody>
+                </table>
+
+<div class="ui form">
+  <div class="field">
+        <label>Add Point</label>
+        {{input type="text" cols="50" rows="1" value = pointToAdd placeholder="add title"}}
+  </div>
+  <div class="ui blue button" {{action 'addBullet'}}>
+      <i class = "plus icon"></i>Add to the List
+  </div>
+  <br>
+  <h3>Right Box</h3> 
+  <br>
+  <div class="field">
+    <label>Box Blurb</label>
+    {{textarea value=blurb cols="50" rows="4" placeholder="add content"}}
+  </div>
+  
+
+</div>
+<br>
+<div class="ui blue button" {{action 'updateBackend'}}>
+  <i class = "file alternate upload icon"></i>Save
+</div>

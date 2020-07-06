@@ -1,0 +1,112 @@
+<style>
+    td {
+        max-width:280px;
+        word-wrap:break-word;
+    }
+    div {
+        align-items: center;
+        max-width: 180%;
+    }
+</style>
+
+<h1>Patient Profile Page</h1>
+<div class="field">
+  {{input type="text" value=title placeholder="test"}}
+</div>
+
+{{#each model as |client|}}
+ <li>{{client.givenName}} </li>
+{{/each}}
+
+{{!--{{rehabPlanModel.id}}--}}
+
+{{!--Patient Profile Info--}}
+<div class="ui compact raised segment ">
+    <a class="ui blue ribbon label">Client Profile</a>
+    <div class="ui list">
+  <div class="item">
+    <i class="users icon"></i>
+    <div class="content">
+      Client Name
+    </div>
+  </div>
+  <div class="item">
+    <i class="marker icon"></i> 
+    <div class="content">
+      Client Location
+    </div>
+  </div>
+  <div class="item">
+    <i class="mail icon"></i>
+    <div class="content">
+      <a href="mailto:jack@semantic-ui.com">jack@semantic-ui.com</a>
+    </div>
+  </div>
+</div>
+</div>
+
+{{!--Rehab plan info --}}
+<div class="ui compact raised segment ">
+    <a class="ui blue ribbon label">Rehabilitation Plan</a>
+ 
+    <table class="ui unstackable table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Goal</th>
+      <th>Time Frame</th>
+      <th>Author Name</th>
+      <th class="right aligned">  </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Spring Rehabilitation Plan</td>
+      <td></td>
+      <td></td>
+      <td>x:xx</td>
+      <td>Mar</td>
+      <td class="right aligned"> 
+          <i class="edit icon"></i>
+          <i class="remove icon"></i>
+      </td>
+    </tr>
+
+    <tr>
+      <td>Summer Rehabilitation Plan</td>
+      <td>Descriptionkjsadgfulsdvflg</td>
+      <td>This is the goal</td>
+      <td>x:xx</td>
+      <td>Marcotte</td>
+      <td class="right aligned"> 
+          <i class="edit icon"></i>
+          <i class="remove icon"></i>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+{{!--Payment Info--}}
+<div class="ui compact raised segment ">
+    <a class="ui blue ribbon label">Payment History</a>
+    <table class="ui unstackable table">
+    <thead>
+    <tr>
+      <th>Amount</th>
+      <th>Date</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="right aligned"> 
+      <td>$43.23</td>
+      <td>February 8, 2018</td>
+      <td>Notes: </td>
+      </td>
+    </tr>
+  </tbody>
+  </table> 
+</div>

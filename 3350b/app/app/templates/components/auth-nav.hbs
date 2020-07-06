@@ -1,0 +1,273 @@
+<style>
+        .ui.card{
+            background-color: #80b3ff;
+        }
+        .ui#content{
+          padding-top: 70px;
+          z-index:5;
+        }
+          .ui#logo{
+            padding-left: 20px;
+            padding-top: 0px;
+            padding-bottom: 0px;
+            width: 250px;
+          }
+  
+  .ui#btn{
+    position:absolute; 
+    top:0; 
+    right:0;
+    margin-top: 23px;
+    margin-right:20px;
+  }
+  
+  .ui#main{
+    padding-left:20px;
+    padding-top:20px;
+  }
+
+</style>
+<script
+  src = "/frontend/app/components/nav-bar.js"
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+<script src="semantic/dist/semantic.min.js"></script>
+{{#if (not-eq oudaAuth.getName "Root")}}
+  {{#if VCI01IsPermitted }}
+    {{!--PHYSIO THERAPIST NAV BAR--}}
+
+  {{!--TOP MENU--}}
+  <div class = "ui fluid container top fixed massive menu">
+      <div id = "logo" class="ui small image">
+        <img src="assets/images/logo.png">
+      </div>
+
+      <div class = "right item">{{log-out name=oudaAuth.getName}}</div>
+  </div>
+
+  {{!--START NAVBAR --}}
+  <div id="content" class="ui secondary visible left vertical sidebar menu">
+    
+    {{!--DASHBOARD--}}
+    <a>{{#link-to "client-dashboard"}}
+    <br><br>
+    <a class="item">
+      <i class="calendar icon"></i>
+      Dashboard
+    </a>
+    {{/link-to}}
+    </a>
+
+    {{!--CLIENTS--}}
+    <a>{{#link-to "clients"}}
+    <a class="item">
+      <i class="user circle icon"></i>
+      Client Profiles
+    </a>
+    {{/link-to}}
+    </a>
+    
+    {{!--EXERCISES--}}
+    <a>{{#link-to "exercises"}}
+    <a class="item">
+      <i class="list layout icon"></i>
+      Exercise Library
+    </a>
+    {{/link-to}}
+    </a>
+    
+    {{!--EXERCISE MENU--}}
+    <a>{{#link-to "rehabilitations"}}
+    <a class="item">
+      <i class="list alternate icon"></i>
+      Exercise Menus
+    </a>
+    {{/link-to}}
+    </a>
+    
+    {{!--QUESTION LIBRARY--}}
+    <a> {{#link-to "questionLibrary"}}
+    <a class="item">
+      <i class="question circle icon"></i>
+     Question Library
+    </a>
+    {{/link-to}}
+    </a>
+    
+    {{!--DYNAMIC FORMS--}}
+    <a> {{#link-to "dynamicForms"}}
+    <a class="item">
+      <i class="file icon"></i>
+     Dynamic Forms
+    </a>
+    {{/link-to}}
+    </a>
+
+    {{!--Appointment--}}
+    <a> {{#link-to "appointment"}}
+    <a class="item">
+      <i class="calendar alternate icon"></i>
+     Appointment Bookings
+    </a>
+    {{/link-to}}
+    </a>
+    
+    {{!--landing page--}}
+    <a> {{#link-to "landing-form"}}
+    <a class="item">
+      <i class="file icon"></i>
+     Landing Page Data
+    </a>
+    {{/link-to}}
+    </a>
+    
+  </div>
+    {{!----------------------------------------------------------------------------------------------}}
+    {{!--END OF PHYSIO NAV--}}
+  {{else}}
+    {{!--CLIENT NAV BAR--}}
+    <style>
+  .ui#content{
+  padding-top: 70px;
+  z-index:5;
+  }
+  
+  .ui#logo{
+    padding-left: 20px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    width: 250px;
+  }
+  
+  .ui#btn{
+    position:absolute; 
+    top:0; 
+    right:0;
+    margin-top: 23px;
+    margin-right:20px;
+  }
+  
+  .ui#main{
+    padding-left:20px;
+    padding-top:20px;
+  }
+</style>
+
+    <script
+
+  src = "/frontend/app/components/nav-bar.js"
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+  
+  <div class = "ui fluid container top fixed massive menu">
+      <div id = "logo" class="ui small image">
+        <img src="assets/images/logo.png">
+      </div>
+      <div class = "right item">{{log-out name=oudaAuth.getName}}</div>
+      {{!--{{#link-to "landing-page"}}<button id = "btn" class="ui blue button">Log out</button>{{/link-to}}--}}
+  </div>
+  
+  {{!--SIDEBAR--}}
+  <div id="content" class="ui secondary visible left vertical sidebar menu">
+    {{!--DASHBOARD--}}
+    <a>{{#link-to "client-dashboard"}}
+        <br>
+        <br>
+        <a class="item">
+          <i class="calendar icon"></i>
+          Dashboard
+        </a>
+    {{/link-to}}
+    </a>
+    {{!--PHOTOS--}}
+    <a>{{#link-to "client-upload"}}
+    <a class="item">
+      <i class="id badge icon"></i>
+      Upload Photos
+    </a>
+    {{/link-to}}
+    </a>
+    {{!--EXERCISES--}}
+    <a>{{#link-to "client-exercises"}}
+    <a class="item">
+      <i class="list layout icon"></i>
+      Exercise Menus
+    </a>
+    {{/link-to}}
+    </a>
+    {{!--ASSESSMENTS--}}
+    {{!--<a>{{#link-to "client-assessments"}}--}}
+    {{!--<a class="item">--}}
+    {{!--  <i class="clipboard icon"></i>--}}
+    {{!--  Assessment Tests--}}
+    {{!--</a>--}}
+    {{!--{{/link-to}}--}}
+    {{!--</a>--}}
+    {{!--BOOK --}}
+    <a> {{#link-to "client-book"}}
+    <a class="item">
+      <i class="calendar plus icon"></i>
+    Appointments 
+    </a>
+    {{/link-to}}
+    </a>
+    {{!--ENTER--}}
+    {{!--<a> {{#link-to "client-appointment"}}--}}
+    {{!--<a class="item">--}}
+    {{!--  <i class="sign in alternate icon"></i>--}}
+    {{!-- Enter Appointment --}}
+    {{!--</a>--}}
+    {{!--{{/link-to}}--}}
+    {{!--</a>--}}
+    {{!--PAYMENTS--}}
+     <a> {{#link-to "client-payment"}}
+    <a class="item">
+      <i class="credit card icon"></i>
+     Payment History  
+    </a>
+    {{/link-to}}
+    </a>
+    {{!--CONTACT US--}}
+    <a> {{#link-to "client-contact"}}
+    <a class="item">
+      <i class="edit icon"></i>
+     Contact Us  
+    </a>
+    {{/link-to}}
+    </a>
+    {{!-- SETTINGS --}}
+    <a> {{#link-to "client-settings"}}
+    <a class="item">
+      <i class="wrench icon"></i>
+     Settings
+    </a>
+    {{/link-to}}
+    </a>
+  </div>
+  {{!--END OF SIDEBAR--}}
+
+    {{!----------------------------------------------------------------------------------------------}}
+    {{!--END OF CLIENT NAV--}}
+  {{/if}}
+{{else}}
+  {{!--ADMIN NAV BAR--}}
+  {{!--<div class = "ui fluid container top fixed massive menu">--}}
+  {{!--    <div id = "logo" class="ui small image">--}}
+  {{!--      <img src="assets/images/logo.png">--}}
+  {{!--    </div>--}}
+  {{!--    <div class = "right item">{{log-out name=oudaAuth.getName}}</div>--}}
+      
+  {{!--</div>--}}
+  
+  {{!----------------------------------------------------------------------------------------------}}
+  {{!--END OF ADMIN NAV--}}
+
+{{/if}}
+

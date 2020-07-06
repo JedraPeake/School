@@ -1,0 +1,105 @@
+<style>
+        .ui.card{
+            background-color: #80b3ff;
+        }
+        .ui#content{
+          padding-top: 100px;
+          z-index:5;
+        }
+          .ui#logo{
+            padding-left: 20px;
+            padding-top: 0px;
+            padding-bottom: 0px;
+            width: 250px;
+          }
+  
+  .ui#btn{
+    position:absolute; 
+    top:0; 
+    right:0;
+    margin-top: 23px;
+    margin-right:20px;
+  }
+  
+  .ui#main{
+    padding-left:20px;
+    padding-top:20px;
+  }
+
+</style>
+<script
+  src = "/frontend/app/components/nav-bar.js"
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+{{#if ADM01IsPermitted }}
+<div class = "ui fluid container top fixed massive menu">
+      <div id = "logo" class="ui small image">
+        <img src="assets/images/logo.png">
+      </div>
+      <div class = "right item">{{log-out name=oudaAuth.getName}}</div>
+      
+  </div>
+<div id="content" class="ui secondary visible left vertical sidebar menu">
+        <a class="item" {{action "manageUsers"}}>
+          <i class="users icon"></i>
+          Users Accounts
+        </a>
+        <a class="item" {{action "manageRoles"}}>
+          <i class="list layout icon"></i>
+          System Roles
+        </a>
+        <a class="item " {{action "manageFeatures"}}>
+          <i class="lock icon"></i>
+          System Features/Privileges
+        </a>
+  </div>
+  <div class="ui grid">
+    {{!--<div class="three wide column">--}}
+    {{!--  <div class="ui violet vertical pointing menu">--}}
+    {{!--    <a class="item active" {{action "manageUsers"}}>--}}
+    {{!--      <i class="large users icon"></i>--}}
+    {{!--      Users Accounts--}}
+    {{!--    </a>--}}
+    {{!--    <a class="item" {{action "manageRoles"}}>--}}
+    {{!--      <i class="large list layout icon"></i>--}}
+    {{!--      System Roles--}}
+    {{!--    </a>--}}
+    {{!--    <a class="item " {{action "manageFeatures"}}>--}}
+    {{!--      <i class="large lock icon"></i>--}}
+    {{!--      System Features/Privileges--}}
+    {{!--    </a>--}}
+    {{!--  </div>--}}
+    {{!--</div>--}}
+    <div class="thirteen wide column ">
+      <div class="ui segment container">
+        {{#if isUsersShowing}}
+          {{manage-users}}
+        {{/if}}
+        {{#if isRolesEditing }}
+          {{manage-roles}}
+        {{/if}}
+        {{#if isFeaturesEditing }}
+          {{manage-features}}
+        {{/if}}
+      </div>
+    </div>
+  </div>
+
+{{else}}
+  <div class="ui center aligned raised segment">
+    <div class="ui icon header">
+      <i class="protect icon"></i>
+      Permission Denied
+    </div>
+    <div>
+      <p>This feature (ADM01) is not allowed for your account.</p>
+      <p>Please contact the system administrator for more information.</p>
+    </div>
+
+  </div>
+
+{{/if}}
+
+
+

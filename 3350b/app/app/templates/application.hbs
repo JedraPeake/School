@@ -1,0 +1,15 @@
+<div class="ember-view">
+  {{#if oudaAuth.isLoginRequested }}
+    {{outlet "login"}}
+  {{else}}
+    {{#if oudaAuth.isAuthenticated }}
+      {{auth-nav}}
+    {{!--{{#if EUP01IsPermitted }}--}}
+    {{!--    {{outlet}}--}}
+    {{!--  {{/if}}--}}
+    {{else}}    {{!--<div class="right item">{{log-sign-in}}</div>--}}
+    {{/if}}
+
+  {{outlet}}
+  {{/if}}
+</div>

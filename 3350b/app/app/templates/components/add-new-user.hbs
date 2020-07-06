@@ -1,0 +1,66 @@
+{{#if oudaAuth.isAuthenticated }}
+<div class="ui button" {{action 'openModal' }}>
+  Add New User
+</div>
+{{else}}
+  <a  {{action 'openModal'}}>  Sign in </a>
+{{/if}}
+
+
+{{#ui-modal name="newUser" class="newUser" }}
+  <div class="header">
+    Create New User Account
+  </div>
+  <div class="content">
+    <div class="ui form">
+      <div class="inline field">
+        <label>First Name</label>
+        {{input value=familyName type="text" placeholder="enter first name" }}
+      </div>
+      <div class="inline field">
+        <label>Last Name</label>
+        {{input value=givenName type="text" placeholder="enter last name"}}
+      </div>
+      <div class="inline field">
+        <label>Email Address</label>
+        {{input value=email type="text" placeholder="enter email address"}}
+      </div>
+      <div class="inline field">
+        <label>User Name</label>
+        {{input value=userName type="text" placeholder="enter user name"}}
+      </div>
+      <div class="inline field">
+        <label>Initial Password</label>
+        {{input value=password type="password" placeholder="enter password"}}
+      </div>
+      <div class="inline field">
+        <label>Account Expiry Date</label>
+        <input value={{selectedDate}} id="AccountExpiryDate" type="date" onchange={{action 'assignDate'
+                                                                                           value="target.value"}}>
+      </div>
+    </div>
+  </div>
+  <div class="actions">
+    <div class="ui black deny button">
+      Cancel
+    </div>
+    <div class="ui positive right labeled icon button">
+      Save
+      <i class="checkmark icon"></i>
+    </div>
+    <div class="ui center aligned container">
+      <p style="color: #ca1010"> {{errorMessage}}</p>
+    </div>
+  </div>
+
+
+
+{{/ui-modal}}
+
+
+
+
+
+
+
+

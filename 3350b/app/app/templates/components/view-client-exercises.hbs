@@ -1,0 +1,222 @@
+<style>
+  .item.content{
+    padding: 5px;
+  }
+
+</style>
+
+{{#if viewMore}}
+
+  {{#if viewAss}}
+  <br>
+      <button class="ui basic labeled icon blue button" {{action 'goBack' }}>
+      <i class="arrow left icon"></i>
+      Back 
+    </button>
+    
+    <div class="ui form">
+      {{#each questionData as |qD|}}
+        {{#if qD.isWritten}}
+          <div class="field">
+            <label>{{qD.questionText}}</label>
+            <textarea rows="4" cols="50" {{action "setLongAnswer" this.value qD.questionText on='change'}} ></textarea>
+            {{!--{{textarea value=blurb cols="50" rows="4" placeholder="add content"}}--}}
+            {{!--{{textarea value=blurb cols="50" rows="4" placeholder="add content" focus-out='setLongAnswer'}}--}}
+            
+          </div>
+        {{/if}}
+        
+        {{#if qD.isAgree}}
+          <div class="inline fields">
+            <label>{{qD.questionText}}</label>
+            <div class="field">
+            <input type='radio' name=question.questionText checked="checked" {{action "setAgreeAnswer" 'Strongly Agree' qD.questionText on='change'}} >
+          <label>Strongly Agree</label>
+            </div>
+            <div class="field">
+               <input type='radio' name=question.questionText {{action "setAgreeAnswer" 'Agree' qD.questionText on='change'}}>
+                <label>Agree</label>
+            </div>
+            <div class="field">
+               <input type='radio' name=question.questionText {{action "setAgreeAnswer" 'Neither' qD.questionText on='change'}}>
+                <label>Neither</label>
+            </div>
+            <div class="field">
+               <input type='radio' name=question.questionText {{action "setAgreeAnswer" 'Disagree' qD.questionText on='change'}}>
+                <label>Disagree</label>
+            </div>
+            <div class="field">
+               <input type='radio' name=question.questionText {{action "setAgreeAnswer" 'Strongly Disagree' qD.questionText on='change'}}>
+                <label>Strongly Disagree</label>
+            </div>
+            </div>
+        {{/if}}
+        
+        {{#if qD.isMultiple}}
+          <div class="field">
+            <label>{{qD.questionText}}</label>
+            {{textarea value=blurb cols="50" rows="2" placeholder="add content"}}
+          </div>
+        {{/if}}
+        
+        {{#if qD.isYes}}
+        <div class="inline fields">
+            <label>{{qD.questionText}}</label>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input type="radio" name={{qD.questionText}} checked="checked"  {{action "setAgreeAnswer" 'Yes' qD.questionText on='change'}}>
+                <label>Yes</label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input type="radio" name={{qD.questionText}}  {{action "setAgreeAnswer" 'No' qD.questionText on='change'}}>
+                <label>No</label>
+              </div>
+            </div>
+          </div>
+        {{/if}}
+        
+      {{/each}}
+      
+    </div>
+    
+    
+    <button class="ui basic labeled icon blue button" {{action 'completeAss' }}>
+      <i class="arrow left icon"></i>
+      Done 
+    </button>
+    
+  {{else}}
+      <br>
+      <button class="ui basic labeled icon blue button" {{action 'goBack' }}>
+      <i class="arrow left icon"></i>
+      Back 
+    </button>
+    
+              <div class="ui centered header">
+                <h1 class="font" style="color:black;">Details of {{selectedEx.name}} Exercise</h1>
+              </div>
+              
+      
+    
+    <table class="ui blue table">
+      <thead>
+        <tr><th><div class="ui centered header" style="color:#0E6EB8;">Description</div></th>
+        <th><div class="ui centered header" style="color:#0E6EB8;">Objectives</div></th>
+        <th><div class="ui centered header" style="color:#0E6EB8;">Action Steps</div></th>
+        <th><div class="ui centered header" style="color:#0E6EB8;">Location</div></th>
+        <th><div class="ui centered header" style="color:#0E6EB8;">Frequency</div></th>
+        <th><div class="ui centered header" style="color:#0E6EB8;">Duration</div></th>
+        <th><div class="ui centered header" style="color:#0E6EB8;">Repetitions</div></th>
+        
+      </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><center>{{selectedEx.description}}</center></td>
+          <td><center>{{selectedEx.objectives}}</center></td>
+          <td><center>{{selectedEx.authorSteps}}</center></td>
+          <td><center>{{selectedEx.location}}</center></td>
+          <td><center>{{selectedEx.frequency}}</center></td>
+          <td><center>{{selectedEx.duration}}</center></td>
+          <td><center>{{selectedEx.reps}}</center></td>
+        </tr>
+        
+      </tbody>
+    </table>
+    
+    <div class="ui blue compact raised segment ">
+      
+    
+      
+    <div class="item">
+      <div class="ui centered header">
+        
+          <h2 style="color:#0E6EB8;">Exercise Photos</h2>
+              </div>
+              <div class="content">
+            {{#each filterImages as |singleImage|}}
+              <img src="{{singleImage.imageData}}" width="920px">
+            {{/each}}
+          </div>
+        </div>
+        
+       </div> 
+   
+
+    {{/if}}
+   
+
+{{else}}
+
+<h1>Your Assigned Exercise Menus</h1>
+  <br> <br>
+{{#ui-accordion class="styled fluid"}}
+    
+        {{#each rehabilitationData2 as |rehab|}}
+        
+                <div class="title" {{action 'currSelected' rehab.id rehab.exercises}}>
+                    <h1 class="font" style="color:#0E6EB8;"><i class="dropdown icon"></i>{{rehab.name}}</h1>
+                </div>
+                
+                <div class="content">
+
+<div class="ui header" style="color:#0E6EB8;">Exercises Menu Description</div>
+{{rehab.description}}
+<div class="ui header" style="color:#0E6EB8;">Overall Goal</div>
+{{rehab.goal}}
+<div class="ui header" style="color:#0E6EB8;">Assigned by</div>
+{{rehab.authorName}}
+<div class="ui header" style="color:#0E6EB8;">Exercises in this Menu</div>
+
+<table id="exTable" class = "ui blue table" >
+<thead>
+<tr>
+<th><div class="ui centered header" style="color:#0E6EB8;"><font size='3'>Exercise Name</font></div></th>
+<th><div class="ui centered header" style="color:#0E6EB8;"><font size='3'>Objectives</font></div></th>
+<th><div class="ui centered header" style="color:#0E6EB8;"><font size='3'>Location</font></div></th>
+<th><div class="ui centered header" style="color:#0E6EB8;"><font size='3'>Sets</font></div></th>
+<th><div class="ui centered header" style="color:#0E6EB8;"><font size='3'>Duration</font></div></th>
+<th><div class="ui centered header" style="color:#0E6EB8;"><font size='3'>Compelted</font></div></th>
+<th><div class="ui centered header" style="color:#0E6EB8;"><font size='3'>More Details</font></div></th>
+    </tr>
+</thead>
+<tbody>
+{{#each rehab.exercises as |rehabEx|}}
+<tr> 
+    <td><center>{{rehabEx.name}}</center></td>
+    <td><center>{{rehabEx.objectives}}</center></td>
+    <td><center>{{rehabEx.location}}</center></td>
+    <td><center>{{rehabEx.frequency}}</center></td>
+    <td><center>{{rehabEx.duration}}</center></td>
+    
+    <td><center>
+      <div class="ui toggle checkbox">
+        <input type="checkbox" name="public" {{action "toggleCheckBox" rehabEx.name rehab.id on="change" }} >
+        <label></label>
+      </div>
+    </center></td>
+    
+    <td><center>
+    <div class="ui animated fade button" tabindex="0" 
+          {{action 'loadMore' rehabEx.id }}
+          title="View">
+      <div class="visible content"></div>
+      <div class="hidden content"><i class="arrow right icon"></i></div>
+    </div>
+    </center></td>
+    
+    </tr> 
+{{/each}}
+</tbody>
+</table>
+
+</div>
+            
+        {{/each}}
+        
+    
+{{/ui-accordion}}
+
+{{/if}}

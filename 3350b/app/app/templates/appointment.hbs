@@ -1,0 +1,335 @@
+/*<style>*/
+
+/*  .ui#content{*/
+/*  padding-top: 70px;*/
+/*  z-index:5;*/
+/*  }*/
+  
+/*  .ui#logo{*/
+/*    padding-left: 20px;*/
+/*    padding-top: 0px;*/
+/*    padding-bottom: 0px;*/
+/*    width: 250px;*/
+/*  }*/
+  
+/*  .ui#btn{*/
+/*    position:absolute; */
+/*    top:0; */
+/*    right:0;*/
+/*    margin-top: 23px;*/
+/*    margin-right:20px;*/
+/*  }*/
+  
+/*  .ui#main{*/
+/*    padding-left:20px;*/
+/*    padding-top:20px;*/
+/*  }*/
+
+
+/*Slide show styles*/
+
+/** {box-sizing:border-box}*/
+
+/* Slideshow container */
+/*.slideshow-container {*/
+/*  max-width: 1000px;*/
+/*  position: relative;*/
+/*  margin: auto;*/
+/*}*/
+
+/* Hide the images by default */
+/*.mySlides {*/
+/*    display: none;*/
+/*}*/
+
+/* Next & previous buttons */
+/*.prev, .next {*/
+/*  cursor: pointer;*/
+/*  position: absolute;*/
+/*  top: 50%;*/
+/*  width: auto;*/
+/*  margin-top: -22px;*/
+/*  padding: 16px;*/
+/*  color: white;*/
+/*  font-weight: bold;*/
+/*  font-size: 18px;*/
+/*  transition: 0.6s ease;*/
+/*  border-radius: 0 3px 3px 0;*/
+/*}*/
+
+/* Position the "next button" to the right */
+/*.next {*/
+/*  right: 0;*/
+/*  border-radius: 3px 0 0 3px;*/
+/*}*/
+
+/* On hover, add a black background color with a little bit see-through */
+/*.prev:hover, .next:hover {*/
+/*  background-color: rgba(0,0,0,0.8);*/
+/*}*/
+
+/* Caption text */
+/*.text {*/
+/*  color: #f2f2f2;*/
+/*  font-size: 15px;*/
+/*  padding: 8px 12px;*/
+/*  position: absolute;*/
+/*  bottom: 8px;*/
+/*  width: 100%;*/
+/*  text-align: center;*/
+/*}*/
+
+/* Number text (1/3 etc) */
+/*.numbertext {*/
+/*  color: #f2f2f2;*/
+/*  font-size: 12px;*/
+/*  padding: 8px 12px;*/
+/*  position: absolute;*/
+/*  top: 0;*/
+/*}*/
+
+/* The dots/bullets/indicators */
+/*.dot {*/
+/*  cursor: pointer;*/
+/*  height: 15px;*/
+/*  width: 15px;*/
+/*  margin: 0 2px;*/
+/*  background-color: #bbb;*/
+/*  border-radius: 50%;*/
+/*  display: inline-block;*/
+/*  transition: background-color 0.6s ease;*/
+/*}*/
+
+/*.active, .dot:hover {*/
+/*  background-color: #717171;*/
+/*}*/
+
+/* Fading animation */
+/*.fade {*/
+/*  -webkit-animation-name: fade;*/
+/*  -webkit-animation-duration: 1.5s;*/
+/*  animation-name: fade;*/
+/*  animation-duration: 1.5s;*/
+/*}*/
+
+/*@-webkit-keyframes fade {*/
+/*  from {opacity: .4} */
+/*  to {opacity: 1}*/
+/*}*/
+
+/*@keyframes fade {*/
+/*  from {opacity: .4} */
+/*  to {opacity: 1}*/
+/*}*/
+
+/*</style>*/
+
+<style>
+  .ui#content{
+    margin-left:280px;
+    /*margin-top: 20px;*/
+    margin-right: 20px;
+    z-index:5;
+  }
+  
+  .ui#logo{
+    padding-left: 20px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    width: 250px;
+  }
+  
+  .ui#btn{
+    position:absolute; 
+    top:0; 
+    right:0;
+    margin-top: 23px;
+    margin-right:20px;
+  }
+  
+  .ui#main{
+    padding-left:20px;
+    padding-top:20px;
+  }
+</style>
+<script
+  src = "/frontend/app/components/nav-bar.js"
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous">
+  
+  // Slide show javascript
+</script>
+
+{{!--<div class="ui bottom attached segment">--}}
+  
+  {{!--<div class = "ui fluid container top fixed massive menu">--}}
+  {{!--    <div id = "logo" class="ui small image">--}}
+        {{!--<img src="https://owl.uwo.ca/access/lessonbuilder/item/92768700/group/4fba372a-5b2d-4717-bb15-3e659416e637/Client%20Materials/marcotte-self-start-bodysmartFINAL.png">--}}
+  {{!--      <img src="assets/images/logo.png">--}}
+  {{!--    </div>--}}
+      
+    
+  {{!--    <a>{{#link-to "landing-page"}}--}}
+  {{!--    <button id = "btn" class="ui blue button">Log out</button>--}}
+  {{!--    {{/link-to}}--}}
+  {{!--    </a>--}}
+  {{!--</div>--}}
+  
+
+  {{!--START NAVBAR --}}
+  {{!--<div id="content" class="ui secondary visible left vertical sidebar menu">--}}
+    
+    {{!--DASHBOARD--}}
+  {{!--  <a>{{#link-to "dashboard"}}--}}
+  {{!--  <br><br>--}}
+  {{!--  <a class="item">--}}
+  {{!--    <i class="calendar icon"></i>--}}
+  {{!--    Dashboard--}}
+  {{!--  </a>--}}
+  {{!--  {{/link-to}}--}}
+  {{!--  </a>--}}
+
+    {{!--CLIENTS--}}
+  {{!--  <a>{{#link-to "clients"}}--}}
+  {{!--  <a class="item">--}}
+  {{!--    <i class="user circle outline icon"></i>--}}
+  {{!--    Clients--}}
+  {{!--  </a>--}}
+  {{!--  {{/link-to}}--}}
+  {{!--  </a>--}}
+    
+    {{!--EXERCISES--}}
+  {{!--  <a>{{#link-to "exercises"}}--}}
+  {{!--  <a class="item">--}}
+  {{!--    <i class="list layout icon"></i>--}}
+  {{!--    Exercises--}}
+  {{!--  </a>--}}
+  {{!--  {{/link-to}}--}}
+  {{!--  </a>--}}
+    
+    {{!--EXERCISE MENU--}}
+  {{!--  <a>{{#link-to "rehabilitations"}}--}}
+  {{!--  <a class="item">--}}
+  {{!--    <i class="list layout icon"></i>--}}
+  {{!--    Exercises Menu--}}
+  {{!--  </a>--}}
+  {{!--  {{/link-to}}--}}
+  {{!--  </a>--}}
+    
+    {{!--QUESTION LIBRARY--}}
+  {{!--  <a> {{#link-to "questionLibrary"}}--}}
+  {{!--  <a class="item">--}}
+  {{!--    <i class="question circle outline icon"></i>--}}
+  {{!--   Question Library--}}
+  {{!--  </a>--}}
+  {{!--  {{/link-to}}--}}
+  {{!--  </a>--}}
+    
+    {{!--DYNAMIC FORMS--}}
+  {{!--  <a> {{#link-to "dynamicForms"}}--}}
+  {{!--  <a class="item">--}}
+  {{!--    <i class="file outline icon"></i>--}}
+  {{!--   Forms--}}
+  {{!--  </a>--}}
+  {{!--  {{/link-to}}--}}
+  {{!--  </a>--}}
+    
+    {{!--ADMIN--}}
+  {{!--  <a> {{#link-to "admin"}}--}}
+  {{!--  <a class="item">--}}
+  {{!--    <i class="user plus icon"></i>--}}
+  {{!--   Admin--}}
+  {{!--  </a>--}}
+  {{!--  {{/link-to}}--}}
+  {{!--  </a>--}}
+    
+    {{!--Appointment--}}
+  {{!--  <a> {{#link-to "appointment"}}--}}
+  {{!--  <a class="item">--}}
+  {{!--    <i class="calendar icon"></i>--}}
+  {{!--   Appointment Calendar--}}
+  {{!--  </a>--}}
+  {{!--  {{/link-to}}--}}
+  {{!--  </a>--}}
+    
+    {{!--landing page--}}
+  {{!--  <a> {{#link-to "landing-form"}}--}}
+  {{!--  <a class="item">--}}
+  {{!--    <i class="calendar icon"></i>--}}
+  {{!--   Landing Page Data--}}
+  {{!--  </a>--}}
+  {{!--  {{/link-to}}--}}
+  {{!--  </a>--}}
+    
+  {{!--</div>--}}
+  {{!--END NAVBAR--}}
+  
+  
+<div class="pusher">
+ <div id="content" class="ui basic segment">
+      <div id = "main" class = "ui grid">
+      <div class="fourteen wide column">
+        <br>
+{{book-app}}
+
+
+{{!--<!-- Slideshow container -->--}}
+{{!--<div class="slideshow-container">--}}
+
+{{!--  <!-- Full-width images with number and caption text -->--}}
+{{!--  <div class="mySlides fade">--}}
+{{!--    <div class="numbertext">1 / 3</div>--}}
+{{!--    <img src="assets/images/logo.png" style="width:100%">--}}
+{{!--    <div class="text">Caption Text</div>--}}
+{{!--  </div>--}}
+
+{{!--  <div class="mySlides fade">--}}
+{{!--    <div class="numbertext">2 / 3</div>--}}
+{{!--    <img src="assets/images/stephanie.jpg" style="width:100%">--}}
+{{!--    <div class="text">Caption Two</div>--}}
+{{!--  </div>--}}
+
+{{!--  <div class="mySlides fade">--}}
+{{!--    <div class="numbertext">3 / 3</div>--}}
+{{!--    <img src="assets/images/stephanie.jpg" style="width:100%">--}}
+{{!--    <div class="text">Caption Three</div>--}}
+{{!--  </div>--}}
+
+{{!--  <!-- Next and previous buttons -->--}}
+{{!--  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>--}}
+{{!--  <a class="next" onclick="plusSlides(1)">&#10095;</a>--}}
+{{!--</div>--}}
+{{!--<br>--}}
+
+{{!--<!-- The dots/circles -->--}}
+{{!--<div style="text-align:center">--}}
+{{!--  <span class="dot" onclick="currentSlide(1)"></span> --}}
+{{!--  <span class="dot" onclick="currentSlide(2)"></span> --}}
+{{!--  <span class="dot" onclick="currentSlide(3)"></span> --}}
+{{!--</div>--}}
+
+{{!--{{#carousel-container transitionInterval=400 as |ui controls|}}--}}
+{{!--  <div class="carousel-body">--}}
+{{!--    <img src="assets/images/stephanie.jpg">--}}
+{{!--    <img src="assets/images/stephanie.jpg">--}}
+{{!--    <img src="assets/images/stephanie.jpg"--}}
+{{!--  </div>--}}
+ 
+{{!--  <button onclick={{controls.previous}}>--}}
+{{!--    Slide Left--}}
+{{!--  </button>--}}
+{{!--  <button onclick={{controls.next}}>--}}
+{{!--    Slide Right--}}
+{{!--  </button>--}}
+{{!--{{/carousel-container}}--}}
+
+
+
+</div>
+</div>
+</div> 
+</div>
+
+
+

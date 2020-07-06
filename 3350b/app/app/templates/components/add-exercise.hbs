@@ -1,0 +1,146 @@
+ <style>
+    .ui.modal{
+        position: relative;
+        top: 0;
+        left: 0;
+        max-height: 100%;
+        overflow-y: auto;
+    }
+ </style>
+ {{!--<center>--}}
+   <button class="fluid ui   primary basic  button" 
+  {{action 'openExModal'}}>
+    <i class = "plus icon"></i>Create a New Exercise</button>
+{{!--</center>--}}
+
+{{#ui-modal name="newEx" class="newEx" }}
+<div class="header">
+    Adding New Exercise
+</div>
+<div class="content">
+    
+    <div class="ui form">
+        
+        <div class="two fields">
+            <div class="field">
+                <label>Exercise Name</label>
+            {{input type="text" cols="50" rows="1" value = name placeholder="add exercise name"}}
+            </div>
+            <div class="field">
+                <label>Author Name</label>
+            {{input type="text" cols="50" rows="1" value = author placeholder="add author name"}}
+            </div>
+        </div>
+        
+        <div class="three fields">
+            <div class="field">
+                <label>Exercise Description</label>
+                {{textarea value=description cols="50" rows="3" placeholder="add exercise description"}}
+            </div>
+            <div class="field">
+                <label>Exercise Objectives</label>
+                {{textarea value=objectives cols="50" rows="3" placeholder="add exercise objectives"}}
+            </div>
+            <div class="field">
+                <label>Action Steps</label>
+                {{textarea value=authorSteps cols="50" rows="3" placeholder="add exercise action steps"}}
+            </div>
+        </div>
+        
+        <div class="four fields">
+            <div class="field">
+                <label>Location</label>
+                {{input type="text" cols="50" rows="1" value = location placeholder="add exercise location"}}
+            </div>
+            <div class="field">
+                <label>Sets</label>
+                {{input type="number" cols="50" rows="1" value = frequency placeholder="add exercise sets"}}
+            </div>
+            <div class="field">
+                <label>Reps</label>
+                {{input type="number" cols="50" rows="1" value = reps placeholder="add exercise reps"}}
+            </div>
+            <div class="field">
+                <label>Duration</label>
+                {{input type="number" cols="50" rows="1" value = duration placeholder="add exercise duration"}}
+            </div>
+        </div>
+        
+        <div class="field">
+            <label>Upload Files</label>
+        </div>
+        
+        <div class="field">
+            {{#each queue as |file| }}
+                <div class="ui divided demo items">
+                  <div class="item">
+                    <div class="image">
+                      {{#if file.isUploading}}
+                        <div class="ui active inverted dimmer">
+                          <div class="ui loader"></div>
+                        </div>
+                      {{else}}
+                        <img src="{{file.base64Image}}">
+                      {{/if }}
+                    </div>
+                    <div class="middle aligned content">
+                      <div class="header">{{file.name}}</div>
+                      <div class="meta">
+                        <span>Size: {{file.size}}</span>
+                      </div>
+                      <div class="description">
+                        {{#if file.isDisplayableImage}}
+                          <br>
+                        {{else}}
+                          <p>Unsupported image</p>
+                        {{/if}}
+                      </div>
+                      <div class="extra">
+                        <button class="ui icon red basic button" {{action 'deleteFile' file}}>
+                          <i class="remove icon"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            {{else}}
+              <div class="ui fluid labeled input">
+                <label class="ui fluid huge label" style="{{labelStyle}}">
+                  <i class="big cloud upload icon"></i>
+                  Click or Drop files into this area to upload files
+                </label>
+                <input type="file" value="target.value" onchange={{action "selectFile"}} style="{{inputStyle}}"
+                       accept="{{accept}}" multiple={{multiple}}>
+              </div>
+              <br>
+            {{/each}}
+          
+          {{#if queue}}
+            
+            {{#if savingInProgress}}
+              <button class="ui labeled green icon loading button">Loading</button>
+            {{else}}
+            {{/if}}
+            <button class="ui labeled red icon button" {{action 'deleteAllFiles' }}>
+              <i class="remove icon"></i>
+              Remove All
+            </button>
+          {{/if}}
+        
+        </div>
+    </div>
+</div>
+
+<br>
+<div class="actions">
+    <div class="ui black deny button">
+        Cancel
+    </div>
+    <div class="ui positive right labeled icon button">
+    {{!--{{action 'saveAllFiles' }}>--}}
+        Save
+        <i class="checkmark icon"></i>
+    </div>
+</div>
+
+{{/ui-modal}}

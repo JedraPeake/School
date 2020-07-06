@@ -1,0 +1,205 @@
+ <style>
+  .floatLeft { width: 47%; float: left; }
+.floatRight {width: 47%; float: right; }
+.container { overflow: hidden; }
+
+    .ui.modal{
+        position: relative;
+        top: 0;
+        left: 0;
+        max-height: 100%;
+        overflow-y: auto;
+    }
+</style>
+{{#if isCreating}}
+   <div class="ui grid">
+  
+  <div class="sixteen wide column">
+        <div class="row">
+      <button class="ui right floated basic right labeled icon blue button" {{action 'editBtn' }}>
+  <i class="arrow right icon"></i>
+  View / Edit Existing Forms  
+</button>
+<div class="ui header">
+            <h1 class="font" style="color:black;">Create a New Form </h1>
+         </div>
+
+</div>
+</div></div>
+
+  <div class="ui grid">
+  
+  <div class="eight wide column">
+      <br>
+                <div class="fluid ui raised segment ">
+                    {{#if selectedCount}}
+              <div class="ui horizontal statistics">
+                <div class="statistic">
+                  <div class="value">
+                      1
+                    </div>
+              <div class="label">
+                Selected Questions ({{selectedCount}})
+                </div>
+              </div></div>
+              
+              <table class="ui single line table">
+  <thead>
+    <tr>
+      <th><center>Form Questions</center></th>
+      <th><center>Deselect</center></th>
+    </tr>
+  </thead>
+  <tbody>
+      
+ {{#each formQuest as |form|}}
+ <tr> 
+ <td><center>{{form.questionText}}</center></td>
+<td><center><div class="ui animated fade button"  {{action 'removeQuestion' form.id}} tabindex="0">
+     <div class="visible content"></div><div class="hidden content"><i class="angle double right icon"></i></div>
+        </div></center></td>
+
+ </tr>
+ {{/each}}
+  </tbody>
+</table>
+ {{else}}
+<div class="ui horizontal statistics" style="color:#0E6EB8;">
+<div class="statistic">
+    <div class="value">
+      1
+    </div>
+    <div class="label">
+     Select Questions from the Library 
+    </div>
+</div></div>
+ {{/if}}
+
+       {{!--<div class="ui header">--}}
+       {{!--     <h1 class="font" style="color:black;">Create a New Form</h1>--}}
+       {{!--  </div>--}}
+      <div class="ui form">
+          
+<div class="ui horizontal statistics">
+  <div class="statistic">
+    <div class="value">
+      2
+    </div>
+    <div class="label">
+Complete Form Details    </div>
+  </div></div>
+      {{!--<h3>Fill in Form Details</h3>--}}
+      
+      <div class="field"><h5>Form Name: </h5>
+      {{input type="textarea" cols="50" rows="2" value=formName placeholder="add text"}}
+      </div>
+      <div class="field"><h5>Form Description: </h5>
+      {{textarea type="textarea" cols="50" rows="2" value=formDesc placeholder="add text"}}
+      </div>
+      </div>
+<br><br>
+<div class="ui green button" {{action 'saveForm'}}>
+  <i class = "file alternate outline icon"></i>Save
+</div>
+{{#if done}}
+<h3 style="color:green;">Form has been created!</h3>
+                <br><button class="ui basic right labeled icon blue button" {{action 'editBtn' }}>
+  <i class="arrow right icon"></i>
+  View / Edit Forms  
+</button>
+{{!--<br><br> <p style="font-size:20px; color: green;"> Form has been saved</p>--}}
+{{/if}}
+</div>
+ </div>
+          
+  <div class="eight wide column">
+     
+   <span> 
+   {{!--<div class="ui header">--}}
+            {{!--<h1 class="font" style="color:black;">Create and Edit Forms</h1>--}}
+         
+          
+   {{!--<center>--}}
+{{!--   <center>--}}
+{{!--    <div class="fluid ui right floated basic  blue button" {{action 'editBtn'}}>--}}
+{{!--<i class="write icon"></i> Edit Existing Forms--}}
+{{!--</div> </center>--}}
+{{!--</center>--}}
+</span>
+{{!--<br> <br><br> <br><br><br><br><br><br><br><br>--}}
+
+ <div class="ui header">
+            <h2 style="color:black;"> Question Library</h2>
+         </div>
+<table class="ui fixed table">
+  <thead>
+    <tr>
+    <th><center>Add to Form</center></th>
+      <th><center>Question Title</center></th>
+      <th><center>View Description</center></th>
+    </tr>
+  </thead>
+  <tbody>
+ {{#each model as |question|}}
+ <tr> 
+ <td><center><div class="ui animated fade button"  {{action 'addQuestion' question.id}} tabindex="0">
+     <div class="visible content"></div><div class="hidden content"><i class="angle double left icon"></i></div>
+        </div></center></td>
+ <td><center>{{question.questionText}}</center></td>
+ {{!--<td><center>{{question.description}}</center></td>--}}
+ <td><center>{{view-question ID=question.id}}</center></td>
+
+ </tr>
+ {{/each}}
+  </tbody>
+</table>
+
+  </div>
+
+ </div>
+ {{else}}
+   
+<div class="ui grid">
+  
+  <div class="sixteen wide column">
+        <div class="row">
+      <button class="ui right floated basic labeled icon blue button" {{action 'editBtn' }}>
+  <i class="arrow left icon"></i>
+  Back 
+</button>
+<div class="ui header">
+            <h1 class="font" style="color:black;">Existing Forms </h1>
+         </div>
+
+</div></div></div>
+
+{{!--         <div class="ui blue button" {{action 'editBtn'}}>--}}
+{{!--  <i class = "plus icon"></i>Go Back--}}
+{{!--</div>--}}
+
+<table class="ui unstackable table" id='formTable' >
+  <thead>
+    <tr>
+      <th><center>Form Title</center></th>
+      <th><center>View Form Details</center></th>
+      <th><center>Edit Form Details</center></th>
+    </tr>
+  </thead>
+  <tbody>
+ {{#each existingForms as |form|}}
+ <tr> 
+ <td><center>{{form.name}}</center></td>
+<td><center><div class="ui animated fade button" tabindex="0">
+     <div class="visible content"></div><div class="hidden content"><i class="eye icon"></i></div>
+        </div></center></td>
+<td><center><div class="ui animated fade button" {{action 'editForm' form.id}} tabindex="0">
+     <div class="visible content"></div><div class="hidden content"><i class="pencil alternate icon"></i></div>
+        </div></center></td>
+ </tr>
+ {{/each}}
+  </tbody>
+</table>
+
+ {{!--</div></div>--}}
+ 
+ {{/if}}

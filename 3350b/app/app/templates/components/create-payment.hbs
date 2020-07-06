@@ -1,0 +1,145 @@
+<script>
+    // function disableFiveFifty() {
+    //     document.getElementById('threefiftybuttonclick').setAttribute("disabled","disabled");
+    //     document.getElementById('onefiftybuttonclick').setAttribute("disabled","disabled");
+    //     document.getElementById('seventyfivebuttonclick').setAttribute("disabled","disabled");
+    //     //  document.getElementById("threefiftybuttonclick").disabled = true;
+    //     //  document.getElementById("onefiftybuttonclick").disabled = true;
+    //     //  document.getElementById("seventyfivebuttonclick").disabled = true;
+    // }
+
+</script>
+
+<div class="center aligned twenty column grid container" style="margin:30px;">
+    <div class="ui eight mini ordered steps">
+        <div class = "completed step">
+            <div class="content">
+                  <div class="title">Terms</div>
+                  <div class="description">Terms and Agreements</div>
+            </div>
+        </div>
+        
+        <div class = "completed step">
+            <div class="content">
+                  <div class="title">Create Account</div>
+                  <div class="description">Username and Password</div>
+            </div>
+        </div>
+        
+        <div class = "completed step">
+            <div class="content">
+                  <div class="title">General Information</div>
+                  <div class="description">Fill in Information</div>
+            </div>
+        </div>
+        
+        <div class = "completed step">
+            <div class="content">
+                  <div class="title">Forms</div>
+                  <div class="description">Complete Form</div>
+            </div>
+        </div>
+        
+        <div class = "completed step">
+            <div class="content">
+                  <div class="title">Upload Photo</div>
+                  <div class="description">Upload Photos</div>
+            </div>
+        </div>
+        
+        <div class = "completed step">
+            <div class="content">
+                  <div class="title">Booking</div>
+                  <div class="description">Book Appoinment</div>
+            </div>
+        </div>
+        
+        <div class = "active step">
+            <div class="content">
+                  <div class="title">Payment</div>
+                  <div class="description">Payment Options</div>
+            </div>
+        </div>
+        
+        <div class = "disabled step">
+            <div class="content">
+                  <div class="title">Confirm</div>
+                  <div class="description">Information Confirmation</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="ui center aligned segment text container " id="signUpBox">
+          <div class="ui centered header">
+            <h1 class="font" style="color:black;">Payment Plan</h1>
+            
+            
+            <div class="ui centered cards">
+            {{!--onclick="disableFiveFifty()" --}}
+              <button {{action 'oneFiftyButton'}} class="ui card" id = "onefiftybuttonclick" >
+                <div class="content">
+                  <div class="header">Assessment Package</div>
+                  <div class="meta">$150.00</div>
+                  {{!--<div class="description">--}}
+                      <h6>
+                    Initial consult via email & video conference <br>
+                    Personal online account therapy Plan - accessed on your account <br>
+                    Education & Advice
+                    </h6>
+                  {{!--</div>--}}
+                </div>
+              </button>
+              <button {{action 'threeFiftyButton'}}  class="ui card" id="threefiftybuttonclick">
+                <div class="content">
+                  <div class="header">Assessment + 3 Sessions</div>
+                  <div class="meta">$350.00</div>
+                  {{!--<div class="description">--}}
+                      <h6>
+                    Initial consult via email & video conference <br>
+                    3 further online sessions via email & video conference <br>
+                    Personal online account therapy Plan - accessed on your account <br>
+                    Education & Advice
+                    </h6>
+                  {{!--</div>--}}
+                </div>
+              </button>
+              <button {{action 'fiftyFiveButton'}} class="ui card" id="fivefiftybuttonclick">
+                <div class="content">
+                  <div class="header">Assessment + 6 Sessions</div>
+                  <div class="meta">$550.00</div>
+                  {{!--<div class="description">--}}
+                      <h6>
+                    Initial consult via email & video conference <br>
+                    6 further online sessions via email & video conference <br>
+                    Personal online account therapy Plan - accessed on your account <br>
+                    Education & Advice
+                    </h6>
+                  {{!--</div>--}}
+                </div>
+              </button>
+              <button {{action 'seventyFiveButton'}} class="ui card" id="seventyfivebuttonclick">
+                <div class="content">
+                  <div class="header">Single Follow-up Appointments within 3 months of initial consultation</div>
+                  <div class="meta">$75.00</div>
+                  {{!--<div class="description">--}}
+                  {{!--  Jenny is a student studying Media Management at the New School--}}
+                  {{!--</div>--}}
+                </div>
+              </button>
+            </div>
+                      
+
+
+
+
+            
+          <br>
+          <br>
+          
+          </div>
+          {{payment-button}}
+              {{!--<button class="ui blue  medium button prev6">Previous</button>--}}
+              {{#link-to "landing-page"}}<button {{action 'deleteAccount'}} class="ui red medium button">Cancel</button>{{/link-to}}
+              <button class="ui blue  medium button next6">Next</button>
+        </div>

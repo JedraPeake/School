@@ -1,0 +1,360 @@
+{{!--{{home-menu}}--}}
+{{!--{{home-menu}}--}}
+
+<html>
+<head>
+  <!-- Standard Meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <!-- Site Properties -->
+  <title>Homepage - Semantic</title>
+  <link rel="stylesheet" type="text/css" href="../dist/components/reset.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/site.css">
+
+  <link rel="stylesheet" type="text/css" href="../dist/components/container.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/grid.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/header.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/image.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/menu.css">
+
+  <link rel="stylesheet" type="text/css" href="../dist/components/divider.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/dropdown.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/segment.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/button.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/list.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/icon.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/sidebar.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/transition.css">
+
+  <style type="text/css">
+    .hidden.menu {
+      display: none;
+    }
+    .masthead.segment {
+      min-height: 20px;
+      padding: 1em 0em;
+    }
+    .masthead .logo.item img {
+      margin-right: 1em;
+    }
+    .masthead .ui.menu .ui.button {
+      margin-left: 0.5em;
+    }
+    .masthead h1.ui.header {
+      margin-top: 3em;
+      margin-bottom: 0em;
+      font-size: 4em;
+      font-weight: normal;
+    }
+    .masthead h2 {
+      font-size: 1.7em;
+      font-weight: normal;
+    }
+    .ui.vertical.stripe {
+      padding: 8em 0em;
+    }
+    .ui.vertical.segment {
+      box-shadow: 0 1px 5px rgba(0,0,0,0.004), 0 1px 5px rgba(0,0,0,0.12);
+    }
+    .ui.secondary.pointing.menu{
+      border-bottom: none;
+    }
+    .ui.vertical.stripe h3 {
+      font-size: 2em;
+    }
+    .ui.vertical.stripe .button + h3,
+    .ui.vertical.stripe p + h3 {
+      margin-top: 3em;
+    }
+    .ui.vertical.stripe .floated.image {
+      clear: both;
+    }
+    .ui.vertical.stripe p {
+      font-size: 1.33em;
+    }
+    .ui.vertical.stripe .horizontal.divider {
+      margin: 3em 0em;
+    }
+    .quote.stripe.segment {
+      padding: 0em;
+    }
+    .quote.stripe.segment .grid .column {
+      padding-top: 5em;
+      padding-bottom: 5em;
+    }
+    .footer.segment {
+      padding: 5em 0em;
+    }
+    .secondary.pointing.menu .toc.item {
+      display: none;
+    }
+    @media only screen and (max-width: 700px) {
+      .ui.fixed.menu {
+        display: none !important;
+      }
+      .secondary.pointing.menu .item,
+      .secondary.pointing.menu .menu {
+        display: none;
+      }
+      .secondary.pointing.menu .toc.item {
+        display: block;
+      }
+      .masthead.segment {
+        min-height: 20px;
+      }
+      .masthead h1.ui.header {
+        font-size: 2em;
+        margin-top: 1.5em;
+      }
+      .masthead h2 {
+        margin-top: 0.5em;
+        font-size: 1.5em;
+      }
+    }
+  </style>
+
+  <script src="assets/library/jquery.min.js"></script>
+  <script src="../dist/components/visibility.js"></script>
+  <script src="../dist/components/sidebar.js"></script>
+  <script src="../dist/components/transition.js"></script>
+  <script>
+  $(document)
+    .ready(function() {
+      // fix menu when passed
+      $('.masthead')
+        .visibility({
+          once: false,
+          onBottomPassed: function() {
+            $('.fixed.menu').transition('fade in');
+          },
+          onBottomPassedReverse: function() {
+            $('.fixed.menu').transition('fade out');
+          }
+        })
+      ;
+      // create sidebar and attach to menu open
+      $('.ui.sidebar')
+        .sidebar('attach events', '.toc.item')
+      ;
+    })
+  ;
+  </script>
+</head>
+<body>
+
+<!-- Following Menu -->
+<div class="ui large top fixed hidden menu">
+  <div class="ui left floated image">
+    <img src="assets/images/logo.png" style= "width:170px; padding-left: 15px; padding-top:4px;">
+  </div>
+
+      
+  <div class="item">{{#link-to "landing-page"}}
+    Home
+  {{/link-to}}
+  </div>
+  
+  <a class="active item">{{#link-to "about"}}
+  
+    About
+  
+  {{/link-to}}
+  </a>
+  
+  <div class="item">{{#link-to "how-it-works"}}
+    How it works
+  {{/link-to}}
+  </div>
+  
+  <div class="item">
+    {{#link-to "services"}}
+    Services
+  {{/link-to}}
+  </div>
+  
+  <div class="item">
+    {{#link-to "faq"}}
+    FAQ
+   {{/link-to}}
+  </div>
+  
+  <div class="item">
+   {{#link-to "contact"}}
+      Contact
+    {{/link-to}}
+    </div>
+    
+  <div class="item">
+      <a href="http://marcottephysio.com/blog/" target="_blank">Blog</a>
+    </div>
+  
+  <div class="right menu">
+      <div class="item"><a>{{#link-to "login"}}<a class="ui button">Log in</a>{{/link-to}}</a></div>
+      <div class="item"><a>{{#link-to "create-account"}}<a class="ui primary button">Start Assesment</a>{{/link-to}}</a></div>
+    </div>
+  </div>
+
+
+<!-- Page Contents -->
+<div class="pusher">
+  <div class="ui vertical masthead center aligned segment">
+    <div class="ui left floated image">
+    <img src="assets/images/logo.png" style= "width:170px; padding-left: 15px; padding-top:4px;">
+  </div>
+    <div class="ui container">
+      <div class="ui large secondary pointing menu">
+        <a class="toc item">
+          <i class="sidebar icon"></i>
+        </a>
+        <a>{{#link-to "landing-page"}}
+  <a class="item">
+    Home
+  </a>
+  {{/link-to}}
+  </a>
+  
+  <a>{{#link-to "about"}}
+  <a class="active item">
+    About
+  </a>
+  {{/link-to}}
+  </a>
+  
+  <a>{{#link-to "how-it-works"}}
+  <a class="item">
+    How it works
+  </a>
+  {{/link-to}}
+  </a>
+  
+  <a>{{#link-to "services"}}
+  <a class="item">
+    Services
+  </a>
+  {{/link-to}}
+  </a>
+  
+  <a> {{#link-to "faq"}}
+   <a class="item">
+    FAQ
+    </a>
+   {{/link-to}}
+  </a>
+  
+  <a> {{#link-to "contact"}}
+    <a class="item">
+      Contact
+    </a>
+    {{/link-to}}
+  </a>
+  <a>
+    <a class ="item" href="http://marcottephysio.com/blog/" target="_blank">Blog</a>
+  </a>
+        <div class="right item">
+          <a>{{#link-to "login"}}<a class="ui button">Log in</a>{{/link-to}}</a>
+           <a>{{#link-to "create-account"}}<a class="ui primary button">Start Assesment</a>{{/link-to}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ui vertical stripe segment">
+    <div class="ui middle aligned stackable grid container">
+      <div class="row">
+        <div class="eight wide column">
+          <h3 class="ui header"><font size = "6">About Stephanie</font></h3>
+          <p>As a physiotherapist, Stephanie Marcotte has dedicated herself to helping others discover a
+            pain-free life by tapping into the power of their own body. Now, to help reach more people,
+            Stephanie has developed a unique online platform that allows her to share her expertise in a
+            convenient, effective, and personalized way.<br><br>
+            With over three decades of professional experience, Stephanie inspires her clients to move towards
+            a better life, giving them the tools they need to feel better. Stephanie has studied and
+            observed thousands of bodies in injury and pain over the years. When in pain, whether physical
+            or emotional - we stop moving. The body bears the burdens in life, both mentally
+            and physically.<br><br>
+            A keen observer of how the human body moves and works as a whole, Stephanie is dedicated to
+            helping others discover the ease of living a pain-free life. 
+            </p>
+          <h3 class="ui header"><font size = "6">Her treatment method is simple: A little way with a little movement.</font></h3>
+          <br>
+          <p>By utilizing movement from within your own body, Stephanie will help you return to a state of
+            well-being. Her custom-tailored work, which uses simple movement patterns without any force,
+            reminds your body of its proper design function. <br><br>
+            Once you start moving again, you’ll be inspired to keep going.<br><br>
+            A leader in the self-care movement, Stephanie’s expertise in the field of pain relief will give you
+            the knowledge and confidence you need to step into a better life.<br><br>
+            Through individualized consultation sessions, Stephanie works alongside you to help you
+            achieve your best health. She believes that your body knows how to heal itself and that you already
+            have everything you need to feel better about your body and your life.<br><br>
+            A little way with a little movement really will help you enjoy a life you never thought possible.<br><br>
+            Discover how Stephanie can help you today!
+        </p>
+          <h3 class="ui header"><font size = "6">What I Believe</font></h3>
+          <p>I believe movement is life <br><br>
+          I believe you can heal your body with a return to simple functional movement patterns<br><br>
+          I believe it is never too late to create change in a body and it can happen faster than you ever thought possible.<br><br>
+          I believe your body know what it needs<br><br>
+          I believe every system in your body relies on a functional musculoskeletal system. The musculoskeletal system is the body system that provides the
+           framework for movement and stability.<br><br>
+          All systems in the body work on movement:<br>
+           <div class = "ui bulleted list">
+             <div class = "item">the heart beats</div>
+             <div class = "item">the lungs breathe</div>
+             <div class = "item">the stomach grinds</div>
+             <div class = "item">the colon transports</div>
+             <div class = "item">the blood flows</div>
+             <div class = "item">he nerves conduct</div>
+             <div class = "item">the muscles contract</div>
+           </div>
+          Pain in the body begins when movement patterns are impaired.<br><br>
+          Restore your bodies proper design for movement and the pain will cease.<br><br>
+          No fancy machinery or pills required; your body already has everything it
+          needs to heal.<br><br>
+          I believe you need to trust yourself; you have the ability to help yourself.<br><br>
+          I believe you need to take responsibility for your present state of health.<br><br>
+          I believe with your commitment to change, you can become free of pain.<br><br>
+          I believe your age does not limit you from feeling good again.<br><br>
+          It is never too late to begin.<br><br> Let's get started!
+          <h3 class="ui left aligned header"><a>{{#link-to "create-account"}}<a class="ui huge primary button">Start Now!</a>{{/link-to}}</a></h3>
+          </p>
+        </div>
+        <div class="six wide right floated column">
+          <img src="assets/images/stephanie.jpg" class="ui large bordered rounded image">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{!--<div class="ui vertical footer segment">--}}
+  {{!--  <div class="ui container">--}}
+  {{!--    <div class="ui stackable divided equal height stackable grid">--}}
+  {{!--      <div class="three wide column">--}}
+  {{!--        <h4 class="ui header">About</h4>--}}
+  {{!--        <div class="ui link list">--}}
+  {{!--          <a href="#" class="item">Sitemap</a>--}}
+  {{!--          <a href="#" class="item">Contact Us</a>--}}
+  {{!--          <a href="#" class="item">Religious Ceremonies</a>--}}
+  {{!--          <a href="#" class="item">Gazebo Plans</a>--}}
+  {{!--        </div>--}}
+  {{!--      </div>--}}
+  {{!--      <div class="three wide column">--}}
+  {{!--        <h4 class="ui header">Services</h4>--}}
+  {{!--        <div class="ui link list">--}}
+  {{!--          <a href="#" class="item">Banana Pre-Order</a>--}}
+  {{!--          <a href="#" class="item">DNA FAQ</a>--}}
+  {{!--          <a href="#" class="item">How To Access</a>--}}
+  {{!--          <a href="#" class="item">Favorite X-Men</a>--}}
+  {{!--        </div>--}}
+  {{!--      </div>--}}
+  {{!--      <div class="seven wide column">--}}
+  {{!--        <h4 class="ui header">Footer Header</h4>--}}
+  {{!--        <p>Extra space for a call to action inside the footer that could help re-engage users.</p>--}}
+  {{!--      </div>--}}
+  {{!--    </div>--}}
+  {{!--  </div>--}}
+  {{!--</div>--}}
+</div>
+</body>
+</html>

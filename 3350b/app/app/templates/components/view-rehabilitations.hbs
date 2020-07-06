@@ -1,0 +1,360 @@
+<style>
+  .floatLeft { width: 47%; float: left; }
+.floatRight {width: 47%; float: right; }
+.container { overflow: hidden; }
+</style>
+{{#if viewRehabilitation}}
+  <button class="ui basic labeled icon blue button" {{action 'rehabDone' }}>
+    <i class="arrow left icon"></i>
+    Back 
+  </button>
+  
+  <div class="ui centered header">
+            <h1 class="font" style="color:black;">Details of {{currentSelectedRehabPlan.name}} Exercise Menu</h1>
+          </div>
+          
+  <table id="example" class="ui blue table">
+  <thead>
+    <tr><th><div class="ui centered header" style="color:#0E6EB8;">Description</div></th>
+    <th><div class="ui centered header" style="color:#0E6EB8;">Created by</div></th>
+    <th><div class="ui centered header" style="color:#0E6EB8;">Goal</div></th>
+    <th><div class="ui centered header" style="color:#0E6EB8;">Exercises</div></th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><center>{{currentSelectedRehabPlan.description}}</center></td>
+      <td><center>{{currentSelectedRehabPlan.authorName}}</center></td>
+      <td><center>{{currentSelectedRehabPlan.goal}}</center></td>
+      <td><center>
+         {{#each currentExList as |ex| }}
+          {{ex.name}}<br>
+        {{/each}}
+      </center></td>
+    </tr>
+    
+  </tbody>
+</table>
+
+  
+  
+  
+  {{!--<div class="ui compact raised segment ">--}}
+  {{!--    <a class="ui blue ribbon label">General Exercise Menu Plan Information</a>--}}
+  {{!--    <div class="ui list">--}}
+  {{!--    <div class="item">--}}
+        
+  {{!--      <div class="item">--}}
+  {{!--        <h4>Exercise Menu Plan Name</h4>--}}
+  {{!--        <div class="content">--}}
+  {{!--          {{currentSelectedRehabPlan.name}}--}}
+  {{!--        </div>--}}
+  {{!--      </div>--}}
+        
+  {{!--      <br>--}}
+        
+  {{!--      <div class="item">--}}
+  {{!--        <h4>Exercise Menu Plan Description</h4>--}}
+  {{!--        <div class="content">--}}
+  {{!--          {{currentSelectedRehabPlan.description}}--}}
+  {{!--        </div>--}}
+  {{!--      </div>--}}
+        
+  {{!--      <br>--}}
+        
+  {{!--      <div class="item">--}}
+  {{!--        <h4>Exercise Menu Plan Goals</h4>--}}
+  {{!--        <div class="content">--}}
+  {{!--          {{currentSelectedRehabPlan.goal }}--}}
+  {{!--        </div>--}}
+  {{!--      </div>--}}
+  {{!--      <br>--}}
+        
+  {{!--      <br>--}}
+  {{!--    </div>--}}
+  {{!--    </div>--}}
+  {{!--</div>--}}
+  
+  
+  {{!--  <div class="ui compact raised segment ">--}}
+  {{!--    <a class="ui blue ribbon label">Exercise Menu Plan Exercises</a>--}}
+  {{!--    <div class="ui list">--}}
+  {{!--    <div class="item">--}}
+  {{!--      <br>--}}
+  {{!--      {{#each currentExList as |ex| }}--}}
+  {{!--        <div class="item">--}}
+  {{!--        <h4>{{ex.name}}</h4>--}}
+  {{!--      </div>--}}
+  {{!--      <br>--}}
+        
+  {{!--      {{/each}}--}}
+        
+  {{!--      <br>--}}
+  {{!--    </div>--}}
+  {{!--    </div>--}}
+  {{!--</div>--}}
+  
+  <p>Assign this Exercise Menu to Clients</p>
+  {{#ui-dropdown class="fluid multiple selection" id="dropdownClientOnMore" }}
+    <i class="dropdown icon"></i>
+    <div class="default text">Select Clients</div>
+    <div class="menu">
+      {{#each clientListData as |item|}}
+        <div data-value="{{item.id}}" class="item"{{ action 'itemClicked' item.id }} >
+          {{item.data.givenName}} {{item.data.familyName}}
+        </div>
+      {{/each}}
+    </div>
+  {{/ui-dropdown}}
+  
+  <br>
+  <div class="ui green button" {{action 'assignRehab'}}>
+    <i class = "file alternate outline icon"></i>Save
+  </div>
+  
+{{else}}
+
+
+{{#if isCreating}}
+<button class="ui right floated basic labeled icon blue button" {{action 'editBtn' }}>
+  <i class="arrow left icon"></i>
+  Back 
+</button>
+
+    <h1>Existing Exercise Menu Plans</h1>
+    
+    <table id="example" class = "ui unstackable table" cellspacing="0" width="100%">
+    {{!--<table class="ui selectable line table" >--}}
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Goal</th>
+        <th>Time Frame</th>
+        <th>Author Name</th>
+        <th>More</th>
+        <th>Edit</th>
+        <th>Remove</th>
+        
+    </tr>
+    </thead>
+    
+    <tbody>
+        {{#each rehabilitationData as |rehabilitationPlan|}}
+        <tr> 
+        
+        <td>{{rehabilitationPlan.name}}</td>
+        <td>{{rehabilitationPlan.description}}</td>
+        <td>{{rehabilitationPlan.goal}}</td>
+        <td>{{exerrehabilitationPlancise.timeFrameToComplete}}</td>
+        <td>{{rehabilitationPlan.authorName}}</td>
+        
+        <td>
+            <div class="ui animated fade button" tabindex="0" 
+            {{action 'loadRehab' rehabilitationPlan.id }}
+                  title="View">
+              <div class="visible content"></div>
+              <div class="hidden content"><i class="arrow right icon"></i>
+              </div>
+            </div>
+        </td>
+        
+        <td>{{edit-rehabilitation-menu ID=rehabilitationPlan.id}}</td>
+        <td>{{delete-rehabilitation-menu ID=rehabilitationPlan.id}}</td>
+        
+        </tr> 
+        {{/each}}
+    </tbody>
+    </table>
+   {{else}}
+   
+   <div class="ui grid">
+  
+  <div class="sixteen wide column">
+        <div class="row">
+      <button class="ui right floated basic right labeled icon blue button" {{action 'editBtn' }}>
+  <i class="arrow right icon"></i>
+  View / Edit Existing Exercise Menus 
+</button>
+<div class="ui header">
+            <h1 class="font" style="color:black;">Create a New Exercise Menu </h1>
+         </div>
+
+</div>
+</div></div>
+
+{{!-- <h1>Create a New Exercise Menu </h1><button class="ui left floated basic labeled icon blue button" {{action 'editBtn'}}>--}}
+{{!--<i class="right icon"></i> Edit Existing Exercise Menus--}}
+{{!--</button>--}}
+     
+    <br>
+    <br>
+    
+    <br>
+    
+    {{!--<div class="container">--}}
+    {{!--        <div class="floatLeft">--}}
+              
+              <div class = "ui grid">
+          <div class="eight wide column">
+            <div class="fluid ui raised segment ">
+            
+              {{#if selectedCount}}
+              
+              <div class="ui horizontal statistics">
+                <div class="statistic">
+                  <div class="value">
+                      1
+                    </div>
+              <div class="label">
+                Selected Exercises ({{selectedCount}})
+                </div>
+              </div></div>
+    
+                {{!--<h2 style="color:#0E6EB8;">1- Selected Exercises ({{selectedCount}})</h2>--}}
+                <table class="ui selectable line table" id="table1Head">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>View</th>
+                    <th>Deselect</th>
+                </tr>
+                </thead>
+                <tbody>
+                  {{#each exerciseSelectListData as |exercise|}}
+                    <tr> 
+                    
+                    <td>{{exercise.name}}</td>
+                    <td></td>
+                    <td>
+                        <div class="ui animated fade button" tabindex="0" 
+                          {{action 'deselectEx2' exercise.id}}
+                          title="View">
+                          <div class="visible content"></div>
+                          <div class="hidden content"><i class="arrow right icon"></i></div>
+                        </div>
+                    
+                    </td>
+                    
+                    </tr> 
+                    {{/each}}
+                </tbody>
+                </table>
+                {{else}}
+                <div class="ui horizontal statistics" style="color:#0E6EB8;">
+<div class="statistic">
+    <div class="value">
+      1
+    </div>
+    <div class="label">
+     Select Exercises from the Library 
+    </div>
+  </div></div>
+                {{!--<h2 style="color:#0E6EB8;">1- Select an Exercise from the Library </h2>--}}
+                 
+              {{/if}}
+                
+                <div class="ui form">
+                <div class="ui horizontal statistics">
+  <div class="statistic">
+    <div class="value">
+      2
+    </div>
+    <div class="label">
+Complete Exercise Menu Details    </div>
+  </div></div>
+                  {{!--<h2 style="color:#0E6EB8;">2- Complete the Exercise Menu Details</h2>--}}
+                  <div class="field"><h5>Exercise Menu Name: </h5>
+                  {{input type="textarea" cols="50" rows="2" value=name placeholder="Give this menu a name"}}
+                  </div>
+                  <div class="field"><h5>Exercise Menu Author Name: </h5>
+                  {{input type="textarea" cols="50" rows="2" value=author placeholder="Created by"}}
+                  </div>
+                  <div class="field"><h5>Exercise Menu Description: </h5>
+                  {{textarea type="textarea" cols="50" rows="2" value=description placeholder="Add a exercise menu description"}}
+                  </div>
+                  <div class="field"><h5>Exercise Menu Goals: </h5>
+                  {{textarea type="textarea" cols="50" rows="2" value=goal placeholder="Add the exercise menu goals"}}
+                  </div>
+                </div>
+              
+                <div class="ui horizontal statistics">
+  <div class="statistic">
+    <div class="value">
+      3
+    </div>
+    <div class="label">
+      Select Clients
+    </div>
+  </div>
+</div>
+                {{!--<h2 style="color:#0E6EB8;">3- Select Clients</h2>--}}
+                {{#ui-dropdown class="fluid multiple selection" id="dropdownClient" }}
+                  <i class="dropdown icon"></i>
+                  <div class="default text">Select Clients</div>
+                  <div class="menu">
+                    {{#each clientListData as |item|}}
+                      <div data-value="{{item.id}}" class="item"{{ action 'itemClicked' item.id }} >
+                        {{item.data.givenName}} {{item.data.familyName}}
+                      </div>
+                    {{/each}}
+                  </div>
+                {{/ui-dropdown}}
+                
+                <br>
+                <br>
+           <div class="item">  
+                <div class="ui green button" {{action 'saveExMenu'}}>
+                  <i class = "save outline icon"></i>Save
+                </div>
+                {{#if saved}}
+                <h3 style="color:green;">Exercise Menu has been created!</h3>
+                <br><button class="ui basic right labeled icon blue button" {{action 'editBtn' }}>
+  <i class="arrow right icon"></i>
+  View / Edit Existing Exercise Menus 
+</button>
+                {{/if}}
+                </div>
+              </div>
+            </div>
+             {{!--<div class="floatRight">--}}
+             <div class="eight wide column">
+          {{!--<div class="row">--}}
+              <h2>Exercise Library</h2>
+              
+              <table id="example" class="ui selectable line table" cellspacing="0" width="100%">
+                <thead>
+                <tr>
+                    {{!--<th>View</th>--}}
+                    <th><center>Add to Exercise Menu</center></th>
+                    <th><center>Exercise Name</center></th>
+                </tr>
+                </thead>
+                
+                <tbody>
+                    {{#each exerciseListData as |exercise|}}
+                    <tr> 
+                    
+                    {{!--<td>VIEW</td>--}}
+                    
+                    <td><center>
+                        <div class="ui animated fade button" tabindex="0" 
+                          {{action 'selectEx2' exercise.id}}
+                          title="View">
+                          <div class="visible content"></div>
+                          <div class="hidden content"><i class="arrow left icon"></i></div>
+                        </div>
+                    </center></td>                    
+                    <td><center>{{exercise.name}}</center></td>
+
+                    </tr> 
+                    {{/each}}
+                </tbody>
+                </table>
+                
+            {{!--</div>--}}
+            </div>
+          </div>
+ 
+ {{/if}}
+{{/if}}

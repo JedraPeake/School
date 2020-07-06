@@ -1,0 +1,159 @@
+<div class="center aligned twenty column grid container" style="margin:30px;">
+    <div class="ui eight mini ordered steps">
+        <div class = "completed step">
+            <div class="content">
+                  <div class="title">Terms</div>
+                  <div class="description">Terms and Agreements</div>
+            </div>
+        </div>
+        
+        <div class = "completed step">
+            <div class="content">
+                  <div class="title">Create Account</div>
+                  <div class="description">Username and Password</div>
+            </div>
+        </div>
+        
+        <div class = "completed step">
+            <div class="content">
+                  <div class="title">General Information</div>
+                  <div class="description">Fill in Information</div>
+            </div>
+        </div>
+        
+        <div class = "active step">
+            <div class="content">
+                  <div class="title">Forms</div>
+                  <div class="description">Complete Form</div>
+            </div>
+        </div>
+        
+        <div class = "disabled step">
+            <div class="content">
+                  <div class="title">Upload Photo</div>
+                  <div class="description">Upload Photos</div>
+            </div>
+        </div>
+        
+        <div class = "disabled step">
+            <div class="content">
+                  <div class="title">Booking</div>
+                  <div class="description">Book Appoinment</div>
+            </div>
+        </div>
+        
+        <div class = "disabled step">
+            <div class="content">
+                  <div class="title">Payment</div>
+                  <div class="description">Payment Options</div>
+            </div>
+        </div>
+        
+        <div class = "disabled step">
+            <div class="content">
+                  <div class="title">Confirm</div>
+                  <div class="description">Information Confirmation</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="ui left aligned  segment text container " id="signUpBox">
+
+          <div class="ui centered header">
+            <h1 class="font" style="color:black;">Please fill out the following</h1>
+          </div>
+          <br>
+            
+            <form class="ui form">
+                
+            {{!--------------------------------------------------------------------------------------------------------}}
+                
+
+              
+{{#each quests as |question index|}}
+
+<br/><br/>
+
+
+<div align="center">
+<div class="ui form">
+      {{#if question.isWritten }}
+<h4>{{question.questionText}}</h4>
+<label>{{question.helpDescription}}</label>
+{{textarea type="textarea" col="50" rows="4"}}
+{{/if}}
+    {{#if question.isAgree }}
+    <label>{{question.questionText}}</label>
+    <br/>
+    <label>{{question.helpDescription}}</label>
+    <div class="inline fields">
+    <div class="field">
+    <input type='radio' name=question.questionText checked="checked" {{action "setAgreeAnswer" 'Strongly Agree' index on='change'}} >
+  <label>Strongly Agree</label>
+    </div>
+    <div class="field">
+       <input type='radio' name=question.questionText {{action "setAgreeAnswer" 'Agree' index on='change'}}>
+        <label>Agree</label>
+    </div>
+    <div class="field">
+       <input type='radio' name=question.questionText {{action "setAgreeAnswer" 'Neither' index on='change'}}>
+        <label>Neither</label>
+    </div>
+    <div class="field">
+       <input type='radio' name=question.questionText {{action "setAgreeAnswer" 'Disagree' index on='change'}}>
+        <label>Disagree</label>
+    </div>
+    <div class="field">
+       <input type='radio' name=question.questionText {{action "setAgreeAnswer" 'Strongly Disagree' index on='change'}}>
+        <label>Strongly Disagree</label>
+    </div>
+    </div>
+    {{/if}}
+{{#if question.isYes}}
+
+
+    <h4>{{question.questionText}}</h4>
+    <br/>
+    <label>{{question.helpDescription}}</label>
+    <div class="inline fields">
+    <div class="field">
+        <input type="radio" name={{question.questionText}} {{action 'setAgreeAnswer' 'Yes' index}} checked="checked">
+        <label>Yes</label>
+    </div>
+    <div class="field">
+        <input type="radio" name={{question.questionText}} {{action 'setAgreeAnswer' 'No' index}} >
+        <label>No</label>
+    </div>
+    </div>
+  
+
+
+{{/if}}
+{{#if question.isMultiple}}
+
+{{/if}}
+  
+</div>
+</div>
+
+
+{{/each}}
+              
+     {{!--------------------------------------------------------------------------------------------------------}}
+              
+            </form>
+<div class="ui centered header">
+  <button {{action 'confirmIntroForm'}}>Temporary Button</button>
+              {{!--<button class="ui blue  medium button prev3">Previous</button>--}}
+              <button class = "ui red medium button">Cancel</button>
+              <button class="ui blue  medium button next3">Next</button>
+</div>
+
+
+
+
+
+
+
+        </div>

@@ -1,0 +1,64 @@
+{{!--<center>--}}
+
+<div class="ui two top attached buttons">
+  <button class="ui right floated   primary basic  button" {{action 'openModal'}}>
+   <i class = "plus icon"></i> Create a New Question
+</button>
+{{!--</center>--}}
+
+
+<button class ="ui left floated  primary basic  button">
+{{#link-to "intro-form"}}  <i class = "eye icon"></i> View the Current Introduction Form {{/link-to}}
+  </button>
+ 
+
+</div>
+
+
+{{#ui-modal name="newQuest" class="newQuest" }}
+  <div class="header">
+    Creating new question
+  </div>
+  <div class="content">
+    <div class="ui form">
+      <div class="field">
+        <label>Question</label>
+        {{input type="textarea" cols="50" rows="2" value = quest placeholder="add text"}}
+      </div>
+          <div class="inline fields">
+          <label>Question Type</label>
+        <select class="ui dropdown" onchange={{action "typeChange" value="target.value"}}>
+        <option value="5aba73e6aca2eb1829484512">Written</option>
+        <option value="5aba6a88aca2eb1829484508">Agree/Disagree</option>
+        <option value="5aba6a99aca2eb1829484509">Yes/No</option>
+        <option value="5aba6a7eaca2eb1829484507">Multiple Choice</option>
+         </select>
+        </div>
+        <div class="field">
+          <label>Order</label>
+          {{input type="number" min="1"  value=order}}
+        </div>
+<div class="field">
+
+{{textarea type="textarea" cols="50" rows="2" value=typeName}}
+  
+</div>
+
+<div class="field">
+        <label>Help Description</label>
+        {{textarea type="textarea" cols="50" rows="2" value = help placeholder="add text"}}
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="actions">
+    <div class="ui deny button">
+      Cancel
+    </div>
+    <div class="ui positive right labeled icon button">
+      Save
+      <i class="checkmark icon"></i>
+    </div>
+  </div>
+{{/ui-modal}}
+

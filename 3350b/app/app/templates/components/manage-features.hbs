@@ -1,0 +1,61 @@
+{{#if MF001IsPermitted }}
+
+  {{#if isDataImporting}}
+    {{import-system-features flag = isDataImporting}}
+  {{else}}
+
+    <div class="ui grid">
+      <div class="eight wide column">
+        <h2 class="ui header" style="margin-top: 2px;">Manage System Features</h2>
+      </div>
+      <div class="four wide column right aligned">
+        {{add-new-feature}}
+      </div>
+      <div class="four wide column right aligned">
+        <button class="ui button" {{action 'import'}}>
+          Import System Features
+        </button>
+      </div>
+    </div>
+
+
+    <table class="ui table" style="margin-top: 25px;">
+      <thead>
+      <tr>
+        <th>System Role Name</th>
+        <th></th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+
+      {{#each rolePermissionModel as |oneFeature|}}
+        <tr>
+          <td>
+            {{oneFeature.code}}
+          </td>
+          <td>
+            {{oneFeature.sysFeature}}
+          </td>
+          <td class="right aligned">
+            {{delete-feature ID=oneFeature.id }}
+          </td>
+        </tr>
+      {{/each}}
+      </tbody>
+    </table>
+
+  {{/if}}
+
+{{else}}
+  <div class="ui center aligned raised segment">
+    <div class="ui icon header">
+      <i class="protect icon"></i>
+      Permission Denied
+    </div>
+    <div>
+      <p>This feature (MF001) is not allowed for your account.</p>
+      <p>Please contact the system administrator for more information.</p>
+    </div>
+  </div>
+{{/if}}

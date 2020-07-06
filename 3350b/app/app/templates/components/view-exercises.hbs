@@ -1,0 +1,341 @@
+<style>
+  .item.content{
+    padding: 5px;
+  }
+
+</style>
+
+
+{{!--<script src="https://code.jquery.com/jquery-1.12.4.js"></script>--}}
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+{{!--<script src="https://cdn.datatables.net/1.10.16/js/dataTables.semanticui.min.js"></script>--}}
+{{!--<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/semantic.min.js"></script>--}}
+
+{{#if viewExercise}}
+<button class="ui basic labeled icon blue button" {{action 'profileDone' }}>
+  <i class="arrow left icon"></i>
+  Back 
+</button>
+
+          <div class="ui centered header">
+            <h1 class="font" style="color:black;">Details of {{name}} Exercise</h1>
+          </div>
+{{!--</div>--}}
+
+
+<table class="ui blue table">
+  <thead>
+    <tr><th><div class="ui centered header" style="color:#0E6EB8;">Description</div></th>
+    <th><div class="ui centered header" style="color:#0E6EB8;">Objectives</div></th>
+    <th><div class="ui centered header" style="color:#0E6EB8;">Action Steps</div></th>
+    <th><div class="ui centered header" style="color:#0E6EB8;">Location</div></th>
+    <th><div class="ui centered header" style="color:#0E6EB8;">Frequency</div></th>
+    <th><div class="ui centered header" style="color:#0E6EB8;">Duration</div></th>
+    <th><div class="ui centered header" style="color:#0E6EB8;">Repetitions</div></th>
+    
+  </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><center>{{description}}</center></td>
+      <td><center>{{objectives}}</center></td>
+      <td><center>{{authorSteps}}</center></td>
+      <td><center>{{location}}</center></td>
+      <td><center>{{frequency}}</center></td>
+      <td><center>{{duration}}</center></td>
+      <td><center>{{reps}}</center></td>
+    </tr>
+    
+  </tbody>
+</table>
+
+{{!--<div class="ui center aligned  segment text container ">--}}
+<div class="ui blue compact raised segment ">
+  
+
+  
+<div class="item">
+  <div class="ui centered header">
+    
+      <h2 style="color:#0E6EB8;">Exercise Photos</h2>
+          </div>
+          
+      {{!--<i class="users icon"></i>--}}
+      <div class="content">
+        {{#each filterImages as |singleImage|}}
+          <img src="{{singleImage.imageData}}" width="920px">
+        {{/each}}
+      </div>
+    </div>
+    
+   </div> 
+
+{{!--<div class="ui unstackable items">--}}
+{{!--  <div class="item">--}}
+{{!--    <div class="content">--}}
+{{!--      <a class="header"> <font color="#3385ff">Exercise Description</font></a>--}}
+{{!--      <div class="meta">--}}
+        {{!--<span>{{description}}</span>--}}
+{{!--      </div>--}}
+{{!--      <div class="description">--}}
+{{!--        <p>{{description}}</p>--}}
+{{!--      </div>--}}
+{{!--      <div class="extra">--}}
+        {{!--Additional Details--}}
+{{!--      </div>--}}
+{{!--    </div>--}}
+{{!--  </div>--}}
+{{!--  <div class="item">--}}
+{{!--    <div class="content">--}}
+{{!--      <a class="header"><font color="#3385ff">Objectives</font></a>--}}
+{{!--      <div class="meta">--}}
+        {{!--<span>Description</span>--}}
+{{!--      </div>--}}
+{{!--      <div class="description">--}}
+{{!--        <p>{{objectives}}</p>--}}
+{{!--      </div>--}}
+{{!--      <div class="extra">--}}
+        {{!--Additional Details--}}
+{{!--      </div>--}}
+{{!--    </div>--}}
+{{!--  </div>--}}
+  
+{{!--  <div class="item">--}}
+{{!--    <div class="content">--}}
+{{!--      <a class="header"><font color="#3385ff">Action Steps</font></a>--}}
+{{!--      <div class="meta">--}}
+        {{!--<span>Description</span>--}}
+{{!--      </div>--}}
+{{!--      <div class="description">--}}
+{{!--        <p>{{authorSteps}}</p>--}}
+{{!--      </div>--}}
+{{!--      <div class="extra">--}}
+        {{!--Additional Details--}}
+{{!--      </div>--}}
+{{!--    </div>--}}
+{{!--  </div>--}}
+  
+{{!--  <div class="item">--}}
+{{!--    <div class="content">--}}
+{{!--      <a class="header"><font color="#3385ff">Exercise Location</font></a>--}}
+{{!--      <div class="meta">--}}
+        {{!--<span>Description</span>--}}
+{{!--      </div>--}}
+{{!--      <div class="description">--}}
+{{!--        <p>{{location}}</p>--}}
+{{!--      </div>--}}
+{{!--      <div class="extra">--}}
+        {{!--Additional Details--}}
+{{!--      </div>--}}
+{{!--    </div>--}}
+{{!--  </div>--}}
+  
+  
+{{!--  <div class="item">--}}
+{{!--    <div class="content">--}}
+{{!--      <a class="header"><font color="#3385ff">Exercise Frequency</font></a>--}}
+{{!--      <div class="meta">--}}
+        {{!--<span>Description</span>--}}
+{{!--      </div>--}}
+{{!--      <div class="description">--}}
+{{!--        <p>{{frequency}}</p>--}}
+{{!--      </div>--}}
+{{!--      <div class="extra">--}}
+        {{!--Additional Details--}}
+{{!--      </div>--}}
+{{!--    </div>--}}
+{{!--  </div>--}}
+  
+{{!--  <div class="item">--}}
+{{!--    <div class="content">--}}
+{{!--      <a class="header"><font color="#3385ff">Exercise Duration</font></a>--}}
+{{!--      <div class="meta">--}}
+        {{!--<span>Description</span>--}}
+{{!--      </div>--}}
+{{!--      <div class="description">--}}
+{{!--        <p>{{duration}}</p>--}}
+{{!--      </div>--}}
+{{!--      <div class="extra">--}}
+        {{!--Additional Details--}}
+{{!--      </div>--}}
+{{!--    </div>--}}
+{{!--  </div>--}}
+  
+  
+{{!--  <div class="item">--}}
+{{!--    <div class="content">--}}
+{{!--      <a class="header"><font color="#3385ff	">Exercise Repetitions</font></a>--}}
+{{!--      <div class="meta">--}}
+        {{!--<span>Description</span>--}}
+{{!--      </div>--}}
+{{!--      <div class="description">--}}
+{{!--        <p>{{reps}}</p>--}}
+{{!--      </div>--}}
+{{!--      <div class="extra">--}}
+        {{!--Additional Details--}}
+{{!--      </div>--}}
+{{!--    </div>--}}
+{{!--  </div>--}}
+  
+{{!--  {{#each filterImages as |singleImage|}}--}}
+         
+       
+{{!--<div class="item">--}}
+{{!--    <div class="image">--}}
+{{!--       <img src="{{singleImage.imageData}}" width="800px">--}}
+{{!--    </div>--}}
+{{!--  </div>--}}
+{{!--   {{/each}}--}}
+  
+{{!--</div>--}}
+
+
+
+
+{{!--<div class="ui compact raised segment ">--}}
+  
+{{!--  <a class="ui big blue ribbon label">--}}
+{{!--    <div class="item">--}}
+{{!--      <div class="content">--}}
+{{!--        Details of {{name}} Exercise--}}
+{{!--      </div>--}}
+{{!--    </div>--}}
+{{!--  </a>--}}
+  
+  {{!--<button class="right floated large blue circular ui icon button">--}}
+  {{!--  <i class="icon write"></i>--}}
+  {{!--</button>--}}
+  
+{{!--  <div class="ui list">--}}
+{{!--    <div class="item">--}}
+{{!--      <h4>Objectives</h4>--}}
+{{!--      <div class="content">--}}
+{{!--        {{objectives}} --}}
+{{!--      </div>--}}
+{{!--    </div>--}}
+{{!--    <br>--}}
+{{!--    <hr>--}}
+{{!--    <br>--}}
+    
+{{!--    <div class="item">--}}
+{{!--      <h4>Location</h4>--}}
+{{!--      <div class="content">--}}
+{{!--        {{location}}--}}
+{{!--      </div>--}}
+{{!--    </div>--}}
+{{!--    <br>--}}
+{{!--    <hr>--}}
+{{!--    <br>--}}
+
+{{!--    <div class="item">--}}
+{{!--      <h4>Sets</h4>--}}
+{{!--      <div class="content">--}}
+{{!--        {{sets}}--}}
+{{!--      </div>--}}
+{{!--    </div>--}}
+{{!--    <br>--}}
+{{!--    <hr>--}}
+{{!--    <br>--}}
+    
+{{!--    <div class="item">--}}
+{{!--      <h4>Reps</h4>--}}
+{{!--      <div class="content">--}}
+{{!--        {{reps}}--}}
+{{!--      </div>--}}
+{{!--    </div>--}}
+{{!--    <br>--}}
+{{!--    <hr>--}}
+{{!--    <br>--}}
+    
+{{!--    <div class="item">--}}
+{{!--      <h4>Duration</h4>--}}
+{{!--      <div class="content">--}}
+{{!--        {{duration}}--}}
+{{!--      </div>--}}
+{{!--    </div>--}}
+{{!--    <br>--}}
+{{!--    <hr>--}}
+{{!--    <br>--}}
+    
+{{!--    <div class="item">--}}
+{{!--      <h4>Description</h4>--}}
+{{!--      <div class="content">--}}
+{{!--        {{description}}--}}
+{{!--      </div>--}}
+{{!--    </div>--}}
+{{!--    <br>--}}
+{{!--    <hr>--}}
+{{!--    <br>--}}
+    
+{{!--    </div>--}}
+    
+
+{{!--<div class="ui  raised segment ">--}}
+{{!--    <div class="item">--}}
+{{!--      <h4>Exercise Photos</h4>--}}
+      {{!--<i class="users icon"></i>--}}
+{{!--      <div class="content">--}}
+{{!--        {{#each filterImages as |singleImage|}}--}}
+{{!--          <img src="{{singleImage.imageData}}" width="800px">--}}
+{{!--        {{/each}}--}}
+{{!--      </div>--}}
+{{!--    </div>--}}
+{{!--  </div>--}}
+    
+  
+{{else}}
+{{add-exercise}}
+<h1>Exercise Library</h1>  
+ 
+
+
+
+{{!--<br>--}}
+{{!--<table id="exTable" class="ui exTable celled table" cellspacing="0" width="100%">--}}
+<table id="example" class = "ui unstackable table" cellspacing="0" width="100%">
+<thead>
+<tr>
+    <th>Exercise Name</th>
+    <th>Objectives</th>
+    <th>Location</th>
+    <th>Sets</th>
+    <th>Reps</th>
+    <th>Duration</th>
+    <th>More</th>
+    <th>Edit</th>
+    <th>Remove</th>
+    
+</tr>
+</thead>
+
+<tbody>
+    {{#each exerciseData as |exercise|}}
+    <tr> 
+    
+    <td>{{exercise.name}}</td>
+    <td>{{exercise.objectives}}</td>
+    <td>{{exercise.location}}</td>
+    <td>{{exercise.frequency}}</td>
+    <td>{{exercise.reps}}</td>
+    <td>{{exercise.duration}}</td>
+    
+    
+    <td>
+    <div class="ui animated fade button" tabindex="0" 
+          {{action 'loadExercise' exercise.id exercise.name exercise.description exercise.objectives exercise.authorName exercise.authorSteps exercise.location exercise.frequency exercise.duration exercise.reps}}
+          title="View">
+      <div class="visible content"></div>
+      <div class="hidden content"><i class="arrow right icon"></i>
+      </div>
+    </div>
+    </td>
+    <td>{{edit-exercise ID=exercise.id}}</td>
+    <td>{{delete-exercise ID=exercise.id}}</td>
+    
+    
+    </tr> 
+    {{/each}}
+</tbody>
+</table>
+
+{{/if}}
