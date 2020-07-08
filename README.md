@@ -69,7 +69,7 @@ In addition to the web application, they wanted to have additional functionality
 2. List all the steps that you need to take to deploy the system
 3. You don’t have to write specific command, just plain English description of the needed steps
 
-[See Deployment Steps](https://github.com/JedraPeake/Software-Engineering-Projects/blob/master/4455b/se445b_final_case.pdf)
+[See Deployment Steps](https://github.com/JedraPeake/Software-Engineering-Projects/blob/master/4455B/se445b_final_case.pdf)
 
 ### SE 3309A: Database Management Systems
 ----
